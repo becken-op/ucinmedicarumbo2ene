@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_budget_post_form_inherit_exceed" model="ir.ui.view">
+        <field name="name">account.budget.post.inherit.notify.exceed</field>
+        <field name="model">account.budget.post</field>
+        <field name="inherit_id" ref="account_budget.view_budget_post_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                 <field name="custom_notify_users_ids" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record>
+    
+</odoo>

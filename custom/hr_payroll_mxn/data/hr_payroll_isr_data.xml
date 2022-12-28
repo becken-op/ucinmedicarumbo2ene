@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Diario -->
+        <record id="isr_table_10" model="isr.table">
+            <field name="limite_min">0.01</field>
+            <field name="limite_max">19.03</field>
+            <field name="cuota_fija">0</field>
+            <field name="excedente">0.0192</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_11" model="isr.table">
+            <field name="limite_min">19.04</field>
+            <field name="limite_max">161.52</field>
+            <field name="cuota_fija">0.37</field>
+            <field name="excedente">0.064</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_12" model="isr.table">
+            <field name="limite_min">161.53</field>
+            <field name="limite_max">283.86</field>
+            <field name="cuota_fija">9.48</field>
+            <field name="excedente">0.1088</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_13" model="isr.table">
+            <field name="limite_min">283.87</field>
+            <field name="limite_max">329.97</field>
+            <field name="cuota_fija">22.79</field>
+            <field name="excedente">0.16</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_14" model="isr.table">
+            <field name="limite_min">329.98</field>
+            <field name="limite_max">395.06</field>
+            <field name="cuota_fija">30.17</field>
+            <field name="excedente">0.1792</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_15" model="isr.table">
+            <field name="limite_min">395.07</field>
+            <field name="limite_max">796.79</field>
+            <field name="cuota_fija">41.84</field>
+            <field name="excedente">0.2136</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_16" model="isr.table">
+            <field name="limite_min">796.80</field>
+            <field name="limite_max">1255.85</field>
+            <field name="cuota_fija">127.65</field>
+            <field name="excedente">0.2352</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_17" model="isr.table">
+            <field name="limite_min">1255.86</field>
+            <field name="limite_max">2397.62</field>
+            <field name="cuota_fija">235.62</field>
+            <field name="excedente">0.3</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_18" model="isr.table">
+            <field name="limite_min">2397.63</field>
+            <field name="limite_max">3196.82</field>
+            <field name="cuota_fija">578.15</field>
+            <field name="excedente">0.32</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_19" model="isr.table">
+            <field name="limite_min">3196.83</field>
+            <field name="limite_max">9590.46</field>
+            <field name="cuota_fija">833.89</field>
+            <field name="excedente">0.34</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <record id="isr_table_20" model="isr.table">
+            <field name="limite_min">9590.47</field>
+            <field name="limite_max">0</field>
+            <field name="cuota_fija">3007.73</field>
+            <field name="excedente">0.35</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_1"/>
+        </record>
+        <!-- Semanal -->
+        <record id="isr_table_21" model="isr.table">
+            <field name="limite_min">0.01</field>
+            <field name="limite_max">133.21</field>
+            <field name="cuota_fija">0</field>
+            <field name="excedente">0.0192</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_22" model="isr.table">
+            <field name="limite_min">133.22</field>
+            <field name="limite_max">1130.64</field>
+            <field name="cuota_fija">2.59</field>
+            <field name="excedente">0.064</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_23" model="isr.table">
+            <field name="limite_min">1130.65</field>
+            <field name="limite_max">1987.02</field>
+            <field name="cuota_fija">66.36</field>
+            <field name="excedente">0.1088</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_24" model="isr.table">
+            <field name="limite_min">1987.03</field>
+            <field name="limite_max">2309.79</field>
+            <field name="cuota_fija">159.53</field>
+            <field name="excedente">0.16</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_25" model="isr.table">
+            <field name="limite_min">2309.80</field>
+            <field name="limite_max">2765.42</field>
+            <field name="cuota_fija">211.19</field>
+            <field name="excedente">0.1792</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_26" model="isr.table">
+            <field name="limite_min">2765.43</field>
+            <field name="limite_max">5577.53</field>
+            <field name="cuota_fija">292.88</field>
+            <field name="excedente">0.2136</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_27" model="isr.table">
+            <field name="limite_min">5577.54</field>
+            <field name="limite_max">8790.95</field>
+            <field name="cuota_fija">893.55</field>
+            <field name="excedente">0.2352</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_28" model="isr.table">
+            <field name="limite_min">8790.96</field>
+            <field name="limite_max">16783.34</field>
+            <field name="cuota_fija">1649.34</field>
+            <field name="excedente">0.3</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_29" model="isr.table">
+            <field name="limite_min">16783.35</field>
+            <field name="limite_max">22377.74</field>
+            <field name="cuota_fija">4047.05</field>
+            <field name="excedente">0.32</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_30" model="isr.table">
+            <field name="limite_min">22377.75</field>
+            <field name="limite_max">67133.22</field>
+            <field name="cuota_fija">5837.23</field>
+            <field name="excedente">0.34</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+        <record id="isr_table_31" model="isr.table">
+            <field name="limite_min">67133.23</field>
+            <field name="limite_max">0</field>
+            <field name="cuota_fija">21054.11</field>
+            <field name="excedente">0.35</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_7"/>
+        </record>
+
+        <!-- Catorcenal -->
+        <!-- <record id="isr_table_43" model="isr.table">
+            <field name="limite_min">0.01</field>
+            <field name="limite_max">228.48</field>
+            <field name="cuota_fija">0</field>
+            <field name="excedente">0.0192</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+       <record id="isr_table_44" model="isr.table">
+            <field name="limite_min">228.5</field>
+            <field name="limite_max">1939</field>
+            <field name="cuota_fija">4.34</field>
+            <field name="excedente">0.064</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_45" model="isr.table">
+            <field name="limite_min">1939.02</field>
+            <field name="limite_max">3407.6</field>
+            <field name="cuota_fija">113.82</field>
+            <field name="excedente">0.1088</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_46" model="isr.table">
+            <field name="limite_min">3407.62</field>
+            <field name="limite_max">3961.16</field>
+            <field name="cuota_fija">273.7</field>
+            <field name="excedente">0.16</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_47" model="isr.table">
+            <field name="limite_min">3961.18</field>
+            <field name="limite_max">4742.64</field>
+            <field name="cuota_fija">362.18</field>
+            <field name="excedente">0.1792</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_48" model="isr.table">
+            <field name="limite_min">4742.66</field>
+            <field name="limite_max">9565.22</field>
+            <field name="cuota_fija">502.32</field>
+            <field name="excedente">0.2136</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_49" model="isr.table">
+            <field name="limite_min">9565.24</field>
+            <field name="limite_max">15076.18</field>
+            <field name="cuota_fija">1532.3</field>
+            <field name="excedente">0.2352</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_50" model="isr.table">
+            <field name="limite_min">15076.2</field>
+            <field name="limite_max">28782.88</field>
+            <field name="cuota_fija">2828.56</field>
+            <field name="excedente">0.3</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_51" model="isr.table">
+            <field name="limite_min">28782.9</field>
+            <field name="limite_max">38377.22</field>
+            <field name="cuota_fija">6940.5</field>
+            <field name="excedente">0.32</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_52" model="isr.table">
+            <field name="limite_min">38377.24</field>
+            <field name="limite_max">115131.52</field>
+            <field name="cuota_fija">10010.7</field>
+            <field name="excedente">0.32</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record>
+        <record id="isr_table_53" model="isr.table">
+            <field name="limite_min">115131.54</field>
+            <field name="limite_max">0</field>
+            <field name="cuota_fija">36107.26</field>
+            <field name="excedente">0.35</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_14"/>
+        </record> -->
+
+        <!-- Quincenal -->
+        <record id="isr_table_54" model="isr.table">
+            <field name="limite_min">0.01</field>
+            <field name="limite_max">285.45</field>
+            <field name="cuota_fija">0</field>
+            <field name="excedente">0.0192</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_55" model="isr.table">
+            <field name="limite_min">285.46</field>
+            <field name="limite_max">2422.80</field>
+            <field name="cuota_fija">5.55</field> 
+            <field name="excedente">0.064</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_56" model="isr.table">
+            <field name="limite_min">2422.81</field>
+            <field name="limite_max">4257.90</field>
+            <field name="cuota_fija">142.20</field>
+            <field name="excedente">0.1088</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_57" model="isr.table">
+            <field name="limite_min">4257.91</field>
+            <field name="limite_max">4949.55</field>
+            <field name="cuota_fija">381.85</field>
+            <field name="excedente">0.16</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_58" model="isr.table">
+            <field name="limite_min">4949.56</field>
+            <field name="limite_max">5925.90</field>
+            <field name="cuota_fija">452.55</field>
+            <field name="excedente">0.1792</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_59" model="isr.table">
+            <field name="limite_min">5925.91</field>
+            <field name="limite_max">11951.85</field>
+            <field name="cuota_fija">627.60</field>
+            <field name="excedente">0.2136</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_60" model="isr.table">
+            <field name="limite_min">11951.86</field>
+            <field name="limite_max">18837.75</field>
+            <field name="cuota_fija">1914.75</field>
+            <field name="excedente">0.2352</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_61" model="isr.table">
+            <field name="limite_min">18837.76</field>
+            <field name="limite_max">35964.30</field>
+            <field name="cuota_fija">3534.30</field>
+            <field name="excedente">0.30</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_62" model="isr.table">
+            <field name="limite_min">35964.31</field>
+            <field name="limite_max">47952.30</field>
+            <field name="cuota_fija">8672.25</field>
+            <field name="excedente">0.32</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_63" model="isr.table">
+            <field name="limite_min">47952.31</field>
+            <field name="limite_max">143856.90</field>
+            <field name="cuota_fija">12508.35</field>
+            <field name="excedente">0.34</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <record id="isr_table_64" model="isr.table">
+            <field name="limite_min">143856.91</field>
+            <field name="limite_max">0</field>
+            <field name="cuota_fija">45115.95</field>
+            <field name="excedente">0.35</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_15"/>
+        </record>
+        <!-- Mensual -->
+        <record id="isr_table_65" model="isr.table">
+            <field name="limite_min">0.01</field>
+            <field name="limite_max">578.52</field>
+            <field name="cuota_fija">0</field>
+            <field name="excedente">0.0192</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_66" model="isr.table">
+            <field name="limite_min">578.53</field>
+            <field name="limite_max">4910.18</field>
+            <field name="cuota_fija">11.11</field>
+            <field name="excedente">0.064</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_67" model="isr.table">
+            <field name="limite_min">4910.19</field>
+            <field name="limite_max">8629.20</field>
+            <field name="cuota_fija">288.33</field>
+            <field name="excedente">0.1088</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_68" model="isr.table">
+            <field name="limite_min">8629.21</field>
+            <field name="limite_max">10031.07</field>
+            <field name="cuota_fija">692.96</field>
+            <field name="excedente">0.16</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_69" model="isr.table">
+            <field name="limite_min">10031.08</field>
+            <field name="limite_max">12009.94</field>
+            <field name="cuota_fija">917.26</field>
+            <field name="excedente">0.1792</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_70" model="isr.table">
+            <field name="limite_min">12009.95</field>
+            <field name="limite_max">24222.31</field>
+            <field name="cuota_fija">1271.87</field>
+            <field name="excedente">0.2136</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_71" model="isr.table">
+            <field name="limite_min">24222.32</field>
+            <field name="limite_max">38177.69</field>
+            <field name="cuota_fija">9880.44</field>
+            <field name="excedente">0.2352</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_72" model="isr.table">
+            <field name="limite_min">38177.70</field>
+            <field name="limite_max">72887.50</field>
+            <field name="cuota_fija">7162.74</field>
+            <field name="excedente">0.3</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_73" model="isr.table">
+            <field name="limite_min">72887.51</field>
+            <field name="limite_max">97183.33</field>
+            <field name="cuota_fija">17575.69</field>
+            <field name="excedente">0.32</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_74" model="isr.table">
+            <field name="limite_min">97183.34</field>
+            <field name="limite_max">291550</field>
+            <field name="cuota_fija">25350.35</field>
+            <field name="excedente">0.34</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+        <record id="isr_table_75" model="isr.table">
+            <field name="limite_min">291550.01</field>
+            <field name="limite_max">0</field>
+            <field name="cuota_fija">91435.02</field>
+            <field name="excedente">0.35</field>
+            <field name="type_id" ref="hr_payroll_mxn.isr_table_type_30"/>
+        </record>
+    </data>
+</odoo>

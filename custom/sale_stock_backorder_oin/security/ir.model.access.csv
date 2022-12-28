@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_order_cancellation_reason_user,access.sale.order.cancellation.reason.user,model_sale_order_cancellation_reason,,1,0,0,0
+access_sale_order_cancellation_reason_manager,access.sale.order.cancellation.reason.manager,model_sale_order_cancellation_reason,sales_team.group_sale_manager,1,1,1,1
+access_sale_order_backorder_reason_user,access.sale.order.backorder.reason.user,model_sale_order_backorder_reason,,1,0,0,0
+access_sale_order_backorder_reason_manager,access.sale.order.backorder.reason.manager,model_sale_order_backorder_reason,sales_team.group_sale_manager,1,1,1,1

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sale_customer_target_tree_view" model="ir.ui.view">
+        <field name="name">sale.customer.target.tree.view</field>
+        <field name="model">sale.customer.target</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="user_id"/>
+                <field name="crm_team_id" optional="show"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="target_amount"/>
+                <field name="actual_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_customer_target_pivot_view" model="ir.ui.view">
+        <field name="name">sale.customer.target.pivot.view</field>
+        <field name="model">sale.customer.target</field>
+        <field name="arch" type="xml">
+            <pivot string="Customer Targets">
+                <field name="date_from" interval="month" type="col"/>
+                <field name="crm_team_id" type="row"/>
+                <field name="user_id" type="row"/>
+                <field name="commercial_partner_id" type="row"/>
+                <field name="partner_id" type="row"/>
+                <field name="target_amount" type="measure" decoration-danger="not target_amount"/>
+                <field name="actual_amount" type="measure" decoration-danger="not actual_amount"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="sale_customer_search_view" model="ir.ui.view">
+        <field name="name">sale.customer.search.view</field>
+        <field name="model">sale.customer.target</field>
+        <field name="arch" type="xml">
+            <search string="Search Sale Customer Target">
+                <field name="crm_team_id" string="Sales Team"/>
+                <field name="user_id" string="Salesperson"/>
+                <field name="commercial_partner_id" string="Commercial Entity"/>
+                <field name="partner_id" string="Customer"/>
+                <separator/>
+                <filter string="This Year" name="this_year" domain="[('date_from', '&gt;=', context_today().strftime('%Y-01-01')), ('date_to', '&lt;=', context_today().strftime('%Y-12-31'))]"/>
+                <group expand="0" string="Group By...">
+                    <filter string="Date From" name="date_from_year_group"  context="{'group_by':'date_from:year'}"/>
+                    <filter string='Sales Team' name="crm_team_id_group" domain="[]" context="{'group_by' : 'crm_team_id'}"/>
+                    <filter string='Salesperson' name="user_id_group" domain="[]" context="{'group_by' : 'user_id'}"/>
+                    <filter string="Commercial Entity" name="commercial_partner_id_group" domain="[]" context="{'group_by': 'commercial_partner_id'}"/>
+                    <filter string="Customer" name="partner_id_group" domain="[]" context="{'group_by': 'partner_id'}"/>
+               </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sale_customer_target_action" model="ir.actions.act_window">
+        <field name="name">Customer Targets</field>
+        <field name="res_model">sale.customer.target</field>
+        <field name="search_view_id" ref="sale_customer_search_view"/>
+        <field name="view_mode">tree,pivot</field>
+        <field name="context">{"search_default_date_from_year_group": 1, "search_default_crm_team_id_group": 1, "search_default_user_id_group": 1, "search_default_commercial_partner_id_group": 1, "search_default_partner_id_group": 1}</field>
+    </record>
+
+    <menuitem id="sale_customer_target_menu"
+              name="Customer Targets"
+              action="sale_customer_target_action"
+              parent="account.account_reports_management_menu"
+              sequence="30"/>
+
+</odoo>

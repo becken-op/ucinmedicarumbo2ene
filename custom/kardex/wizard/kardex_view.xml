@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_kardex_form" model="ir.ui.view">
+            <field name="name">stock.kardex.form</field>
+            <field name="model">stock.kardex</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Kardex" create="false" edit="false">
+
+                    <header>
+                        <field name="datas_fname" invisible="1" />
+                        <field name="download_file" invisible="1" />
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <field name="product_id" />
+                            <field name="warehouse_id" />
+                            <field name="start_date" />
+                            <field name="end_date" />
+                        </group>
+                        <hr/>
+                        <div attrs="{'invisible':[('download_file','=',False)]}">
+                            <h2>Report generation completed</h2>
+                            <p>Download: <field name="file" readonly="1" filename="datas_fname"/></p>
+                        </div>
+                    </sheet>
+                    <footer>
+                        <center>
+                            <button name="calculate" string="Generate Report" type="object"  />
+                            o
+                            <button string="Close" class="oe_link" special="cancel" />
+                        </center>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+    <record id="action_kardex" model="ir.actions.act_window">
+      <field name="name">KARDEX</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">stock.kardex</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="kardex.view_kardex_form"/>
+      <field name="target">new</field>
+    </record>
+
+    <menuitem name="Kardex Report" 
+        action="action_kardex" 
+        id="menu_kardex_action" 
+        parent="stock.menu_warehouse_report" 
+        groups="kardex_user"/>
+
+
+    </data>
+</odoo>

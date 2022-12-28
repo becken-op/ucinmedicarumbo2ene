@@ -1,0 +1,258 @@
+<odoo>
+    <report id="report_journal_entry_payment" 
+        model="account.payment" 
+        string="Polizas contables Pagos" 
+        name="journal_entry_prodigia.report_journal_payment" 
+        file="account.report_payment" 
+        report_type="qweb-html" />
+    <template id="report_journal_payment">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Documentos relacionados </h3>
+                            <p>
+                                <strong>
+                                    <t t-foreach="docs" 
+                                        t-as="doc">
+                                        <span t-field="doc.name" />
+|
+                                    </t>
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                    <t t-set="totalHaber" 
+                        t-value="0" />
+                    <t t-set="totalHaber" 
+                        t-value="0" />
+                    <t t-set="totalImporte" 
+                        t-value="0" />
+                    <div class="page">
+                        <div class="container">
+                            <h4>Movimientos:</h4>
+                            <t t-set="totalDebe" 
+                                t-value="0" />
+                            <t t-set="totalHaber" 
+                                t-value="0" />
+                            <table class="table table-condensed" 
+                                name="invoice_line_table">
+                                <thead>
+                                    <tr>
+                                        <th style="font-size: 9pt">Cuenta</th>
+                                        <th style="font-size: 9pt">Poliza</th>
+                                        <th style="font-size: 9pt">Empresa</th>
+                                        <th style="font-size: 9pt">Descripción</th>
+                                        <th style="font-size: 9pt">Cuenta Analítica</th>
+                                        <th style="font-size: 9pt">Etiqueta Analítica</th>
+                                        <th style="font-size: 9pt">Importe</th>
+                                        <th style="font-size: 9pt">Debe</th>
+                                        <th style="font-size: 9pt">Haber</th>
+                                        <th style="font-size: 9pt">Vencimiento</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <t t-foreach="docs" 
+                                        t-as="doc">
+                                        <tr t-foreach="doc.account_move_line_ids" 
+                                            t-as="pago">
+                                            <td style=" font-size:9pt; width:6em">
+                                                <span t-field="pago.account_id" />
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <span t-field="pago.move_id.name" />
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <span t-field="pago.partner_id.name" />
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <span t-field="pago.name" />
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <span t-field="pago.analytic_account_id" />
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <p t-foreach="pago.analytic_tag_ids" 
+                                                    t-as="tag">
+                                                    <span t-field="tag.name" />
+,
+                                                </p>
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <span t-field="pago.amount_currency" 
+                                                    t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: pago.currency_id}" />
+                                                <span t-field="pago.currency_id.name" />
+                                                <t t-set="totalImporte" 
+                                                    t-value="totalImporte+pago.amount_currency" />
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <span t-field="pago.debit" 
+                                                    t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: pago.currency_id}" />
+                                                <t t-set="totalDebe" 
+                                                    t-value="totalDebe+pago.debit" />
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <span t-field="pago.credit" 
+                                                    t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: pago.currency_id}" />
+                                                <t t-set="totalHaber" 
+                                                    t-value="totalHaber+pago.credit" />
+                                            </td>
+                                            <td style=" font-size:9pt;">
+                                                <span t-field="pago.date_maturity" />
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
+                                        <td>
+                                            <strong>Total</strong>
+                                        </td>
+                                        <td style="font-size:9pt; width:10em">
+                                            <span>
+                                                <t t-esc="'$ '+'{0:,.2f}'.format(totalDebe)" />
+                                            </span>
+                                        </td>
+                                        <td style=" font-size:9pt; width:10em">
+                                            <span>
+                                                <t t-esc="'$ '+'{0:,.2f}'.format(totalHaber)" />
+                                            </span>
+                                        </td>
+                                        <td></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <report id="poliza_report" 
+        model="account.move" 
+        string="Poliza Contable" 
+        name="journal_entry_prodigia.poliza_report_view" 
+        file="poliza_contable_report" 
+        report_type="qweb-pdf" />
+    <template id="poliza_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" 
+                t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Documento relacionado </h3>
+                                <p>
+                                    <strong>
+                                        <span t-field="doc.name" />
+                                    </strong>
+                                </p>
+                            </div>
+                        </div>
+                        <t t-set="totalHaber" 
+                            t-value="0" />
+                        <t t-set="totalHaber" 
+                            t-value="0" />
+                        <t t-set="totalImporte" 
+                            t-value="0" />
+                        <div class="page">
+                            <div class="container">
+                                <h4>Movimientos:</h4>
+                                <t t-set="totalDebe" 
+                                    t-value="0" />
+                                <t t-set="totalHaber" 
+                                    t-value="0" />
+                                <table class="table table-condensed" 
+                                    name="invoice_line_table">
+                                    <thead>
+                                        <tr>
+                                            <th style="font-size: 8pt; width:'20%'">Cuenta</th>
+                                            <th style="font-size: 8pt; width:'20%'">Empresa</th>
+                                            <th style="font-size: 8pt; width:'20%'">Descripción</th>
+                                            <th style="font-size: 8pt">Cuenta Analítica</th>
+                                            <th style="font-size: 8pt">Etiqueta Analítica</th>
+
+                                            <th style="font-size: 8pt">Debe</th>
+                                            <th style="font-size: 8pt">Haber</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody class="invoice_tbody">
+
+                                        <tr t-foreach="doc.line_ids" 
+                                            t-as="apunte">
+                                            <td style=" font-size:7pt; width:15em">
+                                                <span t-field="apunte.account_id" />
+                                            </td>
+                                            <td style=" font-size:7pt;width:25em">
+                                                <span t-field="apunte.partner_id.name" />
+                                            </td>
+                                            <td style=" font-size:7pt;width:25em">
+                                                <span t-field="apunte.name" />
+                                            </td>
+                                            <td style=" font-size:7pt;">
+                                                <span t-field="apunte.analytic_account_id" />
+                                            </td>
+                                            <td style=" font-size:7pt;">
+                                                <p t-foreach="apunte.analytic_tag_ids" 
+                                                    t-as="tag">
+                                                    <span t-field="tag.name" />
+,
+                                                </p>
+                                            </td>
+
+                                            <td style=" font-size:7pt;">
+                                                <span t-field="apunte.debit" 
+                                                    t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: apunte.currency_id}" />
+                                                <t t-set="totalDebe" 
+                                                    t-value="totalDebe+apunte.debit" />
+                                            </td>
+                                            <td style=" font-size:7pt;">
+                                                <span t-field="apunte.credit" 
+                                                    t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: apunte.currency_id}" />
+                                                <t t-set="totalHaber" 
+                                                    t-value="totalHaber+apunte.credit" />
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <strong>Total</strong>
+                                            </td>
+                                            <td style="font-size:9pt; width:10em">
+                                                <span>
+                                                    <t t-esc="'$ '+'{0:,.2f}'.format(totalDebe)" />
+                                                </span>
+                                            </td>
+                                            <td style=" font-size:9pt; width:10em">
+                                                <span>
+                                                    <t t-esc="'$ '+'{0:,.2f}'.format(totalHaber)" />
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

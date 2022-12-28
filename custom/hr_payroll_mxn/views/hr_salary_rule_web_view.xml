@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+
+  <record id="action_hr_salary_rule_web" model="ir.actions.act_window">
+    <field name="name">Reglas Nomina</field>
+    <field name="res_model">hr.salary.rule.web</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+              Create a new rule entry
+      </p>
+    </field>
+  </record>
+  <menuitem id="account_invoicing_rule_menu" name="Reglas Web" parent="hr_payroll.menu_hr_salary_configuration" sequence="98" action="action_hr_salary_rule_web"/>
+
+  <record model="ir.actions.server" id="server_hr_salary_rule_web">
+    <field name="name">Sync web rules</field>
+    <field name="model_id" ref="model_hr_salary_rule_web"/>
+    <field name="state">code</field>
+    <field name="code">
+        model.get_list_rules()
+    </field>
+  </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,445 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* so_po_advance_payment_app
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-07 21:56+0000\n"
+"PO-Revision-Date: 2022-11-07 21:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__advance_amount
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__advance_amount
+msgid "Advance Paid Amount"
+msgstr "Importe pagado como anticipo"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__advance_amount
+msgid "Advance Pay Amount"
+msgstr "Cantidad de pago como anticipo"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_company__adv_account_creditors_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_config_settings__adv_account_creditors_id
+msgid "Advance Payable Account"
+msgstr "Cuenta por pagar de anticipos"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/wizard/purchase_advance_payment.py:0
+#: code:addons/so_po_advance_payment_app/wizard/sale_advance_payment.py:0
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.purchase_advance_payment_wizard
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.purchase_order_form_inherit
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.sale_advance_payment_wizard
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.view_sale_order_inherit
+#, python-format
+msgid "Advance Payment"
+msgstr "Pago anticipo"
+
+#. module: so_po_advance_payment_app
+#: model:res.groups,name:so_po_advance_payment_app.group_purchase_advance_payment
+msgid "Advance Payment (Purchase)"
+msgstr "Pago anticipo (Compra)"
+
+#. module: so_po_advance_payment_app
+#: model:res.groups,name:so_po_advance_payment_app.group_sale_advance_payment
+msgid "Advance Payment (Sale)"
+msgstr "Pago anticipo (Venta)"
+
+#. module: so_po_advance_payment_app
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.purchase_order_form_inherit
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.view_sale_order_inherit
+msgid "Advance Payment Information"
+msgstr "Información de pago anticipo"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_company__adv_account_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_config_settings__adv_account_id
+msgid "Advance Receivable Account"
+msgstr "Cuenta por cobrar de anticipos"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_order__payment_history_ids
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_order__payment_history_ids
+msgid "Advanvce Payment Information"
+msgstr "Información de pago anticipo"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__amount_currency
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__amount_currency
+msgid "Amount in Currency"
+msgstr "Importe en moneda"
+
+#. module: so_po_advance_payment_app
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.purchase_advance_payment_wizard
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.sale_advance_payment_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_account_payment__check_advance_payment
+msgid "Check Advance Payment"
+msgstr "Es Pago Anticipo"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model,name:so_po_advance_payment_app.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__company_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__company_currency_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__company_curr_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__company_currency_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__company_curr_id
+msgid "Company Currency"
+msgstr "Moneda de la Empresa"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,help:so_po_advance_payment_app.field_purchase_advance_payment__company_id
+#: model:ir.model.fields,help:so_po_advance_payment_app.field_sale_advance_payment__company_id
+msgid "Company related to this journal"
+msgstr "Empresa relacionada con este diario"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model,name:so_po_advance_payment_app.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: so_po_advance_payment_app
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.res_config_setting_inherit
+msgid "Configure Advance Account"
+msgstr "Configurar Cuentas de Anticipo"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__create_uid
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__create_uid
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__create_uid
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__create_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__create_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__create_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__currency_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__currency_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__currency_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__currency_id
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.advance_payment_history_form
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.advance_payment_history_form_pur
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: so_po_advance_payment_app
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.res_config_setting_inherit
+msgid "Customer Advance Account"
+msgstr "Cuenta de anticipo del cliente"
+
+#. module: so_po_advance_payment_app
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.res_config_setting_inherit
+msgid "Default Advance Account applied to Advance payment Entries."
+msgstr "Cuenta de anticipo predeterminada aplicada a asientos de pago por anticipo."
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_account_payment__display_name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__display_name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__display_name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__display_name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_company__display_name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__display_name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_account_payment__id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_order__id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_company__id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_config_settings__id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_order__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/models/sale_order.py:0
+#, python-format
+msgid "Internal Transfer"
+msgstr "Transferencia interna"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_account_payment____last_update
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history____last_update
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment____last_update
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history____last_update
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_company____last_update
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment____last_update
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__write_uid
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__write_uid
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__write_uid
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__write_uid
+msgid "Last Updated by"
+msgstr "transferencia interna"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__write_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__write_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__write_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,help:so_po_advance_payment_app.field_purchase_advance_payment__payment_method_id
+#: model:ir.model.fields,help:so_po_advance_payment_app.field_sale_advance_payment__payment_method_id
+msgid ""
+"Manual: Get paid by cash, check or any other method outside of Odoo.\n"
+"Electronic: Get paid automatically through a payment acquirer by requesting a transaction on a card saved by the customer when buying or subscribing online (payment token).\n"
+"Check: Pay bill by check and print it from Odoo.\n"
+"Batch Deposit: Encase several customer checks at once by generating a batch deposit to submit to your bank. When encoding the bank statement in Odoo, you are suggested to reconcile the transaction with the batch deposit.To enable batch deposit, module account_batch_payment must be installed.\n"
+"SEPA Credit Transfer: Pay bill from a SEPA Credit Transfer file you submit to your bank. To enable sepa credit transfer, module account_sepa must be installed "
+msgstr ""
+"Manual: Reciba pagos en efectivo, cheque o cualquier otro método fuera de Odoo.\n"
+"Electrónico: Reciba pagos automáticamente a través de un adquirente de pago solicitando una transacción en una tarjeta guardada por el cliente al comprar o suscribirse en línea (token de pago).\n"
+"Cheque: pague la factura con cheque e imprímala desde Odoo.\n"
+"Depósito por lotes: encierre varios cheques de clientes a la vez generando un depósito por lotes para enviar a su banco. Al codificar el extracto bancario en Odoo, se sugiere conciliar la transacción con el depósito por lotes. Para habilitar el depósito por lotes, se debe instalar el módulo account_batch_payment.\n"
+"Transferencia de crédito SEPA: pague la factura desde un archivo de transferencia de crédito SEPA que envíe a su banco. Para habilitar la transferencia de crédito sepa, se debe instalar el módulo account_sepa."
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__multi_currency_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__multi_currency_id
+msgid "Multi Currency"
+msgstr "Multi moneda"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__sale_order_id
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.purchase_order_form_inherit
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.view_sale_order_inherit
+msgid "Name"
+msgstr "Nombre"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__name
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__name
+msgid "Origin"
+msgstr "Origen"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__purchase_id
+msgid "PO"
+msgstr "OC"
+
+#. module: so_po_advance_payment_app
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.purchase_advance_payment_wizard
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.sale_advance_payment_wizard
+msgid "Paid Amount"
+msgstr "Importe de pago"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__paid_payment
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__paid_payment
+msgid "Paid Payment"
+msgstr "Pago pagado"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__partner_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__partner_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__partner_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__journal_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__journal_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__journal_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__journal_id
+msgid "Payment (Journal)"
+msgstr "Pago (Diario)"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__advance_amount
+msgid "Payment Amount"
+msgstr "Importe de pago"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__payment_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__payment_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__payment_date
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__payment_date
+msgid "Payment Date"
+msgstr "Fecha de pago"
+
+#. module: so_po_advance_payment_app
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.advance_payment_history_form
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.advance_payment_history_form_pur
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.purchase_advance_payment_wizard
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.sale_advance_payment_wizard
+msgid "Payment Details"
+msgstr "Detalles del pago"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__payment_difference
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__payment_difference
+msgid "Payment Difference"
+msgstr "Diferencia de pago"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__payment_method_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__payment_method_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__payment_method_id
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__payment_method_id
+msgid "Payment Method"
+msgstr "Método de pago"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__payment_type
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__payment_type
+msgid "Payment Type"
+msgstr "Tipo de pago"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model,name:so_po_advance_payment_app.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/wizard/purchase_advance_payment.py:0
+#: code:addons/so_po_advance_payment_app/wizard/sale_advance_payment.py:0
+#, python-format
+msgid "Please enter valid advance payment amount..!"
+msgstr "Ingrese un monto de anticipo válido, por favor..."
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__purchase_id
+msgid "Purchase"
+msgstr "Compra"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/models/purchase_order.py:0
+#: model:ir.model,name:so_po_advance_payment_app.model_purchase_advance_payment
+#, python-format
+msgid "Purchase Advance Payment"
+msgstr "Pago Anticipo de Compra"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model,name:so_po_advance_payment_app.model_purchase_payment_history
+msgid "Purchase Advance Payment History"
+msgstr "Historial de pagos de anticipo de compra"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model,name:so_po_advance_payment_app.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de compra"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields.selection,name:so_po_advance_payment_app.selection__purchase_advance_payment__payment_type__inbound
+#: model:ir.model.fields.selection,name:so_po_advance_payment_app.selection__sale_advance_payment__payment_type__inbound
+msgid "Receive Money"
+msgstr "Recibir dinero"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/models/sale_order.py:0
+#: model:ir.model,name:so_po_advance_payment_app.model_sale_advance_payment
+#, python-format
+msgid "Sale Advance Payment"
+msgstr "Venta Pago Anticipo"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__order_id
+msgid "Sale Order"
+msgstr "Orden de venta"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model,name:so_po_advance_payment_app.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields.selection,name:so_po_advance_payment_app.selection__purchase_advance_payment__payment_type__outbound
+#: model:ir.model.fields.selection,name:so_po_advance_payment_app.selection__sale_advance_payment__payment_type__outbound
+msgid "Send Money"
+msgstr "Enviar dinero"
+
+#. module: so_po_advance_payment_app
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.res_config_setting_inherit
+msgid "Supplier Advance Account"
+msgstr "Cuenta de anticipo del proveedor"
+
+#. module: so_po_advance_payment_app
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_advance_payment_history__total_amount
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_advance_payment__total_amount
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_purchase_payment_history__total_amount
+#: model:ir.model.fields,field_description:so_po_advance_payment_app.field_sale_advance_payment__total_amount
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.purchase_advance_payment_wizard
+#: model_terms:ir.ui.view,arch_db:so_po_advance_payment_app.sale_advance_payment_wizard
+msgid "Total Amount"
+msgstr "Importe total"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/models/sale_order.py:0
+#, python-format
+msgid "Transfer from %s"
+msgstr "Transferir desde %s"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/models/sale_order.py:0
+#, python-format
+msgid "Transfer to %s"
+msgstr "Transferir a %s"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/models/sale_order.py:0
+#, python-format
+msgid ""
+"You can't create a new advance payment without an customer/supplier "
+"receivable/payable account"
+msgstr ""
+"No puede crear un nuevo pago de anticipo sin una cuenta por cobrar/por pagar de cliente/proveedor"
+
+#. module: so_po_advance_payment_app
+#: code:addons/so_po_advance_payment_app/models/sale_order.py:0
+#, python-format
+msgid ""
+"You can't create a new payment without an outstanding payments/receipts "
+"account set on the %s journal."
+msgstr ""
+"No puede crear un nuevo pago sin una cuenta de pagos/cobros pendientes configurada en el diario %s."
+
+#. module: so_po_advance_payment_app
+#: model:ir.model,name:so_po_advance_payment_app.model_advance_payment_history
+msgid "advance.payment.history"
+msgstr ""

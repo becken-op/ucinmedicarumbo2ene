@@ -1,0 +1,76 @@
+<odoo>
+  <data>
+
+    <!-- FACTURAS DE CLIENTE -->
+    <record model="ir.ui.view" id="invoice_form_prodigia_bank_payment">
+      <field name="name">invoice_form_prodigia_bank_payment</field>
+      <field name="model">account.invoice</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
+        <field name='partner_bank_id' position='after'>
+          <field name='prodigia_bank_payment_id' readonly='1'/>
+        </field>
+      </field>
+    </record>
+
+    <!-- FACTURAS DE PROVEEDOR -->
+    <record model="ir.ui.view" id="invoice_supplier_form_prodigia_bank_payment">
+      <field name="name">invoice_supplier_form_prodigia_bank_payment</field>
+      <field name="model">account.invoice</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="account.invoice_supplier_form"/>
+      <field name="arch" type="xml">
+        <field name='move_id' position='after'>
+          <field name='prodigia_bank_payment_id' readonly='1'/>
+        </field>
+      </field>
+    </record>
+
+    <!-- PAGOS -->
+    <record model="ir.ui.view" id="view_account_payment_form_prodigia_bank_payment">
+      <field name="name">view_account_payment_form_prodigia_bank_payment</field>
+      <field name="model">account.payment</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="account.view_account_payment_form"/>
+      <field name="arch" type="xml">
+        <field name='communication' position='after'>
+          <field name='prodigia_bank_payment_id' readonly='1'/>
+          <field name='payment_group_difference' invisible='1'/>
+        </field>
+      </field>
+    </record>
+
+
+    <!-- DIARIOS -->
+    <record model="ir.ui.view" id="view_account_journal_form_prodigia_bank_payment">
+      <field name="name">view_account_journal_form_prodigia_bank_payment</field>
+      <field name="model">account.journal</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="account.view_account_journal_form"/>
+      <field name="arch" type="xml">
+        <page name='bank_account' position="attributes">
+          <attribute name="attrs">{'invisible': [('type', 'not in', ('bank','cash'))]}</attribute>
+        </page>
+        <field name='bank_id' position='after'>
+          <field name='clabe'/>
+        </field>
+      </field>
+    </record>
+
+    <!-- BANCOS -->
+    <!-- <record model="ir.ui.view" id="view_res_bank_form_prodigia_bank">
+      <field name="name">view_res_bank_form_prodigia_bank</field>
+      <field name="model">res.bank</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="base.view_res_bank_form"/>
+      <field name="arch" type="xml">
+        <field name='bic' position='after'>
+          <field name='prodigia_bank'/>
+        </field>
+      </field>
+    </record> -->
+
+
+  </data>
+</odoo>

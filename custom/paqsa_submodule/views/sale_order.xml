@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record id="view_order_form_inherit_porcentage" model="ir.ui.view">
+            <field name="name">sale.order.view.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/> 
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position = "after"> 
+                    <field name="delivery_percentage" widget="progressbar"/>
+                    <field name="invoiced_percentage" widget="progressbar"/>
+                    <field name="picking_percentage" widget="progressbar"/>
+                </xpath>    
+            </field>
+        </record> 
+        <record id="saler_order_view_form_paymentmethod_inherit" model="ir.ui.view">
+            <field name="name">sale.order.view.form.paymentmethod.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/> 
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_shipping_id']" position = "after"> 
+                    <field name="partner_payment_method_id" />
+                    <field name="partner_l10n_mx_edi_usage" />
+                </xpath>
+                <xpath expr="//field[@name='analytic_account_id']" position = "after"> 
+                    <field name="name_account_id" />
+                </xpath>
+            </field>
+        </record> 
+    </data> 
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_supplier_invoice_margin" model="ir.ui.view">
+        <field name="name">res_config_settings_view_form_supplier_invoice_margin</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="200"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]/div[@data-key='purchase']" position="inside">
+                <div name="supplier_invoice_margin">
+                    <h2>Margen de comparacion factura - xml de proveedores</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <!-- <label string="Margen"/> -->
+                                <div class="content-group">
+                                    <label for="supplier_xml_amount_margin" string="Margen: "/>
+                                    <field name="supplier_xml_amount_margin" readnly="0"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

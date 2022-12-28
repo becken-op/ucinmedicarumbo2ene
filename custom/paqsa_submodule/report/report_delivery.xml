@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <template id="report_weight" inherit_id="stock.report_delivery_document">
+            <xpath expr="//div[@name='div_sched_date']" position="after">
+                <thead>
+                    <div class="col-auto col-3 mw-100 mb-2">
+                        <strong>Nro de Factura:</strong>
+                        <p class="m-0" t-field="o.name_account_id"/>
+                    </div>
+                </thead>
+            </xpath>
+            <xpath expr="//table[@name='stock_move_table']" position="after">
+                <table class="table table-sm" name="stock_weight_sales">
+                    <thead>
+                        <tr>
+                            <th name="th_sm_product"><strong>unidad de medida</strong></th>
+                            <th name="th_sm_quantity"><strong>cantidad</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="lines" t-value="o.weight_ids"/>
+                        <tr t-foreach="lines" t-as="move">
+                            <td>
+                                <span t-field="move.uom_medida"/>
+                            </td>
+                            <td>
+                                <span t-field="move.total_weight_per_uom"/>
+                            </td>
+                        </tr>
+                  </tbody>
+                </table>
+                <div class="col-auto col-3 mw-100 mb-2">
+                    <strong>Peso total</strong>
+                    <p t-field="o.total_weight"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

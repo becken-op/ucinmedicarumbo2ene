@@ -1,0 +1,15 @@
+ <odoo>
+    <data>
+        <record id="res_partner_view_form_property_inherit" model="ir.ui.view">
+            <field name="name">res.partner.view.form.property.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='property_payment_term_id']" position = "after">
+                    <field name="l10n_mx_payment_method_id" />
+                    <field name="l10n_mx_edi_usage" /> 
+                </xpath>
+            </field>
+        </record> 
+    </data>
+</odoo>

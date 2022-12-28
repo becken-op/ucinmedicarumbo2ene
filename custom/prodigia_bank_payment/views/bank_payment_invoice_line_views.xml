@@ -1,0 +1,193 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="prodigia_bank_payment_invoice_line_form">
+      <field name="name">prodigia_bank_payment_invoice_line_form</field>
+      <field name="model">prodigia.bank.payment.invoice.line</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string='Facturas' create='0' edit='0' delete='0'>
+          <group>
+            <group>
+              <field name='invoice_id' readonly='1'/>
+              <field name='partner_id' readonly='1'/>
+              <field name='date_due' readonly='1'/>
+              <field name='bank' readonly='1'/>
+              <field name='currency_id' readonly='1'/>
+              <field name='expired_days' readonly='1'/>
+            </group>
+
+            <group>
+              <field name='amount_total' readonly='1'/>
+              <field name='date_range1' string='1 - 7' readonly='1'/>
+              <field name='date_range2' string='7 - 14' readonly='1'/>
+              <field name='date_range3' string='15 - 21' readonly='1'/>
+              <field name='date_range4' string='22 - 28' readonly='1'/>
+              <field name='date_range5' string='29 ++' readonly='1'/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="prodigia_bank_payment_invoice_line_single_tree">
+      <field name="name">prodigia_bank_payment_invoice_line_single_tree</field>
+      <field name="model">prodigia.bank.payment.invoice.line</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string='Facturas' delete='0'>
+          <field name='invoice_id'/>
+          <field name='partner_id'/>
+          <field name='date_due'/>
+          <field name='bank'/>
+          <field name='currency_id'/>
+          <!-- <field name='day_range'/> -->
+          <field name='expired_days'/>
+
+          <field name='amount_total'/>
+          <field name='date_range1' string='1'/>
+          <field name='date_range2' string='2'/>
+          <field name='date_range3' string='3'/>
+          <field name='date_range4' string='4'/>
+          <field name='date_range5' string='5 ++'/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="prodigia_bank_payment_invoice_line_weekly_tree">
+      <field name="name">prodigia_bank_payment_invoice_line_weekly_tree</field>
+      <field name="model">prodigia.bank.payment.invoice.line</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string='Facturas' delete='0'>
+          <field name='invoice_id'/>
+          <field name='partner_id'/>
+          <field name='date_due'/>
+          <field name='bank'/>
+          <field name='currency_id'/>
+          <!-- <field name='day_range'/> -->
+          <field name='expired_days'/>
+
+          <field name='amount_total'/>
+          <field name='date_range1' string='1 - 7'/>
+          <field name='date_range2' string='7 - 14'/>
+          <field name='date_range3' string='15 - 21'/>
+          <field name='date_range4' string='22 - 28'/>
+          <field name='date_range5' string='29 ++'/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="prodigia_bank_payment_invoice_line_biweekly_tree">
+      <field name="name">prodigia_bank_payment_invoice_line_biweekly_tree</field>
+      <field name="model">prodigia.bank.payment.invoice.line</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string='Facturas'>
+          <field name='invoice_id'/>
+          <field name='payment_id'/>
+          <field name='partner_id'/>
+          <field name='date_due'/>
+          <field name='bank'/>
+          <field name='currency_id'/>
+          <!-- <field name='day_range'/> -->
+          <field name='expired_days'/>
+
+          <field name='amount_total'/>
+          <field name='date_range1' string='1 - 15'/>
+          <field name='date_range2' string='16 - 30'/>
+          <field name='date_range3' string='31 - 45'/>
+          <field name='date_range4' string='46 - 60'/>
+          <field name='date_range5' string='61 ++'/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="prodigia_bank_payment_invoice_line_30_tree">
+      <field name="name">prodigia_bank_payment_invoice_line_30_tree</field>
+      <field name="model">prodigia.bank.payment.invoice.line</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string='Facturas'>
+          <field name='invoice_id'/>
+          <field name='payment_id'/>
+          <field name='partner_id'/>
+          <field name='date_due'/>
+          <field name='bank'/>
+          <field name='currency_id'/>
+          <!-- <field name='day_range'/> -->
+          <field name='expired_days'/>
+
+          <field name='amount_total'/>
+          <field name='date_range1' string='1 - 30'/>
+          <field name='date_range2' string='31 - 60'/>
+          <field name='date_range3' string='61 - 90'/>
+          <field name='date_range4' string='91 - 120'/>
+          <field name='date_range5' string='121 ++'/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="prodigia_bank_payment_invoice_line_45_tree">
+      <field name="name">prodigia_bank_payment_invoice_line_45_tree</field>
+      <field name="model">prodigia.bank.payment.invoice.line</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string='Facturas'>
+          <field name='invoice_id'/>
+          <field name='payment_id'/>
+          <field name='partner_id'/>
+          <field name='date_due'/>
+          <field name='bank'/>
+          <field name='currency_id'/>
+          <!-- <field name='day_range'/> -->
+          <field name='expired_days'/>
+
+          <field name='amount_total'/>
+          <field name='date_range1' string='1 - 45'/>
+          <field name='date_range2' string='46 - 90'/>
+          <field name='date_range3' string='91 - 135'/>
+          <field name='date_range4' string='136 - 180'/>
+          <field name='date_range5' string='181 ++'/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- FILTROS -->
+    <record id="prodigia_bank_payment_invoice_line_filter" model="ir.ui.view">
+        <field name="name">prodigia_bank_payment_invoice_line_filter</field>
+        <field name="model">prodigia.bank.payment.invoice.line</field>
+        <field name="arch" type="xml">
+            <search string='Facturas'>
+                <field name="invoice_id"/>
+                <field name="payment_id"/>
+                <field name="partner_id"/>
+                <field name="bank"/>
+                <field name="currency_id"/>
+
+                <group expand="0" string="Group By..." >
+                    <filter string="Moneda" name='currency_filter' domain="" context="{'group_by':'currency_id'}"/>
+                    <filter string="Empresa" name='partner_filter' domain="" context="{'group_by':'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <!-- ACCIONES -->
+
+    <record id="menu_bank_payment_invoice_line_submenu_action" model="ir.actions.act_window">
+          <field name="name">Facturas</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">prodigia.bank.payment.invoice.line</field>
+          <field name="view_type">tree</field>
+          <field name="view_mode">tree,form</field>
+          <!-- <field name="target">new</field> -->
+      </record>
+
+  </data>
+</odoo>
