@@ -1,0 +1,18 @@
+<!--
+Clave Emisora (payroll_batch_file_company_code) = Número de Cuenta
+Secuencia: General - Utilizar subsecuencias por date_range
+Nombre de archivo: N%(emisora)s%(consecutivo)s.txt
+
+MXPRLF,F,4064887656,1077453.3,132,29112022,,NOM 29 NOV
+
+DETALLE:
+ 
+6511695764,5100.19,NOM 29 NOV ,ACOSTALOPEZJESSICA,,,,
+
+Sustituir en nombre + apellidos:
+' ', ''
+'Ñ', 'N'
+-->
+<?xml version="1.0"?>
+<t t-name="l10n_mx_payroll_bank_dispersion.hsbc_batch_file"><t t-set="recibos" t-value="o.slip_ids.filtered(lambda _w: not _w.settlement_id and _w.state!='cancel' and _w.neto_a_pagar > 0.009999999999 and _w.employee_id.bank_id.id==bank.id and _w.employee_id.bank_account_number)"/><t t-set="suma" t-value="sum(recibos.mapped('neto_a_pagar'))"/>MXPRLF,F,<t t-esc="bank.payroll_batch_file_company_code"/>,<t t-esc="'{0:.2f}'.format(suma)"/>,<t t-esc="len(recibos.ids)"/>,<t t-esc="o.date_payroll.strftime('%d%m%Y')"/>,,<t t-esc="o.name[:20]"/><t t-foreach="recibos" t-as="nom">
+<t t-esc="nom.employee_id.bank_account_number or ''" />,<t t-esc="'{0:.2f}'.format(nom.neto_a_pagar)" />,<t t-esc="nom.payslip_run_id.name[:20]"/>,<t t-esc="nom.employee_id.apellido_paterno.replace(' ','').replace('Ñ','N') + (nom.employee_id.apellido_materno or '').replace(' ','').replace('Ñ','N') + nom.employee_id.nombre.replace(' ','').replace('Ñ','N')" />,,,,</t></t>
