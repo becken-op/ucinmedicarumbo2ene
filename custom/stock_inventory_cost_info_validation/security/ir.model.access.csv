@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-user_access_stock_valuation_layer,user.access.stock.valuation.layer,stock_account.model_stock_valuation_layer,stock.group_stock_user,1,1,1,0

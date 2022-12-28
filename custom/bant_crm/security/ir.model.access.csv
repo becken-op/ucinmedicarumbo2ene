@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_criterios_budget,acceso a criterios budget,model_criterios_budget,base.group_user,1,1,1,1
-access_criterios_authority,acceso a criterios authority,model_criterios_authority,base.group_user,1,1,1,1

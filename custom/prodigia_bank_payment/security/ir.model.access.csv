@@ -1,3 +1,0 @@
-id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-prodigia_bank_payment_group_user,prodigia_bank_payment_group_user,model_prodigia_bank_payment_group,prodigia_bank_payment_user,1,1,1,0
-prodigia_bank_payment_invoice_line_user,prodigia_bank_payment_invoice_line_user,model_prodigia_bank_payment_invoice_line,prodigia_bank_payment_user,1,1,1,1
