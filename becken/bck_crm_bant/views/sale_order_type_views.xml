@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="sale_order_type_tree_view" model="ir.ui.view">
+			<field name="name">sale.order.type.tree.view</field>
+			<field name="model">sale.order.type</field>
+			<field name="arch" type="xml">
+				<tree string="Sale Order Type">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="sale_order_type_form_view" model="ir.ui.view">
+			<field name="name">sale.order.type.form.view</field>
+			<field name="model">sale.order.type</field>
+			<field name="arch" type="xml">
+				<form string="Sale Order Type">
+					<sheet>
+						<group>
+							<group colspan="4" col="4">
+								<field name="name"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_sale_order_type">
+			<field name="name">Sale Order Type</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">sale.order.type</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem
+			id="menu_sale_order_type"
+			name="Sale Order Types"
+			parent="sale.menu_sale_config"
+			action="action_sale_order_type"
+			sequence="10"/>
+
+	</data>
+</odoo>

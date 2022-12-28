@@ -1,0 +1,905 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bck_crm_bant
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-26 16:28+0000\n"
+"PO-Revision-Date: 2022-09-26 16:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__crm_lead__need__0
+msgid "0% si está en zona de confort"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__crm_lead__time__0
+msgid "0%: más de 180 días"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__crm_lead__need__10
+msgid "10% si está en estabilidad"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__crm_lead__time__10
+msgid "10%: de 90 a 180 días"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__crm_lead__need__20
+msgid "20% si está en crecimiento"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__crm_lead__time__20
+msgid "20%: de 30 a 90 días"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__crm_lead__need__25
+msgid "25% si está en problemas"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__crm_lead__time__25
+msgid "25%: de 0 a 30 días"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_config_settings_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__partner_hospital_infrastructure__name__aicu
+msgid "AICU"
+msgstr "UCIA"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_partner_hospital_infrastructure__name
+msgid ""
+"AICU - Adult Intensive Care Unit\n"
+"PICU - Pediatric Intensive Care Unit\n"
+"NICU - Neonatal Intensive Care Unit\n"
+"Operating Theaters"
+msgstr ""
+"UCIA - Unidad de Cuidados Intensivos de Adultos\n"
+"UCIP - Unidad de Cuidados Intensivos Pediátricos\n"
+"UCIN - Unidad de Cuidado Intensivo Neonatal\n"
+"Quirófanos"
+
+#. module: bck_crm_bant
+#: model:crm.lead.type,name:bck_crm_bant.crm_lead_type_acquisition
+msgid "Acquisition"
+msgstr "Adquisición"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__specialty__anestesia
+msgid "Anestesia"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_product__assortment_plan
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template__assortment_plan
+msgid "Assortment plan"
+msgstr "Plan de Surtido"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__authority
+msgid "Authority"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_config_settings_form
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_lead_form_view
+msgid "BANT"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_lead_search_view
+msgid "BANT Score Below Threshold"
+msgstr "Puntuación BANT por debajo del umbral"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__customer_type__blac
+msgid "BLAC"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__bant_actvity_sent
+msgid "Bant Activity Sent"
+msgstr "Actividad de Advertencia BANT enviada"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__bant_score_below_threshold
+msgid "Bant Below Threshold"
+msgstr "BANT debajo del umbral"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_product__basic_chart
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template__basic_chart
+msgid "Basic Chart"
+msgstr "Cuadro Básico"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__beds_operating_rooms_quantity
+msgid "Beds / Operating Rooms"
+msgstr "Camas / Quirófanos"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_partner_hospital_infrastructure__beds_operating_rooms_quantity
+msgid "Beds or Operating Rooms of the customer"
+msgstr "Camas o Quirófanos del cliente"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__budget
+msgid "Budget"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_res_partner__customer_type
+#: model:ir.model.fields,help:bck_crm_bant.field_res_users__customer_type
+msgid ""
+"CLASIFICACIÓN POR TAMAÑO O POTENCIAL\n"
+"\n"
+"Los Hospitales Privados y Públicos: son clasificados con base a la siguiente tabla:\n"
+"\n"
+"Hospital       Camas       Terapia intensiva       Quirófanos\n"
+"Tipo A         50 o más    Sí                      3 o más\n"
+"Tipo A         100 o más   Sí                      Sí\n"
+"Tipo B         30 A 49     Sí                      1 a 2\n"
+"Tipo B         50 a 99     Sí                      Sí\n"
+"Tipo C         30 a 49     Sí                      No\n"
+"Tipo C         15 a 29     Sí                      Sí\n"
+"Tipo C         Justificación de negocio por @GVR o @MKT\n"
+"Tipo A         los que no cumplen con lo anterior\n"
+"\n"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.actions.server,name:bck_crm_bant.crm_bant_send_warning_ir_cron_ir_actions_server
+#: model:ir.cron,cron_name:bck_crm_bant.crm_bant_send_warning_ir_cron
+#: model:ir.cron,name:bck_crm_bant.crm_bant_send_warning_ir_cron
+msgid "CRM BANT Send Warning"
+msgstr "Advertencia de envío de Puntuación BANT"
+
+#. module: bck_crm_bant
+#: model:res.groups,name:bck_crm_bant.group_crm_marketing
+msgid "CRM Marketing"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__opportunity_classification_id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_product__classification
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template__classification
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_partner__partner_classification
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_users__partner_classification
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_lead_search_view
+msgid "Classification"
+msgstr "Clasificación"
+
+#. module: bck_crm_bant
+#: model:ir.actions.act_window,name:bck_crm_bant.action_lead_classification
+#: model:ir.ui.menu,name:bck_crm_bant.menu_lead_classifications
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_lead_classification_tree_view
+msgid "Classifications"
+msgstr "Clasificaciones"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__classification__commodity
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__cycle__commodity
+msgid "Commodity"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__complexity
+msgid "Complexity"
+msgstr "Complejidad"
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority__create_uid
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__create_uid
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__create_uid
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type__create_uid
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority__create_date
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__create_date
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__create_date
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type__create_date
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: bck_crm_bant
+#: model:ir.actions.act_window,name:bck_crm_bant.action_criterios_authority
+#: model:ir.model,name:bck_crm_bant.model_criterios_authority
+#: model:ir.ui.menu,name:bck_crm_bant.menu_criterios_authority
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_criterios_authority_tree_view
+msgid "Criterios Authority"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.ui.menu,name:bck_crm_bant.crm_menu_bant
+msgid "Criterios BANT"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.actions.act_window,name:bck_crm_bant.action_criterios_budget
+#: model:ir.model,name:bck_crm_bant.model_criterios_budget
+#: model:ir.ui.menu,name:bck_crm_bant.menu_criterios_budget
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_criterios_budget_tree_view
+msgid "Criterios Budget"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_partner__customer_type
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_users__customer_type
+msgid "Customer type"
+msgstr "Tipo de Cliente"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_product__cycle
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template__cycle
+msgid "Cycle"
+msgstr "Ciclo"
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_lead_form_view
+msgid "Cálculo de criterios en oportunidades"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_res_company__bant_warning_user_ids
+#: model:ir.model.fields,help:bck_crm_bant.field_res_config_settings__bant_warning_user_ids
+msgid "Define the users who are going to receive the warning."
+msgstr "Definir los usuarios que van a recibir la actividad."
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__cycle__desarrollo
+msgid "Desarrollo"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority__name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__name
+msgid "Descripción"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:crm.lead.type,name:bck_crm_bant.crm_lead_type_development
+msgid "Development"
+msgstr "Desarrollo"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__classification__differentiate
+msgid "Differentiate"
+msgstr "Diferenciado"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__partner_classification__direct_customer
+msgid "Direct Customer"
+msgstr "Cliente Directo"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_account_move__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_company__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_partner__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_sale_order__display_name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__partner_classification__distributor
+msgid "Distributor"
+msgstr "Distribuidor"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__shipping_mode__eav
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__sale_order__shipping_mode__eav
+msgid "EAV"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__shipping_mode__epr
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__sale_order__shipping_mode__epr
+msgid "EPR"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_crm_lead__time
+msgid "En cuanto tiempo estimamos que se genere la venta."
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_crm_lead__need
+msgid ""
+"En que momento de la necesidad de encuentran: en problemas, en crecimiento, "
+"en estabilidad y zona de confort"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__cycle__estable
+msgid "Estable"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__fans_anesthesia_machines_quantity
+msgid "Fans / Anesthesia Machines"
+msgstr "Ventiladores / Máquinas de Anestesia"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_partner_hospital_infrastructure__fans_anesthesia_machines_quantity
+msgid "Fans or Anesthesia Machines of the customer"
+msgstr "Ventiladores o máquinas de anestesia del cliente."
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_partner__hospital_infrastructure_ids
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_users__hospital_infrastructure_ids
+msgid "Hospital Infrastructure"
+msgstr "Infraestructura Hospitalaria"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__partner_hospital_infrastructure__name__hospitalization
+msgid "Hospitalization"
+msgstr "Hospitalización"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_account_move__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_company__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_config_settings__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_partner__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_sale_order__id
+#: model:ir.model.fields,field_description:bck_crm_bant.field_stock_picking__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_res_company__bant_warning_percentage
+#: model:ir.model.fields,help:bck_crm_bant.field_res_config_settings__bant_warning_percentage
+msgid ""
+"If any Opportunity is less than this percentage, a warning is going to be "
+"created."
+msgstr ""
+"Si la puntuación BANT de alguna Oportunidad es inferior a este porcentaje, "
+"se creará una advertencia."
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_res_partner__partner_classification
+#: model:ir.model.fields,help:bck_crm_bant.field_res_users__partner_classification
+msgid ""
+"Integradores: Es aquel distribuidor que vende de manera integral a algún hospital público o privado.\n"
+"OEM (Original Equipment Manufacturer): Fabricante de equipos originales confecciona piezas o componentes que se utilizan en los productos.\n"
+"Servicios Subrrogados: Empresa que ofrece un servicio a un hospital que generalmente va dirigida a alguna área."
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__partner_classification__integrator
+msgid "Integrator"
+msgstr "Integrador"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/stock_picking.py:0
+#, python-format
+msgid ""
+"It is not allowed to confirm a delivery without Carrier and Tracking "
+"Reference, delivery: %s"
+msgstr ""
+"No se permite confirmar una entrega sin Transportista y Referencia de Rastreo, entrega: %s"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/stock_picking.py:0
+#, python-format
+msgid "It is not allowed to confirm a delivery without ticket, delivery: %s"
+msgstr "No se permite confirmar una entrega sin ticket, entrega: %s"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/account_move.py:0
+#, python-format
+msgid "It is not allowed to confirm an invoice without ticket, invoice: %s"
+msgstr "No se permite confirmar factura sin ticket, factura: %s"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/sale_order.py:0
+#, python-format
+msgid "It is not allowed to confirm an order without ticket, sale order: %s"
+msgstr "No se permite confirmar pedido sin ticket, pedido de venta: %s"
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: bck_crm_bant
+#: model:crm.lead.classification,name:bck_crm_bant.crm_lead_classification_known_brand_commodity
+msgid "Known Brand - Commodity"
+msgstr "Marca conocida - Comodity"
+
+#. module: bck_crm_bant
+#: model:crm.lead.classification,name:bck_crm_bant.crm_lead_classification_known_brand_new_technology
+msgid "Known Brand - New Technology"
+msgstr "Marca conocida - Nueva Tecnología"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__cycle__lanzamiento
+msgid "Lanzamiento"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_account_move____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_company____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_partner____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_sale_order____last_update
+#: model:ir.model.fields,field_description:bck_crm_bant.field_stock_picking____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority__write_uid
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__write_uid
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__write_uid
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type__write_uid
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority__write_date
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__write_date
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__write_date
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type__write_date
+#: model:ir.model.fields,field_description:bck_crm_bant.field_partner_hospital_infrastructure__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Oportunidad"
+
+#. module: bck_crm_bant
+#: model:crm.lead.type,name:bck_crm_bant.crm_lead_type_maintenance
+msgid "Maintenance"
+msgstr "Mantenimiento"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__partner_hospital_infrastructure__name__nicu
+msgid "NICU"
+msgstr "UCIN"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__name
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__need
+msgid "Need"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__specialty__neonatología
+msgid "Neonatología"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:crm.lead.classification,name:bck_crm_bant.crm_lead_classification_new_brand_commodity
+msgid "New Brand - Commodity"
+msgstr "Nueva marca - Comodity"
+
+#. module: bck_crm_bant
+#: model:crm.lead.classification,name:bck_crm_bant.crm_lead_classification_new_brand_new_technology
+msgid "New Brand - New Technology"
+msgstr "Nueva marca - Nueva Tecnología"
+
+#. module: bck_crm_bant
+#: model:crm.lead.classification,name:bck_crm_bant.crm_lead_classification_new_client_new_technology
+msgid "New Client - New Technology"
+msgstr "Nuevo cliente - Nueva Tecnología"
+
+#. module: bck_crm_bant
+#: model:crm.lead.classification,name:bck_crm_bant.crm_lead_classification_new_client_commodity
+msgid "New client - Commodity"
+msgstr "Nuevo cliente - Comodity"
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_lead_form_view
+msgid "Nombre"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_type__not_editable
+msgid "Not Editable"
+msgstr "No Editable"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__cycle__nueva_tecnología
+msgid "Nueva Tecnología"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__partner_classification__oem
+msgid "OEM"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_account_bank_statement_line__ticket_number
+#: model:ir.model.fields,help:bck_crm_bant.field_account_move__ticket_number
+#: model:ir.model.fields,help:bck_crm_bant.field_account_payment__ticket_number
+#: model:ir.model.fields,help:bck_crm_bant.field_sale_order__ticket_number
+#: model:ir.model.fields,help:bck_crm_bant.field_stock_picking__ticket_number
+msgid "OSTicket number"
+msgstr "No. de OSTicket"
+
+#. module: bck_crm_bant
+#: model:res.groups,comment:bck_crm_bant.group_crm_marketing
+msgid "Only this group can edit partners"
+msgstr "Solo este grupo puede editar socios"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__partner_hospital_infrastructure__name__operating_theaters
+msgid "Operating Theaters"
+msgstr "Quirófanos"
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_config_settings_form
+msgid ""
+"Oportunidades con una Puntuación BANT menor a este valor será enviada una "
+"actividad para ser analizadas."
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_crm_lead_classification
+msgid "Opportunity Classification"
+msgstr "Clasificación de Oportinidad"
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_crm_lead_type
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead_classification__opportunity_type_id
+msgid "Opportunity Type"
+msgstr "Tipo de Oportunidad"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/crm_lead.py:0
+#, python-format
+msgid "Opportunity has a BANT Rate below the threshold"
+msgstr "La oportunidad tiene una puntuación BANT por debajo del umbral"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__specialty__otros
+msgid "Otros"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__shipping_mode__pco
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__sale_order__shipping_mode__pco
+msgid "PCO"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__partner_hospital_infrastructure__name__picu
+msgid "PICU"
+msgstr "UCIP"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__shipping_mode__ppa
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__sale_order__shipping_mode__ppa
+msgid "PPA"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_partner_hospital_infrastructure
+msgid "Partner Hospital Infrastructure"
+msgstr "Infraestructura hospitalaria"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__extra_value
+msgid "Porcentaje extra"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_crm_lead__budget
+msgid "Presupuesto con el que cuenta el cliente"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__partner_classification__private_hospital
+msgid "Private Hospital"
+msgstr "Hospital Privado"
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__partner_classification__public_hospital
+msgid "Public Hospital"
+msgstr "Hospital Público"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__bant_score
+msgid "Puntuación Bant"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__shipping_mode__rdi
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__sale_order__shipping_mode__rdi
+msgid "RDI"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__shipping_mode__rel
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__sale_order__shipping_mode__rel
+msgid "REL"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_res_partner__shipping_mode
+#: model:ir.model.fields,help:bck_crm_bant.field_res_users__shipping_mode
+#: model:ir.model.fields,help:bck_crm_bant.field_sale_order__shipping_mode
+msgid ""
+"REL: Recolección\n"
+"RHO: Ruta UCIN Hospitales\n"
+"RDI: Ruta UCIN Distribuidores\n"
+"PCO: Paqueteria con cobro\n"
+"PPA: Paqueteria pagada por UCIN\n"
+"EAV: Entrega Asesor de Ventas asignado\n"
+"EPR: Entrega programada\n"
+"UER: Urgencia por error de UCIN\n"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__shipping_mode__rho
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__sale_order__shipping_mode__rho
+msgid "RHO"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_product__quality_management_system
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template__quality_management_system
+msgid "SGC"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__assortment_plan__sp
+msgid "SP"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: bck_crm_bant
+#: model:crm.lead.classification,name:bck_crm_bant.crm_lead_classification_sell_the_same_thing
+msgid "Sell ​​the same thing in greater quantity to the customer"
+msgstr "Venderle lo mismo en mayor cantidad al cliente"
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_sale_order_form_view
+msgid "Send by Email"
+msgstr "Enviar por correo electrónico"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_partner__shipping_mode
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_users__shipping_mode
+#: model:ir.model.fields,field_description:bck_crm_bant.field_sale_order__shipping_mode
+msgid "Shipping mode"
+msgstr "Modo de envío"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_crm_lead__authority
+msgid "Si se tiene contacto directo con los tomadores de decisiones"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,help:bck_crm_bant.field_product_product__quality_management_system
+#: model:ir.model.fields,help:bck_crm_bant.field_product_template__quality_management_system
+msgid "Sistema de Gestión de Calidad"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_product__specialty
+#: model:ir.model.fields,field_description:bck_crm_bant.field_product_template__specialty
+msgid "Specialty"
+msgstr "Especialidad"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__partner_classification__subrogated_service
+msgid "Subrogated Service"
+msgstr "Servicio Subrogado"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__partner_classification__surrogate
+msgid "Surrogate"
+msgstr "Arrendadora"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__customer_type__top
+msgid "TOP"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__specialty__terapia_respiratoria
+msgid "Terapia Respiratoria"
+msgstr ""
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/crm_lead.py:0
+#, python-format
+msgid ""
+"This new opportunity has a BANT Rate below the value %s.\n"
+"Check if an action is needed."
+msgstr ""
+"Esta nueva oportunidad tiene una tasa BANT por debajo del valor %s.\n"
+"Verifique si se necesita una acción."
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_account_bank_statement_line__ticket_number
+#: model:ir.model.fields,field_description:bck_crm_bant.field_account_move__ticket_number
+#: model:ir.model.fields,field_description:bck_crm_bant.field_account_payment__ticket_number
+#: model:ir.model.fields,field_description:bck_crm_bant.field_sale_order__ticket_number
+#: model:ir.model.fields,field_description:bck_crm_bant.field_stock_picking__ticket_number
+msgid "Ticket"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__time
+msgid "Time"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model,name:bck_crm_bant.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__opportunity_type_id
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_lead_search_view
+msgid "Type"
+msgstr "Tipo"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_crm_lead__opportunity_type_not_editable
+msgid "Type Not Editable"
+msgstr "Tipo no Editable"
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_lead_kanban_view
+msgid "Type:"
+msgstr "Tipo:"
+
+#. module: bck_crm_bant
+#: model:ir.actions.act_window,name:bck_crm_bant.action_lead_type
+#: model:ir.ui.menu,name:bck_crm_bant.menu_lead_types
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_lead_type_tree_view
+msgid "Types"
+msgstr "Tipos"
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.ucin_fields_product_template_form_view
+msgid "UCIN"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__res_partner__shipping_mode__uer
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__sale_order__shipping_mode__uer
+msgid "UER"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model_terms:ir.ui.view,arch_db:bck_crm_bant.crm_bant_config_settings_form
+msgid ""
+"Usuarios a enviar las actividades de las Oportunidades con una Puntuación "
+"BANT baja, además del jefe inmediato."
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_authority__value
+#: model:ir.model.fields,field_description:bck_crm_bant.field_criterios_budget__value
+msgid "Valor"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields.selection,name:bck_crm_bant.selection__product_template__specialty__vía_aérea
+msgid "Vía Aérea"
+msgstr ""
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_company__bant_warning_percentage
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_config_settings__bant_warning_percentage
+msgid "Warning Percentage"
+msgstr "Porcentaje para lanzar actividad"
+
+#. module: bck_crm_bant
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_company__bant_warning_user_ids
+#: model:ir.model.fields,field_description:bck_crm_bant.field_res_config_settings__bant_warning_user_ids
+msgid "Warning Users"
+msgstr "Usuarios a enviar actividad"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/res_partner.py:0
+#, python-format
+msgid "You must add at least one Hospital Infrastructure Line!"
+msgstr "¡Agregar al menos una línea de Infraestructura Hospitalaria!"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/crm_lead.py:0
+#, python-format
+msgid "You must select at least one BANT Authority!"
+msgstr "¡Debe seleccionar al menos una Autoridad BANT!"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/crm_lead.py:0
+#, python-format
+msgid "You must select at least one BANT Budget!"
+msgstr "¡Debe seleccionar al menos un Budget BANT!"
+
+#. module: bck_crm_bant
+#: code:addons/bck_crm_bant/models/crm_lead.py:0
+#, python-format
+msgid "You must select the BANT Need!"
+msgstr "Debes seleccionar el BANT Need!"

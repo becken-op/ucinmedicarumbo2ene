@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+criterios_budget_manager_access,criterios.budget.manager.access,model_criterios_budget,sales_team.group_sale_manager,1,1,1,1
+criterios_budget_user_access,criterios.budget.user.access,model_criterios_budget,sales_team.group_sale_salesman,1,0,0,0
+criterios_authority_manager_access,criterios.authority.manager.access,model_criterios_authority,sales_team.group_sale_manager,1,1,1,1
+criterios_authority_user_access,criterios.authority.user.access,model_criterios_authority,sales_team.group_sale_salesman,1,0,0,0
+hospital_infrastructure_manager_access,hospital.infrastructure.manager.access,model_partner_hospital_infrastructure,sales_team.group_sale_manager,1,1,1,1
+hospital_infrastructure_user_access,hospital.infrastructure.user.access,model_partner_hospital_infrastructure,,1,0,0,0
+crm_lead_type_manager_access,crm.lead.type.manager.access,model_crm_lead_type,sales_team.group_sale_manager,1,1,1,1
+crm_lead_type_user_access,crm.lead.type.user.accesss,model_crm_lead_type,sales_team.group_sale_salesman,1,0,0,0
+crm_lead_classification_manager_access,crm.lead.classification.manager.access,model_crm_lead_classification,sales_team.group_sale_manager,1,1,1,1
+crm_lead_classification_user_access,crm.lead.classification.user.accesss,model_crm_lead_classification,sales_team.group_sale_salesman,1,0,0,0
+utm_campaign_crm_marketing_access,utm.campaign.crm.marketing.access,utm.model_utm_campaign,bck_crm_bant.group_crm_marketing,1,1,1,1
+product_pricelist_manager_access,product.pricelist.manager.access,product.model_product_pricelist,bck_crm_bant.group_pricelist_manager,1,1,1,1
+access_sale_order_type_user,access.sale.order.type.user,model_sale_order_type,,1,0,0,0
+access_sale_order_type_manager,access.sale.order.type.manager,model_sale_order_type,sales_team.group_sale_manager,1,1,1,1

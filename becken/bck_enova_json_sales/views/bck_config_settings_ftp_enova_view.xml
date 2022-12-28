@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="bck_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">bck.res.config.settings.view.form.inherit.enova</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]/div[@data-string='Sales']" position="inside">
+                <h2>Enova files server</h2>
+                <div class="row mt16 o_settings_container" name="enova_bck_file_server">
+                    <div class="col-12 col-lg-6 o_setting_box" id="enova_ftp_file_server">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">File Server</span>
+                            <div class="text-muted" id="msg_server_files_install_setting">
+                                Add information to connect odoo to ftp file servers
+                            </div>
+                            <div class="row mt16">
+                                <label string="FTP server" for="enova_server" class="col-lg-3 o_light_label" />
+                                <field name="enova_server"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="FTP username" for="enova_user" class="col-lg-3 o_light_label" />
+                                <field name="enova_user"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="FTP password" for="enova_password" class="col-lg-3 o_light_label" />
+                                <field name="enova_password" password="True"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="In Path" for="enova_in_path" class="col-lg-3 o_light_label" />
+                                <field name="enova_in_path"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Out path" for="enova_out_path" class="col-lg-3 o_light_label" />
+                                <field name="enova_out_path"/>
+                            </div>
+                            <div class="row mt16">
+                                <label string="Processed path" for="enova_out_path" class="col-lg-3 o_light_label" />
+                                <field name="enova_processed_path"/>
+                            </div>
+ 
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+
+        </field>
+
+    </record>
+</odoo>

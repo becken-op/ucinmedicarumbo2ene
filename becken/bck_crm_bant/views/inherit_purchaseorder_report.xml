@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<template id="report_inherit_purchase_order" inherit_id="purchase.report_purchaseorder_document">
+		<!-- Agregar la columna Piezas -->
+		<xpath expr="//th[@name='th_quantity']" position="after">
+			<th name="th_pieces" class="text-right"><strong>Pieces</strong></th>
+		</xpath>
+		<xpath expr="//t[@t-foreach='o.order_line']/tr/t/td[4]" position="after">
+			<td class="text-right">
+				<t t-set="reference_uom_id" t-value="line.product_uom.search([('category_id', '=', line.product_uom.category_id.id), ('uom_type', '=', 'reference')], limit=1)"/>
+				<span t-esc="line.product_uom._compute_quantity(line.product_qty, reference_uom_id)" groups="uom.group_uom"/>
+			</td>
+		</xpath>
+		<!-- Quitar la columna Impuestos -->
+		<xpath expr="//th[@name='th_taxes']" position="replace">
+		</xpath>
+		<xpath expr="//td[@name='td_taxes']" position="replace">
+		</xpath>
+		<!-- Quitar la columna Fecha Planeada -->
+		<xpath expr="//th[@name='th_date_req']" position="replace">
+		</xpath>
+		<xpath expr="//td[hasclass('text-center')]" position="replace">
+		</xpath>
+	</template>
+
+</odoo>	

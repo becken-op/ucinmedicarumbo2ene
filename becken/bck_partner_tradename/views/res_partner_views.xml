@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- <record id="partner_tradename_kanban_view" model="ir.ui.view">
+      <field name="name">partner.tradename.kanban.view</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+      <field name="arch" type="xml">
+        <field name="type" position="after">
+          <field name="tradename"/>
+        </field>
+        <xpath expr="//kanban/templates/t/div/div[1]/strong" position="replace">
+          <strong class="o_kanban_record_title oe_partner_heading">
+            <field name="tradename"/>
+          </strong>
+          <strong class="o_kanban_record_title oe_partner_heading">
+            <field name="display_name"/>
+          </strong>
+        </xpath>
+      </field>
+    </record> -->
+
+    <record id="partner_tradename_tree_view" model="ir.ui.view">
+      <field name="name">partner.tradename.tree.view</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_tree"/>
+      <field name="arch" type="xml">
+        <field name="display_name" position="after">
+          <field name="tradename" optional='hide'/>
+        </field>
+      </field>
+    </record>
+
+    <record id="partner_tradename_form_view" model="ir.ui.view">
+      <field name="name">partner.tradename.form.view</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="after">
+          <h3>
+            <label for="tradename" attrs="{'invisible': ['&amp;', '|', ('is_company','=', False),('parent_id', '=', True),('company_name', '=', False)]}"/>
+            <field readonly="0" name="tradename" placeholder="Tradename" attrs="{'invisible': ['&amp;', '|', ('is_company','=', False),('parent_id', '=', True),('company_name', '=', False)]}"/>
+          </h3>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="partner_tradename_search_view" model="ir.ui.view">
+      <field name="name">partner.tradename.search.view</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_res_partner_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="replace">
+          <field name="name" filter_domain="['|','|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self),('tradename','ilike',self)]"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

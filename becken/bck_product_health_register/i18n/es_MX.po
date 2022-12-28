@@ -1,0 +1,429 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bck_product_health_register
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-11 21:59+0000\n"
+"PO-Revision-Date: 2022-11-11 21:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_needaction
+msgid "Action Needed"
+msgstr "Accion necesaria"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: bck_product_health_register
+#: model_terms:ir.ui.view,arch_db:bck_product_health_register.product_health_register_form_view
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cantidad de archivos adjuntos"
+
+#. module: bck_product_health_register
+#: model_terms:ir.ui.view,arch_db:bck_product_health_register.product_health_register_form_view
+msgid "Configure Health Register Products"
+msgstr "Configurar registro sanitario de productos"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__create_uid
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__create_date
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__distinctive
+msgid "Denominación Distintiva"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__generic
+msgid "Denominación Genérica"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__legal_manufacturer
+msgid "Dirección Fabricante Legal"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__actual_manufacturer
+msgid "Dirección Fabricante Real"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__display_name
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config__display_name
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_template__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__active
+msgid "Estado"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__manufactured_place
+msgid "Fabricado en"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__made_for
+msgid "Fabricado para"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__manufacturer
+msgid "Fabricado por"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__due_date
+msgid "Fecha Vencimiento"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__name
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config__product_health_register_id
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_product__product_health_register_id
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_template__product_health_register_id
+#: model:ir.module.category,name:bck_product_health_register.module_health_register
+#: model_terms:ir.ui.view,arch_db:bck_product_health_register.product_health_register_product_template_search_view
+msgid "Health Register"
+msgstr "Registro Sanitario"
+
+#. module: bck_product_health_register
+#: model:res.groups,name:bck_product_health_register.health_register_manager_group
+msgid "Health Register Manager"
+msgstr "Encargado de Registro Sanitario"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__product_ids
+msgid "Health Register Products"
+msgstr "Registro Sanitario de Productos"
+
+#. module: bck_product_health_register
+#: model:ir.module.category,description:bck_product_health_register.module_health_register
+msgid "Helps you manage your Health Register process."
+msgstr "Ayuda a gestionar el proceso de Registro Sanitario."
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__id
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config__id
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_template__id
+msgid "ID"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: bck_product_health_register
+#: model_terms:ir.ui.view,arch_db:bck_product_health_register.product_health_register_config_form_view
+msgid ""
+"If any other health register set on select product list will replace on "
+"save."
+msgstr ""
+"Si cualquier otro registro de salud establecido en la lista de productos "
+"seleccionados se reemplazará al grabar."
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__message_needaction
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__message_has_error
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__products_count
+msgid "It shows the number of product counts"
+msgstr "Muestra el número de productos."
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register____last_update
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config____last_update
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_template____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__write_uid
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__write_date
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización el"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__cautionary_legends
+msgid "Leyendas Precautorias"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Archivo adjunto principal"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega de mensajes"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de la próxima actividad"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields.selection,name:bck_product_health_register.selection__product_health_register__state__no_renewal
+msgid "No Renewal"
+msgstr "Sin renovación"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__products_count
+msgid "Number of products"
+msgstr "Número de productos"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register_config__product_ids
+msgid "Product"
+msgstr "Producto"
+
+#. module: bck_product_health_register
+#: model:ir.model,name:bck_product_health_register.model_product_health_register
+msgid "Product Health Register"
+msgstr "Registro sanitario del producto"
+
+#. module: bck_product_health_register
+#: model:ir.model,name:bck_product_health_register.model_product_health_register_config
+msgid "Product Health Register Configuration Wizard"
+msgstr "Asistente de configuración del registro sanitario de productos"
+
+#. module: bck_product_health_register
+#: model:ir.model,name:bck_product_health_register.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: bck_product_health_register
+#: model_terms:ir.ui.view,arch_db:bck_product_health_register.product_health_register_config_form_view
+#: model_terms:ir.ui.view,arch_db:bck_product_health_register.product_health_register_form_view
+msgid "Products"
+msgstr "Productos"
+
+#. module: bck_product_health_register
+#: model_terms:ir.ui.view,arch_db:bck_product_health_register.product_health_register_form_view
+msgid "Registro Sanitario"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.actions.act_window,name:bck_product_health_register.action_health_register
+#: model:ir.ui.menu,name:bck_product_health_register.action_menu_health_register
+msgid "Registros Sanitarios"
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_product__require_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_template__require_health_register
+msgid "Require Health Register"
+msgstr "Requiere Registro Sanitario"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: bck_product_health_register
+#: model_terms:ir.ui.view,arch_db:bck_product_health_register.product_health_register_config_form_view
+msgid "Set Product"
+msgstr "Configurar Producto"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha límite ya ha pasado\n"
+"Hoy: La fecha límite es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: bck_product_health_register
+#: model:res.groups,comment:bck_product_health_register.health_register_manager_group
+msgid "This group can manage Health Registers."
+msgstr "Este grupo puede gestionar Registros Sanitarios."
+
+#. module: bck_product_health_register
+#: code:addons/bck_product_health_register/hooks.py:0
+#, python-format
+msgid "This module support Odoo series 14.0, found %s."
+msgstr ""
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: bck_product_health_register
+#: model:ir.model.fields.selection,name:bck_product_health_register.selection__product_health_register__state__under_renovation
+msgid "Under Renovation"
+msgstr "En Renovación"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leídos"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields.selection,name:bck_product_health_register.selection__product_health_register__state__valid
+msgid "Valid"
+msgstr "Vigente"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,field_description:bck_product_health_register.field_product_health_register__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: bck_product_health_register
+#: model:ir.model.fields,help:bck_product_health_register.field_product_health_register__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"

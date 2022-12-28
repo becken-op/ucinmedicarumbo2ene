@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inactivate_expired_utm_campaign_ir_cron" model="ir.cron">
+            <field name="name">Inactivate Campaigns with expired end date</field>
+            <field name="model_id" ref="utm.model_utm_campaign"/>
+            <field name="state">code</field>
+            <field name="code">model.action_inactivate_expired_utm_campaign()</field>
+            <field name="active" eval="True"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="nextcall" eval="(DateTime.now().replace(hour=4, minute=0, second=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+  <t t-name="bck_website_warehouses_stock.warehouses_stock_view">
+    <span>Hola mundo</span>
+    <t t-foreach="widget.warehousesStocks" t-as="stock">
+      <p>
+        <t t-raw="stock['warehouse']"/> - <t t-raw="stock['quantity']"/>
+      </p>
+    </t>
+  </t>
+</templates>

@@ -1,0 +1,204 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bck_product_brand_ept
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-23 00:10+0000\n"
+"PO-Revision-Date: 2022-09-23 00:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config__brand_id
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_product__product_brand_ept_id
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_template__product_brand_ept_id
+msgid "Brand"
+msgstr "Marca"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__name
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_ept_form
+msgid "Brand Name"
+msgstr "Nombre de la marca"
+
+#. module: bck_product_brand_ept
+#: model:ir.actions.act_window,name:bck_product_brand_ept.action_open_brand_products
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__product_ids
+msgid "Brand Products"
+msgstr "Productos de la Marca"
+
+#. module: bck_product_brand_ept
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_product_template_kanban_view
+msgid "Brand:"
+msgstr "Marca:"
+
+#. module: bck_product_brand_ept
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_ept_form
+msgid "Configure Brand Products"
+msgstr "Configurar Productos de la Marca"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config__create_uid
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config__create_date
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__description
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_ept_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_account_invoice_report__display_name
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config__display_name
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__display_name
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_template__display_name
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_sale_report__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,help:bck_product_brand_ept.field_product_brand_ept__sequence
+msgid "Gives the sequence order when displaying a list of product Brands."
+msgstr "Da el orden de secuencia al mostrar una lista de Marcas de productos."
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_account_invoice_report__id
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config__id
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__id
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_template__id
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_sale_report__id
+msgid "ID"
+msgstr ""
+
+#. module: bck_product_brand_ept
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_config_form_view
+msgid "If any other brand set on select product list will replace on save."
+msgstr "Si cualquier otra marca es establecida en la lista de productos seleccionados se reemplazará al guardar."
+
+#. module: bck_product_brand_ept
+#: model:ir.model,name:bck_product_brand_ept.model_account_invoice_report
+msgid "Invoices Statistics"
+msgstr "Estadísticas de facturas"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,help:bck_product_brand_ept.field_product_brand_ept__products_count
+msgid "It shows the number of product counts"
+msgstr "Muestra el número de conteos de productos."
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_account_invoice_report____last_update
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config____last_update
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept____last_update
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_template____last_update
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_sale_report____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config__write_uid
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config__write_date
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización el"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__logo
+msgid "Logo File"
+msgstr "Archivo de logo"
+
+#. module: bck_product_brand_ept
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_ept_tree
+msgid "Name"
+msgstr "Nombre"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__products_count
+msgid "Number of products"
+msgstr "Cantidad de Productos"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_config__product_ids
+msgid "Product"
+msgstr "Producto"
+
+#. module: bck_product_brand_ept
+#: model:ir.actions.act_window,name:bck_product_brand_ept.action_open_single_product_brand
+#: model:ir.model,name:bck_product_brand_ept.model_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_account_invoice_report__product_brand_ept_id
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_sale_report__product_brand_ept_id
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_product_template_search_view
+msgid "Product Brand"
+msgstr "Marca de Producto"
+
+#. module: bck_product_brand_ept
+#: model:ir.model,name:bck_product_brand_ept.model_product_brand_config
+msgid "Product Brand Configuration Wizard"
+msgstr "Asistente de configuración de marca de producto"
+
+#. module: bck_product_brand_ept
+#: model:ir.actions.act_window,name:bck_product_brand_ept.action_product_brand_ept
+#: model:ir.ui.menu,name:bck_product_brand_ept.menu_product_brand_ept
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_ept_tree
+msgid "Product Brands"
+msgstr "Marcas de Productos"
+
+#. module: bck_product_brand_ept
+#: model:ir.model,name:bck_product_brand_ept.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: bck_product_brand_ept
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_config_form_view
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_ept_form
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_ept_kanban
+msgid "Products"
+msgstr "Productos"
+
+#. module: bck_product_brand_ept
+#: model:ir.model,name:bck_product_brand_ept.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Reporte de análisis de ventas"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,help:bck_product_brand_ept.field_account_invoice_report__product_brand_ept_id
+#: model:ir.model.fields,help:bck_product_brand_ept.field_product_product__product_brand_ept_id
+#: model:ir.model.fields,help:bck_product_brand_ept.field_product_template__product_brand_ept_id
+#: model:ir.model.fields,help:bck_product_brand_ept.field_sale_report__product_brand_ept_id
+msgid "Select a brand for this product"
+msgstr "Seleccione una marca para este producto"
+
+#. module: bck_product_brand_ept
+#: model:ir.model.fields,field_description:bck_product_brand_ept.field_product_brand_ept__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: bck_product_brand_ept
+#: model_terms:ir.ui.view,arch_db:bck_product_brand_ept.product_brand_config_form_view
+msgid "Set Product"
+msgstr "Establecer producto"
+
+#. module: bck_product_brand_ept
+#: code:addons/bck_product_brand_ept/hooks.py:0
+#, python-format
+msgid "This module support Odoo series 14.0, found %s."
+msgstr ""

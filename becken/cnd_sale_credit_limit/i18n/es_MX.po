@@ -1,0 +1,381 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cnd_sale_credit_limit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-23 00:15+0000\n"
+"PO-Revision-Date: 2022-11-23 00:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_order_credit_limit_restrict_config_settings_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Los valores establecidos aquí"
+" son específicos de la empresa.\" aria-label=\"Los valores establecidos aquí"
+" son específicos de la empresa.\" groups=\"base.group_multi_company\" "
+"role=\"img\"/>"
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_credit_limit_res_partner_form_view
+msgid "<span class=\"o_stat_text\">Credit Available</span>"
+msgstr "<span class=\"o_stat_text\">Crédito Disponible</span>"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_partner__has_credit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_users__has_credit
+msgid ""
+"A customer has credit if their Payment Term is different to Innmediate "
+"Payment."
+msgstr ""
+"Un cliente tiene crédito si su Plazo de pago es diferente al Pago Inmediato."
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_account_bank_statement_line__allow_exceeding_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_account_move__allow_exceeding_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_account_payment__allow_exceeding_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_sale_order__allow_exceeding_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_stock_picking__allow_exceeding_credit_limit
+msgid "Allow Exceeding Credit Limit?"
+msgstr "¿Permitir exceder el Límite de Crédito?"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner__allow_override
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_users__allow_override
+msgid "Allow Override"
+msgstr "Permitir Exceder"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_stock_picking__allow_exceeding_credit_limit
+msgid "Allow delivery with customer credit limit overrode"
+msgstr "Permitir la entrega al cliente con límite de crédito excedido"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_account_bank_statement_line__allow_exceeding_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_account_move__allow_exceeding_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_account_payment__allow_exceeding_credit_limit
+msgid "Allow invoice with customer credit limit overrode"
+msgstr "Permitir facturas al cliente con límite de crédito excedido"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_partner__allow_override
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_users__allow_override
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_sale_order__allow_exceeding_credit_limit
+msgid ""
+"Allow override credit limit, if marked, you can confirm sales to this "
+"customer."
+msgstr ""
+"Permitir anular el límite de crédito, si está marcado, puede confirmar las "
+"ventas a este cliente."
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner__balance
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_users__balance
+msgid "Balance"
+msgstr ""
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_partner__credit_extra_days
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_users__credit_extra_days
+msgid ""
+"Block Invoicing to this customer if has Due Invoices with more days than "
+"customer extra days."
+msgstr ""
+"Bloquear la facturación a este cliente si tiene facturas vencidas con más "
+"días que los días extra configurados en el cliente."
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model,name:cnd_sale_credit_limit.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model,name:cnd_sale_credit_limit.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model,name:cnd_sale_credit_limit.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_credit_limit_res_partner_form_view
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner__available_credit_amount
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_users__available_credit_amount
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_credit_limit_res_partner_form_view
+msgid "Credit Available"
+msgstr "Crédito Disponible"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner__credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_users__credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_order_credit_limit_restrict_config_settings_form
+msgid "Credit Limit"
+msgstr "Límite de Crédito"
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_credit_limit_res_partner_form_view
+msgid "Credit Limit is managed on"
+msgstr "Límite de Crédito es gestionado en"
+
+#. module: cnd_sale_credit_limit
+#: code:addons/cnd_sale_credit_limit/models/account_invoice.py:0
+#: code:addons/cnd_sale_credit_limit/models/sale_order.py:0
+#: code:addons/cnd_sale_credit_limit/models/stock_picking.py:0
+#, python-format
+msgid ""
+"Credit limit exceeded by this customer. Please, contact to your \"Credit & Collection Department\".\n"
+"\n"
+"    Credit Limit: %s\n"
+"    Credit: %s\n"
+"    Available Credit: %s"
+msgstr ""
+"Límite de crédito excedido por este cliente. Por favor, contacte a su \"Departamento de Crédito y Cobranza\".\n"
+"\n"
+"    Límite de crédito: %s\n"
+"    Crédito: %s\n"
+"    Crédito disponible: %s"
+
+#. module: cnd_sale_credit_limit
+#: model:res.groups,name:cnd_sale_credit_limit.credit_limit_manager_group
+msgid "Customer Credit Manager"
+msgstr "Administrador de Crédito de Clientes"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_account_move__display_name
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_company__display_name
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner__display_name
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_sale_order__display_name
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_credit_limit_res_partner_search_view
+msgid "Don't have credit"
+msgstr "No tiene crédito"
+
+#. module: cnd_sale_credit_limit
+#: model:res.groups,name:cnd_sale_credit_limit.edit_quotation_pricelist_group
+msgid "Edit pricelist in quotations"
+msgstr "Editar lista de precios en cotizaciones"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner__credit_extra_days
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_users__credit_extra_days
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_account_move__credit_extra_days
+msgid "Extra Days"
+msgstr "Días Extra"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner__has_credit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_users__has_credit
+msgid "Has Credit"
+msgstr "Tiene Crédito"
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_credit_limit_res_partner_search_view
+msgid "Have credit"
+msgstr "Tienen Crédito"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_account_move__id
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_company__id
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_config_settings__id
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner__id
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_sale_order__id
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_stock_picking__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_company__restrict_sale_orders
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_config_settings__restrict_sale_orders
+msgid ""
+"If marked, restrict confirm Sale Orders if the customer has exceeded the "
+"credit limit."
+msgstr ""
+"Si está marcado, restringe confirmar órdenes de venta si el cliente ha "
+"excedido el límite de crédito."
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_company__restrict_sales_by_due_invoices
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_config_settings__restrict_sales_by_due_invoices
+msgid ""
+"If marked, restrict confirm Sale Orders if the customer if has Due Invoices "
+"with more days than customer extra days, without considering the customer's "
+"credit limit."
+msgstr ""
+"Si está marcado, restringe la confirmación de Órdenes de Venta si el cliente"
+" tiene Facturas Vencidas con más días que los días extra configurados en el "
+"cliente, sin considerar el límite de crédito del cliente."
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_company__restrict_invoices
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_config_settings__restrict_invoices
+msgid ""
+"If marked, restrict confirm customer invoices if the customer has exceeded "
+"the credit limit."
+msgstr ""
+"Si está marcado, restringe la confirmación de facturas del cliente si este "
+"ha excedido el límite de crédito."
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_company__restrict_transfers
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_config_settings__restrict_transfers
+msgid ""
+"If marked, restrict validate stock transfers if the customer has exceeded "
+"the credit limit."
+msgstr ""
+"Si está marcado, restringe validar transferencias de existencias si el "
+"cliente ha excedido el límite de crédito."
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model,name:cnd_sale_credit_limit.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_account_move____last_update
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_company____last_update
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_partner____last_update
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_sale_order____last_update
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_stock_picking____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_company__restrict_invoices
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_config_settings__restrict_invoices
+msgid "Restrict Customer Invoices"
+msgstr "Restringir las facturas de los clientes"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_company__restrict_sale_orders
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_config_settings__restrict_sale_orders
+msgid "Restrict Sale Orders"
+msgstr "Restringir órdenes de venta"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_company__restrict_sales_by_due_invoices
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_config_settings__restrict_sales_by_due_invoices
+msgid "Restrict Sales by Due Invoices"
+msgstr "Restringir Ventas por Facturas Vencidas"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_company__restrict_transfers
+#: model:ir.model.fields,field_description:cnd_sale_credit_limit.field_res_config_settings__restrict_transfers
+msgid "Restrict Stock Transfers"
+msgstr "Restringir las entregas"
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_order_credit_limit_restrict_config_settings_form
+msgid ""
+"Restrict confirm Sale Orders if the customer has exeeded the credit limit."
+msgstr ""
+"Restringir la confirmación de Órdenes de Venta si el cliente ha excedido el "
+"límite de crédito."
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_order_credit_limit_restrict_config_settings_form
+msgid ""
+"Restrict confirm Sale Orders if the customer if has Due Invoices with more "
+"days than customer extra days, without considering the customer's credit "
+"limit."
+msgstr ""
+"Restringir la confirmación de Órdenes de Venta si el cliente tiene Facturas "
+"Vencidas con más días que los días extra configurados en el cliente, sin "
+"considerar el límite de crédito del cliente."
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_order_credit_limit_restrict_config_settings_form
+msgid ""
+"Restrict confirm customer invoices if the customer has exeeded the credit "
+"limit."
+msgstr ""
+"Restringir la confirmación de facturas del cliente si este ha excedido el "
+"límite de crédito."
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_order_credit_limit_restrict_config_settings_form
+msgid ""
+"Restrict validate stock transfers if the customer has exeeded the credit "
+"limit."
+msgstr ""
+"Restringir validar entregas si el cliente ha excedido el límite de crédito."
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model,name:cnd_sale_credit_limit.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_partner__balance
+#: model:ir.model.fields,help:cnd_sale_credit_limit.field_res_users__balance
+msgid ""
+"Technical field holding the debit - credit in order to open meaningful graph"
+" views from reports"
+msgstr ""
+"Campo técnico que retiene el débito - crédito para abrir vistas gráficas "
+"significativas de los informes"
+
+#. module: cnd_sale_credit_limit
+#: code:addons/cnd_sale_credit_limit/models/sale_order.py:0
+#: code:addons/cnd_sale_credit_limit/models/sale_order.py:0
+#, python-format
+msgid ""
+"This customer has at least one past due invoice including %s customer's extra days.\n"
+"Please, contact to your \"Credit & Collection Department\"."
+msgstr ""
+"Este cliente tiene al menos una factura vencida incluyendo los días extra del cliente de %s.\n"
+"Por favor, comuníquese con su \"Departamento de Crédito y Cobranza\"."
+
+#. module: cnd_sale_credit_limit
+#: model:res.groups,comment:cnd_sale_credit_limit.edit_quotation_pricelist_group
+msgid "This group can edit pricelist in quotations."
+msgstr "Este grupo puede editar la lista de precios en las cotizaciones."
+
+#. module: cnd_sale_credit_limit
+#: model:res.groups,comment:cnd_sale_credit_limit.credit_limit_manager_group
+msgid "This group may manage the credit limit to customers."
+msgstr "Este grupo puede gestionar el límite de crédito a los clientes"
+
+#. module: cnd_sale_credit_limit
+#: code:addons/cnd_sale_credit_limit/hooks.py:0
+#, python-format
+msgid "This module support Odoo series 15.0, found %s."
+msgstr ""
+
+#. module: cnd_sale_credit_limit
+#: model:ir.model,name:cnd_sale_credit_limit.model_stock_picking
+msgid "Transfer"
+msgstr "Traslado"
+
+#. module: cnd_sale_credit_limit
+#: code:addons/cnd_sale_credit_limit/models/sale_order.py:0
+#, python-format
+msgid "Warning for %s"
+msgstr "Aviso para %s"
+
+#. module: cnd_sale_credit_limit
+#: model_terms:ir.ui.view,arch_db:cnd_sale_credit_limit.sale_credit_limit_res_partner_form_view
+msgid "the parent company"
+msgstr "la compañía padre"

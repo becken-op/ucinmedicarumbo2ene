@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_health_register_general_access,access.health.register.general.access,model_product_health_register,,1,0,0,0
+access_health_register_admin_access,access.health.register.admin.access,model_product_health_register,bck_product_health_register.health_register_manager_group,1,1,1,1
+access_product_health_register_config,product.health.register.config,model_product_health_register_config,bck_product_health_register.health_register_manager_group,1,1,1,1

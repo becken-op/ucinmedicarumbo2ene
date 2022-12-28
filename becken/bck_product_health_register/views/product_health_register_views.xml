@@ -1,0 +1,90 @@
+<odoo>
+  <data>
+    <record id="product_health_register_tree_view" model="ir.ui.view">
+        <field name="name">product.health.register.tree.view</field>
+        <field name="model">product.health.register</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="due_date"/>
+                <field name="state"/>
+                <field name="distinctive"/>
+                <field name="generic"/>
+                <field name="manufacturer"/>
+                <field name="made_for"/>
+                <field name="manufactured_place"/>
+                <field name="actual_manufacturer" optional="hide"/>
+                <field name="legal_manufacturer" optional="hide"/>
+                <field name="cautionary_legends" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_health_register_form_view" model="ir.ui.view">
+        <field name="name">product.health.register.form.view</field>
+        <field name="model">product.health.register</field>
+        <field name="arch" type="xml">
+            <form string="Registro Sanitario">
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="active" invisible="1"/>
+                    <group name="data_general">
+                        <group name="group_one">                
+                            <field name="name"/>
+                            <field name="due_date"/>
+                            <field name="distinctive"/>
+                            <field name="generic"/>
+                            <field name="manufacturer"/>                
+                        </group>
+                        <group name="group_two">
+                            <field name="made_for"/>
+                            <field name="manufactured_place"/>
+                            <field name="actual_manufacturer"/>
+                            <field name="legal_manufacturer"/>
+                            <field name="cautionary_legends"/>                
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Products" name="products_lines">
+                            <group>
+                                <button name="set_health_register_wizard" class="oe_highlight" type="object"
+                                        string="Configure Health Register Products"/>
+                            </group>
+                            <group>
+                                <field name="product_ids" attrs="{'readonly':1}" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="default_code"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_health_register" model="ir.actions.act_window">
+        <field name="name">Registros Sanitarios</field>
+        <field name="res_model">product.health.register</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem
+        action="action_health_register"
+        id="action_menu_health_register"
+        groups="health_register_manager_group"
+        parent="stock.menu_stock_inventory_control"
+        name="Registros Sanitarios"
+        sequence="12"/>
+  </data>
+</odoo>

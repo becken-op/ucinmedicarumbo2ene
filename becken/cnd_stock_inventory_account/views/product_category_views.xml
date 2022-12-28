@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock_inventory_account_product_category_form_view" model="ir.ui.view">
+            <field name="name">stock.inventory.account.product.category.form.view</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <group name="stock_adjustment_accounts" col="2">
+                        <group string="Stock Adjustment Accounts" groups="account.group_account_readonly">
+                            <field name="property_stock_adjustment_in_account_id"/>
+                            <field name="property_stock_adjustment_out_account_id"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

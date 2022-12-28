@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cnd_sale_product_manager
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-04 15:53+0000\n"
+"PO-Revision-Date: 2022-07-04 15:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cnd_sale_product_manager
+#: model:ir.model,name:cnd_sale_product_manager.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: cnd_sale_product_manager
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_account_invoice_report__display_name
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_res_partner__display_name
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_sale_report__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: cnd_sale_product_manager
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_account_invoice_report__id
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_res_partner__id
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_sale_report__id
+msgid "ID"
+msgstr ""
+
+#. module: cnd_sale_product_manager
+#: model:ir.model,name:cnd_sale_product_manager.model_account_invoice_report
+msgid "Invoices Statistics"
+msgstr "Estadísticas de facturas"
+
+#. module: cnd_sale_product_manager
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_account_invoice_report____last_update
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_res_partner____last_update
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_sale_report____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: cnd_sale_product_manager
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_account_invoice_report__customer_product_manager_id
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_res_partner__product_manager_id
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_res_users__product_manager_id
+#: model:ir.model.fields,field_description:cnd_sale_product_manager.field_sale_report__customer_product_manager_id
+#: model_terms:ir.ui.view,arch_db:cnd_sale_product_manager.product_manager_partner_search_view
+msgid "Product Manager"
+msgstr "Especialista de producto"
+
+#. module: cnd_sale_product_manager
+#: model_terms:ir.ui.view,arch_db:cnd_sale_product_manager.product_manager_partner_form_view
+msgid "Product Manager:"
+msgstr "Especialista de producto:"
+
+#. module: cnd_sale_product_manager
+#: model:ir.model,name:cnd_sale_product_manager.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Reporte del análisis de ventas"
+
+#. module: cnd_sale_product_manager
+#: model:ir.model.fields,help:cnd_sale_product_manager.field_account_invoice_report__customer_product_manager_id
+#: model:ir.model.fields,help:cnd_sale_product_manager.field_res_partner__product_manager_id
+#: model:ir.model.fields,help:cnd_sale_product_manager.field_res_users__product_manager_id
+#: model:ir.model.fields,help:cnd_sale_product_manager.field_sale_report__customer_product_manager_id
+msgid "The internal user in charge of this products contact."
+msgstr "El usuario interno a cargo de los productos de este cliente."
+
+#. module: cnd_sale_product_manager
+#: code:addons/cnd_sale_product_manager/hooks.py:0
+#, python-format
+msgid "This module support Odoo series 14.0, found %s."
+msgstr ""

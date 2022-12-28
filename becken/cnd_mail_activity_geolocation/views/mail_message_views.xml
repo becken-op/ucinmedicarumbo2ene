@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="activity_geolocation_mail_message_form_view" model="ir.ui.view">
+            <field name="name">activity.geolocation.mail.message.form.view</field>
+            <field name="model">mail.message</field>
+            <field name="inherit_id" ref="mail.mail_message_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook[last()]" position="inside">
+                    <page string="Geolocation" name="geolocation" attrs="{'invisible': [('use_geolocation', '=', False)]}">
+                        <group>
+                            <group>
+                                <field name="check_in_date"/>
+                                <field name="use_geolocation" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="check_in_latitude"/>
+                                <field name="check_in_longitude"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="activity_geolocation_mail_message_tree_view" model="ir.ui.view">
+            <field name="name">activity.geolocation.mail.message.tree.view</field>
+            <field name="model">mail.message</field>
+            <field name="inherit_id" ref="mail.view_message_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='res_id']" position="after">
+                    <field name="mail_activity_type_id" optional="show"/>
+                    <field name="check_in_date" optional="hide"/>
+                    <field name="check_in_latitude" optional="hide"/>
+                    <field name="check_in_longitude" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="activity_geolocation_mail_message_search_view" model="ir.ui.view">
+            <field name="name">activity.geolocation.mail.message.search.view</field>
+            <field name="model">mail.message</field>
+            <field name="inherit_id" ref="mail.view_message_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='message_needaction']" position="after">
+                    <separator/>
+                    <filter string="Must have Geo Coordinates" name="must_have_geo_coordinates" domain="[('check_in_latitude', '=', False), ('check_in_longitude', '=', False), ('use_geolocation', '=', True)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

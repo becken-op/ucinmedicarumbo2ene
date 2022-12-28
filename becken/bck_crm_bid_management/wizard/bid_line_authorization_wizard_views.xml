@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bid_line_authorization_wizard_form_view" model="ir.ui.view">
+        <field name="name">bid.line.authorization.wizard.from.view</field>
+        <field name="model">bid.line.authorization.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Products">
+                    <field name="sale_order_line_id" attrs="{'invisible': 1}"/>
+                    <label for="authorization_comment" string="Authorization Comment" />
+                    <field name="authorization_comment" nolabel="1"/>
+                </sheet>
+                <footer>
+                    <button type="object" name="do_authorization" class="oe_highlight" string="Authorize" onfirm="Are you sure you want to Authorize this Bid Line?"/>
+                    <button special="cancel" type="object" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

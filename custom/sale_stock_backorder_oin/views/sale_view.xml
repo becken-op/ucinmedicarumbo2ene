@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_sale_backorder_oin_inherit"
+        model="ir.ui.view">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_uom_qty']"
+                position="before">
+                    <field name="qty_available" optional="hide"/>
+            </xpath>
+            <xpath
+                expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_unit']"
+                position="before">
+                    <field name="qty_cancelled" optional="show" attrs="{'readonly': [('parent.state', 'in', ['sale', 'done', 'cancel'])]}"/>
+                    <field name="qty_prevoius_cancelled" invisible="1"/>
+                    <field name="qty_backorder" optional="show" attrs="{'readonly': [('parent.state', 'in', ['sale', 'done', 'cancel'])]}"/>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group name="cancellation_reason">
+                    <field name="has_line_cancelled" invisible="1"/>
+                    <field name="sale_order_cancellation_reason_id" attrs="{'invisible': [('has_line_cancelled','=', False)], 'required': [('has_line_cancelled','=', True)]}"/>
+                    <field name="has_line_backorder" invisible="1"/>
+                    <field name="sale_order_backorder_reason_id" attrs="{'invisible': [('has_line_backorder','=', False)], 'required': [('has_line_backorder','=', True)]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <template id="backorder_oin_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//th[@name='th_quantity']" position="after">
+            <th name="th_backorder" class="text-right">Backorder Qty.</th>
+        </xpath>
+        <xpath expr="//td[@name='td_quantity']" position="after">
+            <td name="td_backorder" class="text-right">
+                <span t-field="line.qty_backorder"/>
+            </td>
+        </xpath>
+    </template>
+
+    <template id="backorder_oin_report_delivery_document" inherit_id="stock.report_delivery_document">
+        <xpath expr="//h2/span[@t-field='o.name']" position="before">
+            <span name="backorder" t-if="o.backorder_id">Backorder: </span>
+        </xpath>
+        <xpath expr="//th[@name='th_sm_product']" position="after">
+            <th name="th_sm_date"><strong>Date Scheduled</strong></th>
+        </xpath>
+        <xpath expr="//tr[@t-foreach='lines']/td[1]" position="after">
+            <td>
+                <span t-field="move.date"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>

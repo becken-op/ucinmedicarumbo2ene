@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="assets_backend" name="hr_attendance assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/cnd_mail_activity_geolocation/static/src/js/mail_activity.js" />
+            <!-- <script type="text/javascript" src="/cnd_mail_activity_geolocation/static/src/js/mail_activity_mark_as_done_and_schedule_next.js" /> -->
+        </xpath>
+    </template>
+</odoo>

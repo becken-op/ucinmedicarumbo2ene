@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pricelist_partner_property_form_view" model="ir.ui.view">
+        <field name="name">pricelist.partner.property.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="product.view_partner_property_form"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="edit_pricelist_partner_property_form_view" model="ir.ui.view">
+        <field name="name">edit.pricelist.partner.property.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="product.view_partner_property_form"/>
+        <field name="priority">21</field>
+        <field name="groups_id" eval="[(4, ref('bck_crm_bant.group_pricelist_manager'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_bant_res_partner_form_view" model="ir.ui.view">
+        <field name="name">crm.bant.res.partner.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">97</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_type']" position="after">
+                <div class="o_row">
+                    <label for="id"/>
+                    <field name="id"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="partner_classification" readonly="0" attrs="{'invisible': [('is_company','=', False)], 'required': [('is_company','=', True)] }"/>
+                <field name="shipping_mode" readonly="0" attrs="{'invisible': [('is_company','=', False)]}"/>
+                <field name="customer_type" readonly="0" attrs="{'invisible': [('is_company','=', False)]}"/>
+                <field name="parcel_service_accepted" readonly="0" attrs="{'invisible': [('is_company','=', False)]}"/>
+                <field name="credit_type" readonly="0" attrs="{'invisible': [('is_company','=', False)]}"/>
+            </xpath>
+            <xpath expr="//notebook[last()]" position="inside">
+                <page string="Hospital Infrastructure" attrs="{'invisible': [('partner_classification', 'not in', ('private_hospital','public_hospital','subrogated_service'))]}">
+                    <field name="hospital_infrastructure_ids">
+                        <tree string="Hospital Infrastructure" editable="bottom">
+                            <field name="partner_id" default="parent." invisible="1"/>
+                            <field name="name" width="40%" style="width: 40%"/>
+                            <field name="beds_operating_rooms_quantity" width="30%" style="width: 30%"/>
+                            <field name="fans_anesthesia_machines_quantity" width="30%" style="width: 30%"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <!-- Hacer todos los campos del partner readonly -->
+            <!-- <xpath expr="//div[hasclass('oe_title')]/field[@name='company_type']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//h1/field[@name='name']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street_name']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('o_address_format')]/div[1]/field[1]" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='l10m_mx_edi_curp']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='branch_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='tradename']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='tradename']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='country_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+
+
+            <!-- <xpath expr="//field[@name='phone']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mobile']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/group/group[2]/field[@name='website']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='lang']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/group/group[2]/field[@name='category_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='sale']/field[@name='user_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_payment_term_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_account_position_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_stock_customer']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_stock_supplier']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_supplier_payment_term_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='receipt_reminder_email']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='reminder_date_before_receipt']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='ref']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='misc']/field[@name='company_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='industry_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='sale_warn']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='picking_warn']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+
+            <!-- <xpath expr="//field[@name='l10n_mx_edi_operator_license']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//page[@name='addenda']/group/field[@name='l10n_mx_edi_addenda']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='addenda']/group/field[@name='l10n_mx_edi_addenda_doc']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//page[@name='addenda']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='l10n_mx_edi_fiscal_regime']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='l10n_mx_edi_no_tax_breakdown']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <xpath expr="//field[@name='l10n_mx_edi_external_trade_type']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+
+            <!-- <xpath expr="//group[@name='geolocation_group']/field[@name='partner_latitude']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='geolocation_group']/field[@name='partner_longitude']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath> -->
+            <!-- <field name="function" placeholder="e.g. Sales Director" attrs="{'invisible': [('is_company','=', True)]}"/>
+            <field name="phone" widget="phone"/>
+            <field name="mobile" widget="phone"/>
+            <field name="user_ids" invisible="1"/>
+            <field name="email" widget="email" context="{'gravatar_image': True}" attrs="{'required': [('user_ids','!=', [])]}"/>
+            <field name="website" widget="url" placeholder="e.g. https://www.odoo.com"/>
+            <field name="title" options="{&quot;no_open&quot;: True}" placeholder="e.g. Mister" attrs="{'invisible': [('is_company', '=', True)]}"/> -->
+        </field>
+    </record>
+
+    <!-- <record id="crm_bant_res_partner_edit_form_view" model="ir.ui.view">
+        <field name="name">crm.bant.res.partner.edit.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="bck_crm_bant.crm_bant_res_partner_form_view"/>
+        <field name="priority">98</field>
+        <field name="groups_id" eval="[(4, ref('bck_crm_bant.group_crm_marketing'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]/field[@name='company_type']" position="attributes">
+                <attribute name="readonly">0</attribute>
+             </xpath>
+            <xpath expr="//h1/field[@name='name']" position="attributes">
+                <attribute name="readonly">0</attribute>
+             </xpath>
+        </field>
+    </record> -->
+
+    <record id="crm_bant_res_partner_tree_view" model="ir.ui.view">
+        <field name="name">crm.bant.res.partner.tree.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']" position="before">
+                <field name="id" optional="hide"/>
+                <field name="credit_type" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_bant_res_partner_search_view" model="ir.ui.view">
+        <field name="name">crm.bant.res.partner.search.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="id" string="ID"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

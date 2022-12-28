@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_bid_sale_order_form_view" model="ir.ui.view">
+            <field name="name">crm.bid.sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                    <field name="is_bid"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree" position="inside">
+                    <field name="is_bid" invisible="1"/>
+                    <field name="basic_chart" invisible="1" force_save="1"/>
+                    <field name="bid_requisition" invisible="1" attrs="{'required': [('parent.is_bid', '=', True)]}"/>
+                    <!-- fa-gavel -->
+                    <button name="show_bid_line_form" string="" type="object" icon="fa-gavel"
+                        attrs="{'invisible': [('parent.is_bid', '=', False)]}"
+                        width="0.1"
+                        options='{"warn": true}' id="duplicate"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="crm_bid_sale_order_search_view" model="ir.ui.view">
+            <field name="name">crm.bid.sale.order.search.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
+                    <separator/>
+                    <filter string="Is Bid" name="is_bid" domain="[('is_bid', '=', True)]"/>
+                </xpath>
+                <xpath expr="//filter[@name='order_month']" position="after">
+                    <separator/>
+                    <filter string="Is Bid" name="is_bid_group" domain="[]" context="{'group_by': 'is_bid'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <report
+            id="sabana_de_trabajo_xlsx"
+            model="sale.order"
+            string="Imprimir Sábana de Trabajo"
+            report_type="xlsx"
+            name="module_name.report_name"
+            file="sabana_de_trabajo"
+            attachment_use="False"
+        />
+        <!-- <record id="sabana_de_trabajo_xlsx" model="ir.actions.report">
+            <field name="name">module_name.report_name</field>
+            <field name="name">Imprimir Sábana de Trabajo</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">xlsx</field>
+            <field name="file">sabana_de_trabajo</field>
+            <field name="attachment_use">False</field>
+            <field name="report_name">account_financial_report.vat_report</field>
+            <field name="report_file">account_financial_report.vat_report</field>
+        </record> -->
+
+        <!-- <report
+            id="sabana_de_trabajo_xlsx"
+            model="sale.order"
+            string="Imprimir Sábana de Trabajo"
+            report_type="xlsx"
+            name="module_name.report_name"
+            file="sabana_de_trabajo"
+            attachment_use="False"
+            attachment="'Sábana_de_Trabajo_'+(object.name or '').replace(' ','_')+'.xlsx'"
+        /> -->
+    </data>
+</odoo>

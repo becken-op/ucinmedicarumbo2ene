@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="s_warehouses" name="Warehouse stock">
+    <section class="s_warehouse_stock pt24 pb24">
+      <div class="container">
+        <h4 class="text-center mb32">Disponibilidad</h4>
+        <div class="dynamic_snippet_template o_not_editable"></div>
+      </div>
+    </section>
+  </template>
+
+  <template id="s_warehouses_details" name="Warehouse stock details">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <t t-foreach="warehouses" t-as="warehouse">
+          <div class="fs-6 col">
+            <span><t t-esc="warehouse['warehouse']" />: </span> <span class="font-monospace"><t t-esc="warehouse['quantity']" /></span>
+          </div>
+        </t>
+      </div>
+    </div>
+  </template>
+</odoo>

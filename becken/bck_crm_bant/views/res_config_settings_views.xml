@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_bant_config_settings_form" model="ir.ui.view">
+            <field name="name">crm.bant.config.settings.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="crm.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='generate_lead_setting_container']" position="after">
+                    <h2>BANT</h2>
+                    <div class="row mt16 o_settings_container" name="quotation_order_setting_credit_limit">
+                        <div class="col-12 col-lg-6 o_setting_box" id="sale_config_credit_limit">
+                            <div class="o_setting_left_pane">
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="bant_warning_percentage"/>
+                                <field name="bant_warning_percentage"/>
+                                <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                <div class="text-muted">
+                                  Oportunidades con una Puntuación BANT menor a este valor será enviada una actividad para ser analizadas.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="bant_warning_user_ids"/>
+                                <field name="bant_warning_user_ids" widget="many2many_tags"/>
+                                <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                <div class="text-muted">
+                                  Usuarios a enviar las actividades de las Oportunidades con una Puntuación BANT baja, además del jefe inmediato.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

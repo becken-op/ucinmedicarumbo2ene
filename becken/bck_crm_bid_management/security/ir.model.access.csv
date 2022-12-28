@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bid_line_authorization_wizard_user_access,bid.line.authorization.wizard.user.access,model_bid_line_authorization_wizard,bck_crm_bid_management.bid_line_authorization_user_group,1,1,1,1

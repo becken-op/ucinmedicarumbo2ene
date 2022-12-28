@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+	<data noupdate="0">
+		<record id="criterios_budget_1" model="criterios.budget">
+			<field name="name">Tiene más de 5 años en el mercado</field>
+			<field name="value">1</field>
+			<field name="extra_value">0</field>
+		</record>
+
+		<record id="criterios_budget_2" model="criterios.budget">
+			<field name="name">Buenas referencias de pagos</field>
+			<field name="value">1</field>
+			<field name="extra_value">0</field>
+		</record>
+
+		<record id="criterios_budget_3" model="criterios.budget">
+			<field name="name">Invierten en nuevas tecnologías / Es el único canal con el cliente final</field>
+			<field name="value">1</field>
+			<field name="extra_value">0</field>
+		</record>
+
+		<record id="criterios_budget_4" model="criterios.budget">
+			<field name="name">Es horpital grupo / Atiende algún hospital grupo</field>
+			<field name="value">1</field>
+			<field name="extra_value">0</field>
+		</record>
+
+		<record id="criterios_budget_5" model="criterios.budget">
+			<field name="name">Tiene contratos con aseguradoras / Tiene contrato vigente</field>
+			<field name="value">1</field>
+			<field name="extra_value">0</field>
+		</record>
+
+		<record id="criterios_budget_6" model="criterios.budget">
+			<field name="name">Tiene servicios subrogados / Es integrador de alguna especialidad (Respiratorio o anestesia)</field>
+			<field name="value">1</field>
+			<field name="extra_value">0</field>
+		</record>
+
+		<record id="criterios_budget_7" model="criterios.budget">
+			<field name="name">Tiene proyección de crecimiento</field>
+			<field name="value">1</field>
+			<field name="extra_value">0</field>
+		</record>
+
+		<record id="criterios_budget_8" model="criterios.budget">
+			<field name="name">Tiene seguro de cartera en UCIN (5% extra)</field>
+			<field name="value">0</field>
+			<field name="extra_value">5</field>
+		</record>
+
+		<record id="criterios_authority_1" model="criterios.authority">
+			<field name="name">Se tiene contacto con la gente de compras</field>
+			<field name="value">1</field>
+		</record>
+
+		<record id="criterios_authority_2" model="criterios.authority">
+			<field name="name">Se tiene contacto con la gente de almacén</field>
+			<field name="value">1</field>
+		</record>
+
+		<record id="criterios_authority_3" model="criterios.authority">
+			<field name="name">Se tiene contacto con la gente del área usuatio / Se tiene contacto con .</field>
+			<field name="value">1</field>
+		</record>
+
+		<record id="criterios_authority_4" model="criterios.authority">
+			<field name="name">Se tiene contacto con los jefes de servicio / Se tiene contacto con </field>
+			<field name="value">1</field>
+		</record>
+
+		<record id="criterios_authority_5" model="criterios.authority">
+			<field name="name">Se tiene contacto con las áreas administrativas</field>
+			<field name="value">1</field>
+		</record>
+
+		<record id="criterios_authority_6" model="criterios.authority">
+			<field name="name">Se tiene contacto con la dirección</field>
+			<field name="value">1</field>
+		</record>
+	</data>
+</odoo>

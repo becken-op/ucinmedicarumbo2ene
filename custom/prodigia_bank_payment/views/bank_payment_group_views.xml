@@ -1,0 +1,119 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="prodigia_bank_payment_group_form_view">
+      <field name="name">prodigia_bank_payment_group_form_view</field>
+      <field name="model">prodigia.bank.payment.group</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string='Grupo de pago bancario' create='1'>
+          <header>
+              <button name="action_create_files" string="Crear formatos"
+                  colspan="1" type="object" class="btn-primary"
+                  attrs="{'invisible':[('state','not in',('validation',))]}"/>
+              <button name="action_open" string="Confirmar"
+                  colspan="1" type="object" class="btn-primary"
+                  attrs="{'invisible':[('state','not in',('draft',))]}"/>
+              <button name="action_validation" string="A validar"
+                  colspan="1" type="object" class="btn-primary"
+                  attrs="{'invisible':[('state','not in',('open',))]}"/>
+              <button name="action_done" string="Terminar"
+                  colspan="1" type="object" class="btn-primary"
+                  attrs="{'invisible':[('state','not in',('validation',))]}"/>
+              <!-- <button name="action_cancel" string="Cancelar"
+                  colspan="1" type="object" class="btn-primary"
+                  attrs="{'invisible':[('state','in',('cancel','done'))]}"/> -->
+              <button name="action_cancel" string="Cancelar"
+                  colspan="1" type="object" class="btn-primary"
+                  attrs="{'invisible':[('allow_cancel','=',False)]}"/>
+              <!-- <button name="action_draft" string="cambiar a borrador"
+                  colspan="1" type="object"
+                  attrs="{'invisible':[('state','not in',('cancel',))]}"/> -->
+              <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,open,validation,done"/>
+          </header>
+
+          <sheet>
+
+            <div class="oe_button_box" name="button_box">
+            </div>
+
+            <h1 class="mt0">
+              <field name='name'/>
+            </h1>
+
+            <group colspan='4'>
+              <group col='2'>
+                <field name='allow_cancel' invisible='1'/>
+                <field name='create_date' string='Fecha de creacion' readonly='1'/>
+                <field name='journal_id' attrs="{'readonly': [('state','not in',('draft',))]}"/>
+                <field name='payment_method_id' attrs="{'readonly': [('state','not in',('draft',))]}"/>
+                <field name='company_id' attrs="{'readonly': [('state','not in',('draft',))]}"/>
+              </group>
+              <group col='2'>
+                <field name='currency_id' attrs="{'readonly': [('state','not in',('draft',))]}"/>
+                <field name='prodigia_bank' attrs="{'readonly': [('state','not in',('draft',))]}"/>
+                <field name='communication' attrs="{'readonly': [('state','not in',('draft',))]}"/>
+              </group>
+            </group>
+
+            <label for="payment_ids"/>
+            <field name='payment_ids' attrs="{'readonly': [('state','in',('done','cancel'))]}"/>
+
+
+            <label for="invoice_ids"/>
+            <field name='invoice_ids' attrs="{'readonly': [('state','not in',('draft',))]}"/>
+
+
+          </sheet>
+          <div class="oe_chatter">
+              <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+              <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="prodigia_bank_payment_group_tree_view">
+      <field name="name">prodigia_bank_payment_group_tree_view</field>
+      <field name="model">prodigia.bank.payment.group</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string='Grupos de pago bancario' create='1' edit='1'>
+          <field name='create_date' string='Fecha de creacion'/>
+          <field name='name'/>
+          <field name='state'/>
+          <field name='currency_id'/>
+          <field name='company_id'/>
+        </tree>
+      </field>
+    </record>
+
+
+
+
+
+    <!-- ACCIONES -->
+
+    <record id="menu_bank_payment_group_action" model="ir.actions.act_window">
+        <field name="name">Grupos de pago bancario</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">prodigia.bank.payment.group</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="target">new</field> -->
+    </record>
+
+
+    <!-- menus -->
+    <menuitem name="Pagos bancarios" id="menu_bank_payment_wizard_root"
+      parent="account.menu_finance_entries"
+      groups="prodigia_bank_payment.prodigia_bank_payment_user"/>
+    <menuitem name="Grupos de pago"
+          id="menu_bank_payment_group_submenu"
+          action='prodigia_bank_payment.menu_bank_payment_group_action'
+          parent="prodigia_bank_payment.menu_bank_payment_wizard_root"/>
+
+
+  </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="email_template_enova_confirmation_b2b" model="mail.template">
+            <field name="name">Enova quotation confirmation mail</field>
+            <field name="email_from">pedidos@ucinmedica.com</field>
+            <field name="email_to">pedidos@ucinmedica.com</field>
+            <field name="subject">{{object.partner_id.tradename}} desde Enova B2B</field>
+            <field name="auto_delete" eval="True"/>
+            <field name="model_id" ref="model_sale_order"/>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <p>Id Movimiento: <t t-out="object.name"/> </p> <br/>
+    <p>OC: <t t-out="object.client_order_ref"/> </p>
+</div>
+            </field>
+        </record>
+    </data>
+</odoo>

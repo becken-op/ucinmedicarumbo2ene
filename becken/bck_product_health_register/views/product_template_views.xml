@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="product_health_register_product_template_form_view" model="ir.ui.view">
+            <field name="name">product.health.register.product.template.form.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="require_health_register"/>
+                    <field name="product_health_register_id" 
+                        attrs="{'invisible': [('require_health_register', '=', False)], 'required': [('require_health_register', '=', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_health_register_product_template_tree_view" model="ir.ui.view">
+            <field name="name">product.health.register.product.template.tree.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="product_health_register_id" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_health_register_account_product_template_tree_view" model="ir.ui.view">
+            <field name="name">product.health.register.account.product.template.tree.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="account.product_template_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="product_health_register_id" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_health_register_product_template_search_view" model="ir.ui.view">
+            <field name="name">product.health.register.product.template.search.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="product_health_register_id"/>
+                </xpath>
+                <xpath expr="//filter[@name='categ_id']" position="after">
+                    <filter string="Health Register" name="product_health_register_id" context="{'group_by':'product_health_register_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record id="supplier_invoice_validation_user" model="res.groups"> 
+        <field name="name">Validar facturas de provedor sin xml</field>
+        <!-- <field name="category_id" ref="base.module_category_operations_purchase"/> -->
+    </record>
+
+    </data>
+</openerp>

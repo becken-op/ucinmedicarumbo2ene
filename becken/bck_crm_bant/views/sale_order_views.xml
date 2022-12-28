@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_bant_sale_order_form_view" model="ir.ui.view">
+        <field name="name">crm.bant.sale.order.form.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="shipping_mode"/>
+                <field name="order_type_id"/>
+                <field name="route_id" attrs="{'required': [('order_type_id', '!=', False)]}"/>
+            </xpath>
+            <!-- <xpath expr="//form/header/button[@name='action_quotation_send' and @states='draft']" position="replace">
+                <button name="action_quotation_send_without_mail" string="Send by Email" type="object" states="draft" class="btn-primary"/>
+            </xpath> -->
+            <xpath expr="//field[@name='client_order_ref']" position="replace">
+            </xpath>
+            <xpath expr="//field[@name='validity_date']" position="before">
+                <field name="ticket_number" attrs="{'readonly': [('state', 'in', ('sale','done','cancel'))]}" force_save="1"/>
+                <field name="client_order_ref"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//button[@name='update_prices']" position="attributes">
+                <attribute name="attrs">{'invisible': [('state', 'in', ['sale', 'done','cancel'])]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='sale_reporting']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="opportunity_sale_order_form_view" model="ir.ui.view">
+        <field name="name">opportunity.sale.order.form.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_crm.sale_view_inherit123"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='opportunity_id']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale.menu_product_pricelist_main" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('bck_crm_bant.group_pricelist_manager')])]"/>
+    </record>
+
+    <record model="ir.ui.view" id="sale_margin.sale_margin_sale_order">
+        <field name="groups_id" eval="[(6, 0, [ref('bck_crm_bant.group_sale_margin')])]"/>
+    </record>
+
+    <record model="ir.ui.view" id="sale_margin.sale_margin_sale_order_line">
+        <field name="groups_id" eval="[(6, 0, [ref('bck_crm_bant.group_sale_margin')])]"/>
+    </record>
+
+    <record model="ir.ui.view" id="sale_margin.sale_margin_sale_order_line_form">
+        <field name="groups_id" eval="[(6, 0, [ref('bck_crm_bant.group_sale_margin')])]"/>
+    </record>
+
+    <record id="crm_bant_quotation_tree_view" model="ir.ui.view">
+        <field name="name">crm.bant.quotation.tree.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="ticket_number" optional="show"/>
+                <field name="shipping_mode" optional="hide"/>
+                <field name="order_type_id" optional="hide"/>
+                <field name="route_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_bant_sale_order_tree_view" model="ir.ui.view">
+        <field name="name">crm.bant.sale.order.tree.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="ticket_number" optional="show"/>
+                <field name="shipping_mode" optional="hide"/>
+                <field name="order_type_id" optional="hide"/>
+                <field name="route_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_bant_sale_order_search_view" model="ir.ui.view">
+        <field name="name">crm.bant.sale.order.search.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="ticket_number"/>
+                <field name="order_type_id"/>
+                <field name="route_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='my_sale_orders_filter']" position="after">
+                <filter string="Remisiones" name="remisiones" domain="[('order_type_id.name', 'ilike', 'remisi')]"/>
+                <filter string="Muestras" name="muestras" domain="[('order_type_id.name', 'ilike', 'muestra')]"/>
+            </xpath>
+            <xpath expr="//filter[@name='order_month']" position="after">
+                <filter string="Order Type" name="order_type_id" domain="[]" context="{'group_by': 'order_type_id'}"/>
+            </xpath>
+            
+        </field>
+    </record>
+
+    <record id="sale_order_type_remisiones_action" model="ir.actions.act_window">
+        <field name="name">Remisiones</field>
+        <field name="res_model">sale.order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+        <field name="domain">[('order_type_id.name','ilike','remisi')]</field>
+    </record>
+
+    <record id="sale_order_type_muestras_action" model="ir.actions.act_window">
+        <field name="name">Muestras</field>
+        <field name="res_model">sale.order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+        <field name="domain">[('order_type_id.name','ilike','muestra')]</field>
+    </record>
+
+    <menuitem id="sale_remisiones" name="Remisiones" parent="sale.sale_order_menu" sequence="2" action="sale_order_type_remisiones_action" groups="sales_team.group_sale_salesman"/>
+    <menuitem id="sale_muestras" name="Muestras" parent="sale.sale_order_menu" sequence="2" action="sale_order_type_muestras_action" groups="sales_team.group_sale_salesman"/>
+</odoo>

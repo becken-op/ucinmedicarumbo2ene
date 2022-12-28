@@ -1,0 +1,170 @@
+<odoo>
+    <data>
+        <record id="crm_bant_lead_form_view" model="ir.ui.view">
+            <field name="name">crm.bant.lead.form.view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='opportunity_partner']//field[@name='partner_id']" position="attributes">
+                    <attribute name="attrs">{'required': [('type','=','opportunity')]}</attribute>
+                    <attribute name="groups"></attribute>
+                </xpath>
+                <xpath expr="//group[@name='opportunity_info']/field[@name='company_id']" position="before">
+                    <field name="opportunity_type_not_editable" invisible="1"/>
+                    <field name="opportunity_type_id" attrs="{'invisible': [('type', '=', 'lead')], 'required': [('type', '!=', 'lead')], 'readonly': [('opportunity_type_not_editable', '=', True)]}" domain="[('not_editable', '=', False)]"/>
+                    <field name="opportunity_classification_id" attrs="{'invisible': [('type', '=', 'lead')], 'required': [('type', '!=', 'lead')]}" domain="[('opportunity_type_id', '=', opportunity_type_id)]"/>
+                    <!-- <field name="shipping_mode" attrs="{'invisible': [('type', '=', 'lead')], 'required': [('type', '!=', 'lead')]}"/> -->
+                </xpath>
+                <xpath expr="//page[@name='lead']" position="after">
+                    <page string="BANT" name="page_bant" attrs="{'invisible': [('type', '=', 'lead')]}">
+                        <group string="Cálculo de criterios en oportunidades">
+                            <group>
+                                <field name="budget" widget="many2many_checkboxes"/>
+                            </group>
+                            <group>
+                                <field name="authority" widget="many2many_checkboxes"/>
+                            </group>
+                            <group>
+                                <field name="need" widget="radio" required="1"/>
+                            </group>
+                            <group>
+                                <field name="time" widget="radio" force_save="1"/>
+                            </group>
+                            <group>
+                                <field name="bant_score" widget="progressbar"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//group[@name='lead_partner']/field[@name='partner_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='lead_partner']/label[@for='street']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='lead_partner']/div[hasclass('o_address_format')]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='lead_partner']/field[@name='website']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='lead_priority']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='categorization']/field[@name='medium_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='lead']/group/group[3]/field[@name='medium_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='priority']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                    <attribute name="widget">selection</attribute>
+                </xpath>
+                <xpath expr="//field[@name='priority']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                    <attribute name="widget">selection</attribute>
+                </xpath>
+                <xpath expr="//group[@name='lead_priority']/field[@name='priority']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                    <attribute name="widget">selection</attribute>
+                </xpath>
+                <xpath expr="//field[@name='probability']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='lead_info']/div/field[@name='contact_name']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_title')]/label[@for='name']" position="attributes">
+                    <attribute name="string">Nombre</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="crm_bant_lead_tree_view" model="ir.ui.view">
+            <field name="name">crm.bant.lead.tree.view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='expected_revenue']" position="after">
+                    <field name="bant_score" widget="progressbar" optional="show"/>
+                    <field name="opportunity_type_id" optional="hide"/>
+                    <field name="opportunity_classification_id" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="crm_bant_lead_kanban_view" model="ir.ui.view">
+            <field name="name">crm.bant.lead.kanban.view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//kanban" position="attributes">
+                    <attribute name="on_create"></attribute>
+                    <attribute name="quick_create_view"></attribute>
+                </xpath>
+                <xpath expr="//field[@name='expected_revenue']" position="after">
+                    <field name="bant_score"/>
+                    <field name="opportunity_type_id"/>
+                    <field name="opportunity_classification_id"/>
+                </xpath>
+                <xpath expr="//div[hasclass('o_kanban_record_bottom')]" position="before">
+                    <div>
+                        <span>
+                            Type:
+                            <strong class="o_kanban_record_title">
+                                <t t-esc="record.opportunity_type_id.value"/>
+                            </strong>
+                        </span>
+                        <br/>
+                        <!-- <span>
+                            Classification:
+                            <strong class="o_kanban_record_title">
+                                <t t-esc="record.opportunity_classification_id.value"/>
+                            </strong>
+                        </span> -->
+                    </div>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_kanban_content')]/div[2]" position="after">
+                    <div style="text-align: center;">
+                        <field name="bant_score" widget="gauge" options="{'style': 'width:160px; height: 80px;'}"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="crm_bant_lead_search_view" model="ir.ui.view">
+            <field name="name">crm.bant.lead.search.view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='lost']" position="after">
+                    <separator/>
+                    <filter string="BANT Score Below Threshold" name="bant_score_below_threshold" domain="[('bant_score_below_threshold', '=', True)]"/>
+                </xpath>
+
+                <xpath expr="//filter[@name='source']" position="after">
+                    <separator orientation="vertical"/>
+                    <filter string="Type" name="opportunity_type_id" domain="[]" context="{'group_by':'opportunity_type_id'}"/>
+                    <filter string="Classification" name="opportunity_classification_id" domain="[]" context="{'group_by':'opportunity_classification_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mail_activity_geolocation_config_settings_form" model="ir.ui.view">
+            <field name="name">mail.activity.geolocation.config.settings.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="crm.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='generate_lead_setting_container']" position="after">
+                    <h2>Activities Geo Location</h2>
+                    <div class="row mt16 o_settings_container" name="activity_geo_location_settings">
+                        <div class="col-12 col-lg-6 o_setting_box" id="geolocation_maximum_distance_meters">
+                            <div class="o_setting_left_pane">
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="geolocation_maximum_distance_meters"/>
+                                <field name="geolocation_maximum_distance_meters"/>
+                                <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                <div class="text-muted">
+                                    Maximum distance in meters accepted to make check in activities between the Salesvendor and the Customer Location.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

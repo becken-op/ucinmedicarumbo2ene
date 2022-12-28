@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+	<data noupdate="0">
+		<record id="crm_lead_type_acquisition" model="crm.lead.type">
+			<field name="name">Acquisition</field>
+			<field name="not_editable">False</field>
+		</record>
+
+		<record id="crm_lead_type_development" model="crm.lead.type">
+			<field name="name">Development</field>
+			<field name="not_editable">False</field>
+		</record>
+
+		<record id="crm_lead_type_maintenance" model="crm.lead.type">
+			<field name="name">Maintenance</field>
+			<field name="not_editable">True</field>
+		</record>
+
+		<record id="crm_lead_classification_new_client_new_technology" model="crm.lead.classification">
+			<field name="name">New Client - New Technology</field>
+			<field name="opportunity_type_id" ref="crm_lead_type_acquisition"/>
+			<field name="complexity">5</field>
+		</record>
+
+		<record id="crm_lead_classification_new_client_commodity" model="crm.lead.classification">
+			<field name="name">New client - Commodity</field>
+			<field name="opportunity_type_id" ref="crm_lead_type_acquisition"/>
+			<field name="complexity">3</field>
+		</record>
+
+		<record id="crm_lead_classification_new_brand_new_technology" model="crm.lead.classification">
+			<field name="name">New Brand - New Technology</field>
+			<field name="opportunity_type_id" ref="crm_lead_type_development"/>
+			<field name="complexity">4</field>
+		</record>
+
+		<record id="crm_lead_classification_new_brand_commodity" model="crm.lead.classification">
+			<field name="name">New Brand - Commodity</field>
+			<field name="opportunity_type_id" ref="crm_lead_type_development"/>
+			<field name="complexity">2</field>
+		</record>
+
+		<record id="crm_lead_classification_known_brand_new_technology" model="crm.lead.classification">
+			<field name="name">Known Brand - New Technology</field>
+			<field name="opportunity_type_id" ref="crm_lead_type_development"/>
+			<field name="complexity">3</field>
+		</record>
+		<record id="crm_lead_classification_known_brand_commodity" model="crm.lead.classification">
+			<field name="name">Known Brand - Commodity</field>
+			<field name="opportunity_type_id" ref="crm_lead_type_development"/>
+			<field name="complexity">1</field>
+		</record>
+		<record id="crm_lead_classification_sell_the_same_thing" model="crm.lead.classification">
+			<field name="name">Sell ​​the same thing in greater quantity to the customer</field>
+			<field name="opportunity_type_id" ref="crm_lead_type_maintenance"/>
+			<field name="complexity">1</field>
+		</record>
+	</data>
+</odoo>

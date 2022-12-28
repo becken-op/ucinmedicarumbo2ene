@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="sale_credit_limit_stock_picking_form_view" model="ir.ui.view">
+            <field name="name">sale.credit.limit.stock.picking.form.view</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="allow_exceeding_credit_limit" readonly="1" attrs="{'invisible': [('picking_type_code','!=','outgoing')]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="sale_credit_limit_edit_stock_picking_form_view" model="ir.ui.view">
+            <field name="name">sale.credit.limit.edit.stock.picking.form.view</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="sale_credit_limit_stock_picking_form_view"/>
+            <field name="groups_id" eval="[(4, ref('cnd_sale_credit_limit.credit_limit_manager_group'))]"/>
+            <field name="arch" type="xml">
+                <field name="allow_exceeding_credit_limit" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

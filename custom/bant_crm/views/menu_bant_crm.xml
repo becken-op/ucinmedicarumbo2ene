@@ -1,0 +1,39 @@
+<odoo>
+  <data>
+    
+    <record id="action_criterios_budget" model="ir.actions.act_window">
+      <field name="name">Criterios Budget</field>
+      <field name="res_model">criterios.budget</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_criterios_authority" model="ir.actions.act_window">
+      <field name="name">Criterios Authority</field>
+      <field name="res_model">criterios.authority</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+      id="crm_menu_bant"
+      parent="crm.crm_menu_root"
+      name="Criterios"
+      sequence="26"/>
+
+     <menuitem
+      id="menu_criterios_budget"
+      action="action_criterios_budget"
+      name="Criterios budget"
+      parent="crm_menu_bant"
+      sequence="1"
+     />
+
+     <menuitem
+      id="menu_criterios_authority"
+      action="action_criterios_authority"
+      name="Criterios Authority"
+      parent="crm_menu_bant"
+      sequence="2"
+     />
+     
+  </data>
+</odoo>

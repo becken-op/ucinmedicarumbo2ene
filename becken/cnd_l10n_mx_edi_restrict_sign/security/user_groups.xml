@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="invoice_edi_sign_manager" model="res.groups">
+        <field name="name">Invoice Sign Manager</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">This group can decide if a invoice is goig to be signed or not.</field>
+    </record>
+  </data>
+</odoo>

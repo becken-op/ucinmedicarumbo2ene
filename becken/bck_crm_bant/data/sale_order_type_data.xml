@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_type_1" model="sale.order.type">
+            <field name="name">Remisión/Demostración</field>
+        </record>
+        <record id="sale_order_type_2" model="sale.order.type">
+            <field name="name">Remisión/Licitación</field>
+        </record>
+        <record id="sale_order_type_3" model="sale.order.type">
+            <field name="name">Remisión/Comodato</field>
+        </record>
+        <record id="sale_order_type_4" model="sale.order.type">
+            <field name="name">Remisión/Anticipo OC</field>
+        </record>
+        <record id="sale_order_type_5" model="sale.order.type">
+            <field name="name">Remisión/Extraordinaria</field>
+        </record>
+        <record id="sale_order_type_6" model="sale.order.type">
+            <field name="name">Remisión/Administración</field>
+        </record>
+        <record id="sale_order_type_7" model="sale.order.type">
+            <field name="name">Remisión/Garantía</field>
+        </record>
+        <record id="sale_order_type_8" model="sale.order.type">
+            <field name="name">Muestra/Promoción</field>
+        </record>
+        <record id="sale_order_type_9" model="sale.order.type">
+            <field name="name">Muestra/Muestrario</field>
+        </record>
+        <record id="sale_order_type_10" model="sale.order.type">
+            <field name="name">Muestra/Merma</field>
+        </record>
+        <record id="sale_order_type_11" model="sale.order.type">
+            <field name="name">Muestra/Licitación</field>
+        </record>
+        <record id="sale_order_type_12" model="sale.order.type">
+            <field name="name">Muestra/Vida útil</field>
+        </record>
+        <record id="sale_order_type_13" model="sale.order.type">
+            <field name="name">Muestra/Garantía</field>
+        </record>
+    </data>
+</odoo>

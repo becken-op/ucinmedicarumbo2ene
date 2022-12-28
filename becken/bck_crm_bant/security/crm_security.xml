@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="module_category_ucin" model="ir.module.category">
+          <field name="name">UCIN</field>
+          <field name="description">Grupos de Ucin.</field>
+          <field name="sequence">120</field>
+        </record>
+        <record id="group_crm_marketing" model="res.groups">
+            <field name="name">CRM Marketing</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+            <field name="comment">Only this group can edit partners</field>
+        </record>
+        <record id="group_pricelist_manager" model="res.groups">
+            <field name="name">Price List Manager</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+            <field name="comment">Only this group can edit price lists</field>
+        </record>
+        <record id="group_sale_margin" model="res.groups">
+            <field name="name">View Margin on Sales</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+            <field name="comment">Only this group can view margin on sales</field>
+        </record>
+    </data>
+</odoo>

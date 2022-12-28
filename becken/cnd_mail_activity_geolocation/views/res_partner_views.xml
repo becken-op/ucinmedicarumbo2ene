@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="activity_geolocation_partner_form_view" model="ir.ui.view">
+            <field name="name">activity.geolocation.partner.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']/group" position="inside">
+                    <group name="geolocation_group" priority="6">
+                        <group string="Geolocation" colspan="2" col="2">
+                            <field name="partner_latitude"/>
+                            <field name="partner_longitude"/>
+                        </group>
+                    </group>
+                </xpath>
+
+                <xpath expr="//field[@name='child_ids']/form/sheet/group/group[2]/field[@name='mobile']" position="after">
+                    <field name="partner_latitude" attrs="{'invisible': [('type', '!=', 'delivery1')]}"/>
+                    <field name="partner_longitude" attrs="{'invisible': [('type', '!=', 'delivery1')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/kanban/field[@name='mobile']" position="after">
+                    <field name="partner_latitude"/>
+                    <field name="partner_longitude"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/kanban/templates/t/div/div[2]" position="inside">
+                    <div t-if="record.partner_latitude.raw_value" attrs="{'invisible': [('type', '!=', 'delivery1')]}">Geo Latitude: <t t-esc="record.partner_latitude.value"/></div>
+                    <div t-if="record.partner_longitude.raw_value" attrs="{'invisible': [('type', '!=', 'delivery1')]}">Geo Longitude: <t t-esc="record.partner_longitude.value"/></div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="activity_geolocation_partner_tree_view" model="ir.ui.view">
+            <field name="name">activity.geolocation.partner.tree.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="partner_latitude" optional="hide"/>
+                    <field name="partner_longitude" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="activity_geolocation_partner_search_view" model="ir.ui.view">
+            <field name="name">activity.geolocation.partner.search.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='type_company']" position="after">
+                    <separator/>
+                    <filter string="Missing Geo Coordinates" name="missing_geo_coordinates" domain="['|', ('partner_latitude', '=', False), ('partner_longitude', '=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

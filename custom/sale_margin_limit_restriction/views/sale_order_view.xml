@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sale_order_form_inherit_margin_limit" model="ir.ui.view">
+            <field name="name">view.sale.order.form.inherit.margin.limit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page//field[@name='tag_ids']" position="after">
+                    <field name="is_restrict_compare_margin_custom" groups="sales_team.group_sale_manager"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

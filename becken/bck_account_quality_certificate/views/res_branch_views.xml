@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="quality_certificate_res_branch_form_view" model="ir.ui.view">
+            <field name="name">quality.certificate.res.branch.form.view</field>
+            <field name="model">res.branch</field>
+            <field name="inherit_id" ref="branch.branch_res_branch_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <group string="Quality Certificate Resposible">
+                        <group>
+                            <field name="responsible_id"/>
+                            <field name="responsible_title"/>
+                        </group>
+                        <group>
+                            <field name="responsible_professional_certificate"/>
+                            <field name="responsible_signature" widget="signature"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="quality_certificate_res_branch_tree_view" model="ir.ui.view">
+            <field name="name">quality.certificate.res.branch.tree.view</field>
+            <field name="model">res.branch</field>
+            <field name="inherit_id" ref="branch.branch_res_branch_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="responsible_id"/>
+                    <field name="responsible_title"/>
+                    <field name="responsible_professional_certificate"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

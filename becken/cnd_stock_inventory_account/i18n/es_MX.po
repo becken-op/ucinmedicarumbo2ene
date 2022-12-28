@@ -1,0 +1,75 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cnd_stock_inventory_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-24 18:28+0000\n"
+"PO-Revision-Date: 2022-03-24 18:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model.fields,field_description:cnd_stock_inventory_account.field_product_category__display_name
+#: model:ir.model.fields,field_description:cnd_stock_inventory_account.field_stock_move__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model.fields,field_description:cnd_stock_inventory_account.field_product_category__id
+#: model:ir.model.fields,field_description:cnd_stock_inventory_account.field_stock_move__id
+msgid "ID"
+msgstr ""
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model.fields,field_description:cnd_stock_inventory_account.field_product_category__property_stock_adjustment_in_account_id
+msgid "Incoming Account"
+msgstr "Cuenta de ingresos"
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model.fields,field_description:cnd_stock_inventory_account.field_product_category____last_update
+#: model:ir.model.fields,field_description:cnd_stock_inventory_account.field_stock_move____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model.fields,field_description:cnd_stock_inventory_account.field_product_category__property_stock_adjustment_out_account_id
+msgid "Outgoing Account"
+msgstr "Cuenta de gastos"
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model,name:cnd_stock_inventory_account.model_product_category
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: cnd_stock_inventory_account
+#: model_terms:ir.ui.view,arch_db:cnd_stock_inventory_account.stock_inventory_account_product_category_form_view
+msgid "Stock Adjustment Accounts"
+msgstr "Cuentas de Ajustes de Inventario"
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model,name:cnd_stock_inventory_account.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model.fields,help:cnd_stock_inventory_account.field_product_category__property_stock_adjustment_in_account_id
+msgid "This incoming account will be used when validating a stock adjustment."
+msgstr "Esta cuenta de ingresos se utilizará al validar un ajuste de existencias."
+
+#. module: cnd_stock_inventory_account
+#: code:addons/cnd_stock_inventory_account/hooks.py:0
+#, python-format
+msgid "This module support Odoo series 14.0, found %s."
+msgstr ""
+
+#. module: cnd_stock_inventory_account
+#: model:ir.model.fields,help:cnd_stock_inventory_account.field_product_category__property_stock_adjustment_out_account_id
+msgid "This outgoing account will be used when validating a stock adjustment."
+msgstr "Esta cuenta de gastos se utilizará al validar un ajuste de existencias."

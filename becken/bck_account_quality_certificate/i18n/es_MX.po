@@ -1,0 +1,171 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bck_account_quality_certificate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-01 19:25+0000\n"
+"PO-Revision-Date: 2022-11-01 19:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bck_account_quality_certificate
+#: model:ir.actions.report,print_report_name:bck_account_quality_certificate.quality_certificate
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid ", en carácter de Responsable Sanitario de la empresa"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid ""
+", por este conducto manifiesto bajo protesta de decir la verdad, que el "
+"presente documento es una traducción parcial del <b>CERTIFICADO DE "
+"ANÁLISIS</b> emitido por el fabricante de los productos de interés."
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "<br/>Responsable Sanitario<br/><br/>Cédula Profesional:"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "<span>CERTIFICADO DE CALIDAD</span>"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "<span>Código</span>"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "<span>Fabricante / Proveedor</span>"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "<span>Fecha de Caducidad</span>"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "<span>Fecha de Fabricación o Esterilidad</span>"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "<span>Lote / Serie</span>"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "<span>Producto / Descripción</span>"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid ""
+"<strong class=\"text-center\">Scan me with your banking "
+"app.</strong><br/><br/>"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "A T E N T A M E N T E"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model:ir.model,name:bck_account_quality_certificate.model_res_branch
+msgid "Branch"
+msgstr "Sucursal"
+
+#. module: bck_account_quality_certificate
+#: model:ir.model.fields,field_description:bck_account_quality_certificate.field_res_branch__responsible_id
+msgid "Certificate Responsible"
+msgstr "Responsable del Certificado"
+
+#. module: bck_account_quality_certificate
+#: model:ir.model.fields,field_description:bck_account_quality_certificate.field_res_branch__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: bck_account_quality_certificate
+#: model:ir.model.fields,field_description:bck_account_quality_certificate.field_res_branch__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "INFORMACIÓN DEL PRODUCTO"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid ""
+"La información presentada anteriomente se obtuvo del CERTIFICADO DE ANÁLISIS"
+" original emitido por el Fabricante, el cual puede ser consultado en su "
+"idioma original."
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model:ir.model.fields,field_description:bck_account_quality_certificate.field_res_branch____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: bck_account_quality_certificate
+#: model:ir.model.fields,field_description:bck_account_quality_certificate.field_res_branch__responsible_professional_certificate
+msgid "Professional Certificate"
+msgstr "Cédula Profesional"
+
+#. module: bck_account_quality_certificate
+#: model:ir.actions.report,name:bck_account_quality_certificate.quality_certificate
+msgid "Quality Certificate"
+msgstr "Certificado de Calidad"
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.quality_certificate_res_branch_form_view
+msgid "Quality Certificate Resposible"
+msgstr "Resposable del Certificado de Calidad"
+
+#. module: bck_account_quality_certificate
+#: model:ir.model.fields,help:bck_account_quality_certificate.field_res_branch__responsible_signature
+msgid "Resposible Signature"
+msgstr "Firma del Responsable"
+
+#. module: bck_account_quality_certificate
+#: model:ir.model.fields,field_description:bck_account_quality_certificate.field_res_branch__responsible_signature
+msgid "Signature"
+msgstr "Firma"
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "Sin más por el momento, quedo a sus apreciables órdenes"
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model:ir.model.fields,field_description:bck_account_quality_certificate.field_res_branch__responsible_title
+msgid "Title"
+msgstr "Título"
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid ""
+"Todos los CERTIFICADOS DE ANÁLISIS originales están aprobados por el "
+"responsable del departamento de Calidad del sitio de Fabricación."
+msgstr ""
+
+#. module: bck_account_quality_certificate
+#: model_terms:ir.ui.view,arch_db:bck_account_quality_certificate.report_quality_certificate_document
+msgid "Yo,"
+msgstr ""

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_payslip_form_inherit" model="ir.ui.view">
+        <field name="name">hr.payslip.form.inherit.mx</field>
+        <field name="model">hr.payslip</field>
+        <field name="priority" eval="100"/>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name='arch' type='xml'>
+            <!-- <xpath expr='//sheet' position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </xpath> -->
+          <!--   <xpath expr="//button[@name='refund_sheet']" position="after">
+                <button string="Sign Payslip" name="sign_payslip_x" states="done" type="object" />
+            </xpath> -->
+            <xpath expr="/form/sheet/group/field[@name='number']" position="replace"/>
+            <xpath expr="/form/sheet/div/label" position="before">
+                <h1>
+                    <span class="o_form_label" attrs="{'invisible': [('state','not in', ('draft'))]}">Draft payroll</span>
+                    <span class="o_form_label" attrs="{'invisible': [('state','in', ('draft'))]}">Payroll</span>
+                    <field name="number" readonly="1" class="oe_inline"/>
+                </h1>
+                <h4 collspan="2">
+                    <field string="Fiscal Number" name="cfdi_folio_fiscal"
+                           placeholder="Fiscal Number" readonly="1"
+                           attrs="{'invisible': [('state', '=', 'draft')]}" />
+                </h4>
+            </xpath>
+            <field name="name" position="after">
+                <!-- <field name="payment_type"/> -->
+                <field name="currency_id" groups="base.group_multi_currency"/>
+                <field name="source_resource"/>
+                <field name="amount_sncf"/>
+            </field>
+            <field name="contract_id" position="before">
+                <field name="date_payroll"/>
+                <field name="l10n_mx_edi_pac_status" invisible="1" />
+                <label for="l10n_mx_edi_sat_status" invisible="1"/>
+                <div class="o_row" >
+                    <field name="l10n_mx_edi_sat_status" invisible="1"/>
+                    <button name="l10n_mx_edi_update_sat_status" invisible="1" string="SAT STATUS" class="oe_link" type="object" />
+                </div>
+            </field>
+            <field name="payslip_run_id" position="after">
+                <field name="antiquity_format_sat"/>
+               <!--  <button string="Calculation Antiquity Format Sat" name="antiquity_format" type="object"/> -->
+                <field name="cfdi_nomina" filename="cfdi_nomina_file_name"/>
+                <field name="cfdi_nomina_file_name" invisible="0"/>
+                <field name="cfdi_folio_fiscal" invisible="1"/>
+               <!--  <field name="cfdi_no_certificado" invisible="0"/> -->
+                <field name="l10n_mx_edi_cfdi_uuid" invisible="1"/>
+                <field name="l10n_mx_edi_cfdi" invisible="1"/>
+                <field name="l10n_mx_edi_cfdi_supplier_rfc" invisible="1"/>
+                <field name="l10n_mx_edi_cfdi_customer_rfc" invisible="1"/>
+                <field name="l10n_mx_edi_cfdi_amount" invisible="0"/>
+                <field name="l10n_mx_edi_cfdi_certificate_id" invisible="0"/>
+            </field>
+            <xpath expr="//field[@name='line_ids']/tree//field[@name='total']" position="before">
+                <field name="taxable_amount" />
+                <field name="excent_amount" />
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_hr_payslip_run_form_inherit_sign">
+        <field name="name">view.hr.payslip.run.form.inherit.sign</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_draft']" position="after">
+                <button name="action_payslips_done" type="object" string="Confirm payslips" class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//sheet/group[1]" position="after">
+                <group>
+                     <group>
+                        <field name="source_resource"/>
+                    </group>
+                </group>
+                
+            </xpath>
+        </field>
+    </record>
+</odoo>

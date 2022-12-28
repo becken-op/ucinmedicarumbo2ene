@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="warehouses_stock_details" customize_show="True" inherit_id="website_sale.product" name="Warehouse Stock details">
+    <xpath expr="//div[@id='product_details']/hr[@t-if='product.description_sale']" position="before">
+      <h5 class="pt-2">Disponibilidad en almacenes</h5>
+      <section class="s_warehouse_stock pb5">
+        <div class="bck_warehouses_details"></div>
+      </section>
+    </xpath>
+  </template>
+</odoo>

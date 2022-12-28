@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="crm_lead_tradename_kanban_view" model="ir.ui.view">
+      <field name="name">crm.lead.tradename.kanban.view</field>
+      <field name="model">crm.lead</field>
+      <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="tradename"/>
+        </xpath>
+        <xpath expr="//span[@t-if='record.partner_id.value']" position="replace">
+          <strong>
+            <field name="tradename"/>
+          </strong>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="crm_lead_tradename_tree_view" model="ir.ui.view">
+      <field name="name">crm.lead.tradename.tree.view</field>
+      <field name="model">crm.lead</field>
+      <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="tradename" optional='hide'/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="crm_lead_tradename_form_view" model="ir.ui.view">
+      <field name="name">crm.lead.tradename.form.view</field>
+      <field name="model">crm.lead</field>
+      <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="after">
+          <field name="tradename"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="crm_lead_tradename_search_view" model="ir.ui.view">
+      <field name="name">crm.lead.tradename.search.view</field>
+      <field name="model">crm.lead</field>
+      <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_id']" position="replace">
+          <field name="partner_id" operator="child_of" string="Customer" filter_domain="['|', '|', '|',, '|',('partner_id', 'ilike', self),('partner_name', 'ilike', self),('email_from', 'ilike', self),('contact_name', 'ilike', self),('tradename','ilike',self)]"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_credit_limit_restrict_config_settings_form" model="ir.ui.view">
+            <field name="name">sale.order.credit.limit.restrict.config.settings.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='invoicing_setting_container']" position="after">
+                    <h2>Credit Limit</h2>
+                    <div class="row mt16 o_settings_container" name="quotation_order_setting_credit_limit">
+                        <div class="col-12 col-lg-6 o_setting_box" id="sale_config_credit_limit">
+                            <div class="o_setting_left_pane">
+                                <field name="restrict_sale_orders"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="restrict_sale_orders"/>
+                                <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                <div class="text-muted">
+                                    Restrict confirm Sale Orders if the customer has exeeded the credit limit.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="restrict_invoices"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="restrict_invoices"/>
+                                <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                <div class="text-muted">
+                                    Restrict confirm customer invoices if the customer has exeeded the credit limit.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="restrict_transfers"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="restrict_transfers"/>
+                                <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                <div class="text-muted">
+                                    Restrict validate stock transfers if the customer has exeeded the credit limit.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="restrict_sales_by_due_invoices"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="restrict_sales_by_due_invoices"/>
+                                <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                                <div class="text-muted">
+                                    Restrict confirm Sale Orders if the customer if has Due Invoices with more days than customer extra days, without considering the customer's credit limit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

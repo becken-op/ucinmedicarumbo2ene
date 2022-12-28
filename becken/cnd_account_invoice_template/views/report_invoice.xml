@@ -1,0 +1,624 @@
+<odoo>
+    <record id="base.paperformat_us" model="report.paperformat">
+        <field name="margin_top">20</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_spacing">17</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <template id="cnd_report_invoice_document" inherit_id="account.report_invoice_document">
+        <t t-set="address" position="replace">
+            <style>
+                .table-sm th {
+                    background-color: #E0E0E0;
+                    color: <t t-esc="o.company_id.secondary_color"/>;
+                    margin: 3px;
+                    padding: 0px 3px 0px 3px;
+                    text-transform: uppercase;
+                }
+                .move_number {
+                    font-size: 16px;
+                }
+                .table-sm tr td {
+                    padding: 0px 3px 0px 3px;
+                }
+            </style>
+            <div id="customer_header" class="row mt32 mb32" style="margin-top:-0px;font-size:11px;">
+                <div class="col-4" name="customer_address">
+                    <strong>
+                        <t t-esc="o.partner_id.commercial_partner_id.name"/>
+                    </strong>
+                    <br/>
+                    <div t-if="o.partner_id.commercial_partner_id.vat" class="mt16">
+                        <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>
+                        <t t-else="">Tax ID:</t>:                        <strong>
+                            <span t-field="o.partner_id.commercial_partner_id.vat"/>
+                        </strong>
+                    </div>
+                    <address t-field="o.partner_id.commercial_partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                    <!-- <span t-if="o.partner_id.commercial_partner_id.street" t-esc="o.partner_id.commercial_partner_id.street_name"/><span t-if="o.partner_id.commercial_partner_id.street_number" t-esc="' '+o.partner_id.commercial_partner_id.street_number"/><span t-if="o.partner_id.commercial_partner_id.street_number2" t-esc="' '+o.partner_id.commercial_partner_id.street_number2"/><span t-if="o.partner_id.commercial_partner_id.l10n_mx_edi_colony" t-esc="', Col. '+o.partner_id.commercial_partner_id.l10n_mx_edi_colony"/><br/>
+                    <span t-if="o.partner_id.commercial_partner_id.zip" t-esc="'C.P. '+o.partner_id.commercial_partner_id.zip"/><span t-if="o.partner_id.commercial_partner_id.city" t-esc="', '+o.partner_id.commercial_partner_id.city"/><span t-if="o.partner_id.commercial_partner_id.state_id" t-esc="', '+o.partner_id.commercial_partner_id.state_id.name"/><span t-if="o.partner_id.commercial_partner_id.country_id" t-esc="', '+o.partner_id.commercial_partner_id.country_id.name"/><br/> -->
+
+                    <t t-if="'partner_shipping_id' in o and o.partner_shipping_id and (o.partner_shipping_id != o.partner_id)">
+                        <t t-set="information_block">
+                            <div groups="sale.group_delivery_invoice_address">
+                                <strong>Shipping Address:</strong>
+                                <div t-field="o.partner_shipping_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                            </div>
+                            <br/>
+                        </t>
+                    </t>
+                    <t t-if="information_block">
+                        <div name="information_block">
+                            <t t-raw="information_block"/>
+                        </div>
+                    </t>
+                </div>
+
+                <div class="col-4" name="shipping_address">
+                    <strong>
+                        <t t-esc="o.company_id.partner_id.name"/>
+                    </strong>
+                    <div t-if="o.company_id.partner_id.vat" class="mt16">
+                        <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>
+                        <t t-else="">Tax ID:</t>
+                        <strong>
+                            <span t-field="o.company_id.partner_id.vat"/>
+                        </strong>
+                    </div>
+                    <b>Fiscal Address: </b>
+                    <br/>
+                    <address t-field="o.company_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                    <!-- <span t-if="o.company_id.partner_id.street" t-field="o.company_id.partner_id.street_name"/><span t-if="o.company_id.partner_id.street_number" t-esc="' '+o.company_id.partner_id.street_number"/><span t-if="o.company_id.partner_id.street_number2" t-esc="' '+o.company_id.partner_id.street_number2"/><span t-if="o.company_id.partner_id.l10n_mx_edi_colony" t-esc="', Col. '+o.company_id.partner_id.l10n_mx_edi_colony"/><br/>
+                    <span t-if="o.company_id.partner_id.zip" t-esc="'C.P. '+o.company_id.partner_id.zip"/><span t-if="o.company_id.partner_id.city" t-esc="', '+o.company_id.partner_id.city"/><span t-esc="', '+o.company_id.partner_id.state_id.name"/><span t-esc="', '+o.company_id.partner_id.country_id.name"/><br/> -->
+                    <b>Fiscal Regime: </b>
+                    <span t-field="o.company_id.l10n_mx_edi_fiscal_regime"/>
+                    <br/>
+                    <b>Expedition place: </b>
+                    <br/>
+                    <!-- <t t-set="expedition_place" t-value="o.journal_id.l10n_mx_address_issued_id or o.company_id"/> -->
+                    <t t-set="expedition_place" t-value="o.company_id"/>
+                    <span t-if="expedition_place.street" t-field="expedition_place.street_name"/>
+                    <span t-if="expedition_place.street_number" t-esc="' '+expedition_place.street_number"/>
+                    <span t-if="expedition_place.street_number2" t-esc="' '+expedition_place.street_number2"/>
+                    <span t-if="expedition_place.l10n_mx_edi_colony" t-esc="', Col. '+expedition_place.l10n_mx_edi_colony"/>
+                    <br/>
+                    <span t-if="expedition_place.zip" t-esc="'C.P. '+expedition_place.zip"/>
+                    <span t-if="expedition_place.city" t-esc="', '+expedition_place.city"/>
+                    <span t-if="expedition_place.state_id" t-esc="', '+expedition_place.state_id.name"/>
+                    <span t-if="expedition_place.country_id" t-esc="', '+expedition_place.country_id.name"/>
+                    <br/>
+                </div>
+
+                <div class="col-4 text-right" name="invoice_name">
+                    <h4>
+                        <strong t-attf-style="color: {{ o.company_id.primary_color }};">
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'" class="move_number">Invoice</span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'" class="move_number">Draft Invoice</span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'" class="move_number">Cancelled Invoice</span>
+                            <span t-if="o.move_type == 'out_refund'" class="move_number">Credit Note</span>
+                            <span t-if="o.move_type == 'in_refund'" class="move_number">Vendor Credit Note</span>
+                            <span t-if="o.move_type == 'in_invoice'" class="move_number">Vendor Bill</span>
+                            <span t-if="o.name != '/'" class="move_number" t-field="o.name"/>
+                        </strong>
+                    </h4>
+                    <span t-if="o.l10n_mx_edi_cfdi_uuid" name="l10n_mx_edi_origin">
+                        <strong t-attf-style="color: {{ o.company_id.primary_color }};">Fiscal Folio:</strong>
+                        <br/>
+                        <span t-field="o.l10n_mx_edi_cfdi_uuid"/>
+                        <br/>
+                    </span>
+                    <span t-if="o.l10n_mx_edi_origin" name="l10n_mx_edi_origin">
+                        <strong>CFDI Origin:</strong>
+                        <br/>
+                        <span t-field="o.l10n_mx_edi_origin"/>
+                        <br/>
+                    </span>
+                    <span name="payment_reference" t-if="o.move_type in ('out_invoice', 'in_refund') and o.payment_reference">
+                        <strong t-attf-style="color: {{ o.company_id.primary_color }};">Payment Reference:</strong>
+                        <span t-field="o.payment_reference"/>
+                        <br/>
+                    </span>
+                    <t t-if="o.company_id.currency_id.id != o.currency_id.id">
+                        <span name="currency_id">
+                            <strong>Currency:</strong>
+                            <span class="m-0" t-field="o.currency_id"/> - <span t-field="o.currency_id.currency_unit_label"/>
+                            <br/>
+                        </span>
+                        <span name="currency_rate">
+                            <strong>Currency Rate:</strong>
+                            <span class="m-0" t-esc="1/o.currency_id.rate"/>
+                            <br/>
+                        </span>
+                    </t>
+                    <span name="invoice_incoterm" t-if="o.invoice_incoterm_id">
+                        <strong>Incoterm:</strong>
+                        <span t-field="o.invoice_incoterm_id.code"/> - <span t-field="o.invoice_incoterm_id.name"/>
+                        <br/>
+                    </span>
+                    <span name="payment_term_note" t-if="o.invoice_payment_term_id">
+                        <strong>
+                            <span t-attf-style="color: {{ o.company_id.primary_color }};" t-field="o.invoice_payment_term_id.note"/>
+                        </strong>
+                        <br/>
+                    </span>
+                </div>
+            </div>
+            <br/>
+        </t>
+
+        <!-- Quitar el nombre de la factura porque lo estoy poniendo en la tabla de aquí arriba -->
+        <xpath expr="//h2" position="replace">
+            <t t-set="lot_values" t-value="o._get_invoiced_lot_values()"/>
+        </xpath>
+
+        <!-- Product Name -->
+        <xpath expr="//table[@name='invoice_line_table']/thead/tr/th[1]" position="before">
+            <th style="width: 300px;">Description</th>
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']/tbody/t/tr/t/td[1]" position="before">
+            <td>
+                <span t-field="line.product_id.name"/>
+                <t t-if="lot_values">
+                    <t t-set="lot_list" t-value="[]"/>
+                    <t t-set="user_date_format" t-value="line.env['res.lang']._lang_get(line.env.user.lang).date_format"/>
+                    <t t-foreach="lot_values" t-as="lot">
+                        <t t-set="lot_id" t-value="line.env['stock.production.lot'].browse(lot['lot_id'])"/>
+                        <t t-if="lot_id.product_id.id  == line.product_id.id">
+                            <t t-set="lot_str" t-value="lot_id.name"/>
+                            <t t-if="'use_expiration_date' in line.product_id and line.product_id.use_expiration_date==True">
+                                <t t-set="lot_str" t-value="lot_str + ' Cad. ' + lot_id.expiration_date.strftime(user_date_format)"/>
+                            </t>
+                            <!-- <t t-if="'manufacturing_date' in lot_id and lot_id.manufacturing_date">
+                                <t t-set="lot_str" t-value="lot_str + ' Fab. ' + lot_id.manufacturing_date.strftime(user_date_format)"/>
+                            </t> -->
+                            <t t-set="lot_list" t-value="lot_list + [lot_str]"/>
+                        </t>
+                    </t>
+                    <t t-set="lot_str" t-value="', '.join(lot_list)"/>
+                    <br/>
+                    <t t-if="line.product_id.tracking=='lot'">
+                        Lot(s): <b><span t-esc="lot_str"/></b>
+                    </t>
+                    <t t-elif="line.product_id.tracking=='serial'">
+                        Serial(s): <b><span t-esc="lot_str"/></b>
+                    </t>
+                </t>
+                <t t-set="custom_numbers" t-value="line._l10n_mx_edi_get_custom_numbers()"/>
+                <t t-if="custom_numbers">
+                    <t t-set="customs_list" t-value="[]"/>
+                    <t t-foreach="custom_numbers" t-as="custom_number">
+                        <t t-set="customs_list" t-value="customs_list + [custom_number]"/>
+                    </t>
+                    <br/>Customs: <strong><span t-esc="', '.join(customs_list)"/></strong>
+                </t>
+            </td>
+        </xpath>
+
+        <!-- Product Code -->
+        <xpath expr="//table[@name='invoice_line_table']/thead/tr/th[1]" position="before">
+            <th style="width: 110px;">Code</th>
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']/tbody/t/tr/t/td[1]" position="before">
+            <td><span t-field="line.product_id.default_code"/></td>
+        </xpath>
+
+        <!-- Agregar Sequence: No aplica en Odoo 14 y 13 por las Notas y Secciones -->
+        <!--<xpath expr="//table[@name='invoice_line_table']/thead/tr/th[1]" position="before">
+            <th>Sequence</th>
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']/tbody/t/tr/t/td[1]" position="before">
+            <td align="right"><span t-esc="line_index + 1"/></td>
+        </xpath>-->
+
+        <xpath expr="//table[@name='invoice_line_table']/thead/tr/th[2]" position="after">
+            <th t-if="o.l10n_mx_edi_cfdi_uuid">
+                <span>SAT Code</span>
+            </th>
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']/tbody//tr[1]//td[2]" position="after">
+            <td t-if="o.l10n_mx_edi_cfdi_uuid"><span t-field="line.product_id.unspsc_code_id.code"/></td>
+        </xpath>
+
+        <!-- Hacer nowrap a la columna Cantidad -->
+        <xpath expr="//table[@name='invoice_line_table']/tbody/t/tr/t/td[6]" position="attributes">
+            <attribute name="style">white-space:nowrap;</attribute>
+        </xpath>
+
+        <!-- Quitar la Columna 4 "SAT Code" llamado "DESCRIPCIÓN PRODUCTO" -->
+        <xpath expr="//table[@name='invoice_line_table']/thead/tr/th[5]" position="replace">
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']/tbody/t/tr/t/td[5]" position="replace">
+        </xpath>
+
+        <!-- Quitar la Columna 3 "SAT Code" llamado "CODIGO PRODUCTO" -->
+        <xpath expr="//table[@name='invoice_line_table']/thead/tr/th[4]" position="replace">
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']/tbody/t/tr/t/td[4]" position="replace">
+        </xpath>
+
+        <!-- Modificar el tamaño de la fuente de todo el documento -->
+        <xpath expr="//div[@class='page']" position="attributes">
+            <attribute name="style">font-size:70%;</attribute>
+        </xpath>
+
+        <!-- Eliminar la note del término de pago PENDIENTE -->
+        <xpath expr="//p[@t-if='o.invoice_payment_term_id']" position="replace">
+        </xpath>
+
+        <!-- <xpath expr="//div[@id='informations']" position="after">
+            <div id="informations" class="row mt32 mb32">
+                <div class="col-2" t-if="o.invoice_date" name="invoice_date">
+                    <strong>Invoice Date:</strong>
+                    <p class="m-0" t-field="o.invoice_date"/>
+                </div>
+                <div class="col-2" t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'" name="due_date">
+                    <strong>Due Date:</strong>
+                    <p class="m-0" t-field="o.invoice_date_due"/>
+                </div>
+                <div class="col-2" t-if="o.invoice_origin" name="origin">
+                    <strong>Source:</strong>
+                    <p class="m-0" t-field="o.invoice_origin"/>
+                </div>
+                <! - - <t t-if="o.invoice_payment_term_id">
+                    <div class="col-2" t-if="o.invoice_payment_term_id" name="payment_term_id">
+                        <strong>Payment Terms:</strong>
+                        <p class="m-0" t-field="o.invoice_payment_term_id"/>
+                    </div>
+                </t> - - >
+                <! - - <div class="col-3" t-if="o.partner_id.ref" name="customer_code">
+                    <strong>Customer Code:</strong>
+                    <p class="m-0" t-field="o.partner_id.ref"/>
+                </div> - - >
+                <! - - <div class="col-3" t-if="o.invoice_incoterm_id" name="invoice_incoterm_id">
+                    <strong>Incoterm:</strong>
+                    <p class="m-0" t-field="o.invoice_incoterm_id.code"/> - <span t-field="o.invoice_incoterm_id.name"/>
+                </div> - - >
+                <div class="col-2" t-if="o.ref" name="reference">
+                    <strong>Purchase Order:</strong>
+                    <p class="m-0" t-field="o.ref"/>
+                </div>
+            </div>
+            <div id="informations" class="row mt32 mb32">
+                <t t-if="is_cfdi_signed">
+                    <t t-if="cfdi_vals['usage']">
+                        <div name="usage" class="col-2">
+                            <strong>Usage:</strong>
+                            <p><span t-esc="cfdi_vals['usage']"/><span> - </span><span t-field="o.l10n_mx_edi_usage"/></p>
+                        </div>
+                    </t>
+                    <t t-if="o.l10n_mx_edi_payment_method_id">
+                        <div class="col-2">
+                            <strong>Payment Way:</strong>
+                            <p t-esc="'%s - %s' % (o.l10n_mx_edi_payment_method_id.code, o.l10n_mx_edi_payment_method_id.name)"/>
+                        </div>
+                    </t>
+                    <div class="col-2" t-if="cfdi_vals['bank_account']">
+                        <strong>Bank Account:</strong>
+                        <p t-esc="cfdi_vals['bank_account']"/>
+                    </div>
+                    <div class="col-2">
+                        <strong>Payment Method:</strong>
+                        <p t-esc="cfdi_vals.get('payment_method')"/>
+                    </div>
+                    <t t-if="o.company_id.currency_id.id != o.currency_id.id">
+                        <div class="col-2" t-if="o.ref" name="currency_id">
+                        <strong>Currency:</strong>
+                        <p class="m-0" t-field="o.currency_id"/>-<span t-field="o.currency_id.currency_unit_label"/>
+                        </div>
+                    </t>
+                    <t t-if="o.company_id.currency_id.id != o.currency_id.id">
+                        <div class="col-2" t-if="o.ref" name="currency_rate">
+                        <strong>Currency Rate:</strong>
+                        <p class="m-0" t-esc="1/o.currency_id.rate"/>
+                        </div>
+                    </t>
+                </t>
+            </div>
+            <br/>
+      </xpath> -->
+
+        <!-- <xpath expr="//div[@id='informations']" position="replace">
+        </xpath> -->
+
+        <!-- Remove original "Please use the following communication for your payment :" and next add it again-->
+        <xpath expr="//p[@name='payment_communication']" position="replace">
+        </xpath>
+
+        <xpath expr="//div[@name='reference']" position="attributes">
+            <attribute name="class">col-xs-3 mw-100 mb-2</attribute>
+        </xpath>
+
+        <!-- Modificar el tamaño de la fuente del comentario -->
+        <xpath expr="//p[@t-if='o.narration']" position="attributes">
+            <attribute name="style">font-size:8px;</attribute>
+        </xpath>
+
+        <xpath expr="//p[@t-if='o.narration']" position="after">
+            <!--<t t-if="o.company_id.currency_id.id != o.currency_id.id">
+                <div style="padding:5px; font-size: 8pt;">
+                    <p>
+                        <div><strong>Currency:</strong> <span t-field="o.currency_id"/>-<span t-field="o.currency_id.currency_unit_label"/></div>
+                        <div><strong>Currency Rate:</strong> <span t-esc="1/o.currency_id.rate"/></div>
+                    </p>
+                </div>
+            </t>-->
+            <!--<div colspan="7" style="text-align: justify;font-size: 9px;border: 1px solid black;border-style: solid; padding: 3px 3px 3px 3px;'">
+                <b>Observations: </b>
+                I must and will unconditionally pay to <span t-field="o.company_id.name"/> in the city of <span t-field="o.company_id.city"/>
+                or wherever the holder chooses, on date <span t-field="o.invoice_date_due"/> the amount of
+                <span t-field="o.amount_total"/> (<span t-esc="o._l10n_mx_edi_cfdi_amount_to_text()"/>),
+                merchandise and/or services covered in this invoice that I have received to my satisfaction.
+                If this promissory note is not settled on the due date, I will pay the 5% (five percent) monthly from the due date.
+                This promissory note is commercial and is governed by the provisions of the Law on Securities and Credit Operations.
+            </div>
+            <br/>
+            <table style="width:100%; padding: 3px 3px 3px 3px;" border="0">
+                <tr>
+                    <td style="border-style:hidden;width:10%;white-space:nowrap;">Received: Name</td>
+                    <td style="border-bottom: 1px solid black;width:34%;vertical-align: baseline;"/>
+                    <td style="border-style:hidden;width:3%;">Sign</td>
+                    <td style="border-bottom: 1px solid black;width:18%;vertical-align: baseline;"/>
+                    <td style="border-style:hidden;width:3%;">Date</td>
+                    <td style="border-bottom: 1px solid black;width:11%;vertical-align: baseline;"/>
+                    <td style="border-style:hidden;width:3%;">Time</td>
+                    <td style="border-bottom: 1px solid black;width:8%;vertical-align: baseline;"/>
+                </tr>
+            </table>-->
+            <br/>
+        </xpath>
+
+        <!-- Reemplazar la Etiqueta "Reference:" por "Purchase Order:". -->
+        <div name="reference" position="replace">
+            <div class="col-4" t-if="o.ref" name="reference">
+                <strong>Purchase Order:</strong>
+                <p t-field="o.ref"/>
+            </div>
+        </div>
+
+        <!-- Eliminar "<span t-esc="o._l10n_mx_edi_cfdi_amount_to_text()"/>", NOTA: Es mejor meterse a la vista MX y comentar esto con todo y <p></p>-->
+        <span t-esc="o._l10n_mx_edi_cfdi_amount_to_text()" position="replace">
+        </span>
+
+        <p t-if="o.narration" name="comment" position="replace">
+        </p>
+
+        <div id="total" class="row" position="replace">
+            <div id="total" class="row">
+                <div t-attf-class="#{'col-12' if report_type != 'html' else 'col-sm-7 col-md-12'} ml-auto">
+                    <table style="width:100%; border-style:hidden; background-color: transparent;" border="0" cellspacing="0" cellpadding="0">
+                        <tr style="border-style:hidden;"><td style="width:75%;border-style:hidden;">
+                            <table style="width:100%; border-style:hidden; background-color: transparent;" border="0" cellspacing="0" cellpadding="0">
+                                <tr style="border-style:hidden;">
+                                    <td style="border-style:hidden;">
+                                        <t t-if="o.l10n_mx_edi_cfdi_uuid">
+                                            <span t-esc="o._l10n_mx_edi_cfdi_amount_to_text()"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:hidden;">
+                                        <span t-if="o.move_type in ('out_invoice', 'in_refund')">
+                                            Please use the following communication for your payment: <b><span t-field="o.payment_reference"/></b>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:hidden;">
+                                        <span t-if="o.company_id.partner_id.bank_ids">
+                                            Account for transfer: <b><span t-field="o.company_id.partner_id.bank_ids[0].acc_number"/></b><span t-if="o.company_id.partner_id.bank_ids[0].bank_id">, Bank: <b><span t-field="o.company_id.partner_id.bank_ids[0].bank_id"/></b></span><span t-if="o.company_id.partner_id.bank_ids[0].l10n_mx_edi_clabe">, Clabe: <b><span t-field="o.company_id.partner_id.bank_ids[0].l10n_mx_edi_clabe"/></b></span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:hidden;">
+                                        <span t-field="o.narration"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width:25%">
+                            <table class="table table-sm" style="page-break-inside: avoid;">
+                                <tr class="o_subtotal border-black" style="">
+                                    <td><strong>Subtotal</strong></td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_untaxed"/>
+                                    </td>
+                                </tr>
+                                <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                    <tr style="">
+                                        <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) == 1 and o.amount_untaxed == amount_by_group[2]">
+                                            <td><span class="text-nowrap" t-esc="amount_by_group[0]"/></td>
+                                            <td class="text-right o_price_total">
+                                                <span class="text-nowrap" t-esc="amount_by_group[3]"/>
+                                            </td>
+                                        </t>
+                                        <t t-else="">
+                                            <td>
+                                                <span t-esc="amount_by_group[0]"/>
+                                                <span class="text-nowrap"> on
+                                                    <t t-esc="amount_by_group[4]"/>
+                                                </span>
+                                            </td>
+                                            <td class="text-right o_price_total">
+                                                <span class="text-nowrap" t-esc="amount_by_group[3]"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </t>
+                                <tr class="o_total border-black">
+                                    <td><strong>Total</strong></td>
+                                    <td class="text-right">
+                                        <span class="text-nowrap" t-field="o.amount_total"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Reemplazar los 4 layouts de encabezado y pie de página por el layout compacto: external_layout_compact -->
+    <template id="compact_external_layout_standard" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+            <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                <div class="row">
+                    <div class="col-4 mb4">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 60px;" alt="Logo"/>
+                    </div>
+                    <div class="col-4 mb4 text-center">
+                        <span t-field="company.partner_id.name" style="width:100%;margin-top:10px;display:inline-block;font-size: 16px;font-weight: bold;"/>
+                    </div>
+                    <div class="col-4 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+                </div>
+                <div class="row zero_min_height" style="background-color: #555555;">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid #555555;"/>
+                    </div>
+                    <div class="col-xs-6" name="company_address" style="display:none;">
+                        <span t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="border-bottom: 1px solid black; display:inline-block;"/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@t-attf-class='footer o_standard_footer o_company_#{company.id}_layout']" position="replace">
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div id="footer" class="row mt32 mb32" style="border-top: 1px solid black; font-size: 11px; color:#404040;">
+                    <div t-if="report_type == 'pdf'" class="col-2">
+                    </div>
+                    <div class="col-8 text-center">
+                        <ul class="list-inline mb4">
+                            <!-- using the list-inline-item class from bootstrap causes weird behaviours in pdf report
+                                    adding d-inline class fixes the problem-->
+                            <li t-if="company.phone" class="list-inline-item d-inline">
+                                <i class="fa fa-phone"/>
+                                <span class="o_force_ltr" t-field="company.phone"/>
+                            </li>
+                            <li t-if="company.email" class="list-inline-item d-inline">
+                                <i class="fa fa-envelope-o"/>
+                                <span t-field="company.email"/>
+                            </li>
+                            <li t-if="company.website" class="list-inline-item d-inline">
+                                <i class="fa fa-globe"/>
+                                <span t-field="company.website"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <div t-if="report_type == 'pdf'" class="col-2 text-right text-muted">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+                <div name="financial_infos" t-if="company.report_footer" class="col-12 text-center" style="font-size: 11px; color:#404040;">
+                    <span t-field="company.report_footer"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Eliminar la tabla de Lotes para agregarla en las líneas de factura -->
+    <template id="sale_stock_report_invoice_document" inherit_id="sale_stock.sale_stock_report_invoice_document">
+        <xpath expr="//t[@t-set='lot_values']" position="replace">
+            <t t-set="lot_values" t-value="False"/>
+        </xpath>
+    </template>
+
+    <template id="compact_external_layout_background" inherit_id="web.external_layout_background">
+        <xpath expr="//div[@t-attf-class='o_company_#{company.id}_layout header']" position="replace">
+            <style>
+                .page {
+                    border-top: 1px solid black;
+                }
+            </style>
+            <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                <div class="row">
+                    <div class="col-4 mb4">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 60px;" alt="Logo"/>
+                    </div>
+                    <div class="col-4 mb4 text-center">
+                        <span t-field="company.partner_id.name" t-attf-style="color: {{ o.company_id.primary_color }};width:100%;margin-top:10px;display:inline-block;font-size: 16px;font-weight: bold;text-transform: uppercase;"/>
+                    </div>
+                    <div class="col-4 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+                </div>
+                <div class="row zero_min_height" style="background-color: #555555;">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid #555555;"/>
+                    </div>
+                    <div class="col-xs-6" name="company_address" style="display:none;">
+                        <span t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="display:inline-block;"/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@t-attf-class='o_company_#{company.id}_layout footer o_background_footer']" position="attributes">
+            <attribute name="style">font-size: 11px; color:#404040;</attribute>
+        </xpath>
+    </template>
+
+    <template id="compact_external_layout_boxed" inherit_id="web.external_layout_boxed">
+        <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+            <style>
+                .page {
+                    border-top: 1px solid black;
+                }
+            </style>
+            <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                <div class="row">
+                    <div class="col-4 mb4">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 60px;" alt="Logo"/>
+                    </div>
+                    <div class="col-4 mb4 text-center">
+                        <span t-field="company.partner_id.name" style="width:100%;margin-top:10px;display:inline-block;font-size: 16px;font-weight: bold;"/>
+                    </div>
+                    <div class="col-4 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+                </div>
+                <div class="row zero_min_height" style="background-color: #555555;">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid #555555;"/>
+                    </div>
+                    <div class="col-xs-6" name="company_address" style="display:none;">
+                        <span t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="display:inline-block;"/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']" position="replace">
+            <div t-attf-class="footer o_boxed_footer o_company_#{company.id}_layout">
+                <div id="footer" class="row mt32 mb32" style="font-size: 11px; color:#404040;">
+                    <div t-if="report_type == 'pdf'" class="col-2">
+                    </div>
+                    <div class="col-8 text-center">
+                        <ul class="list-inline mb4">
+                            <!-- using the list-inline-item class from bootstrap causes weird behaviours in pdf report
+                                            adding d-inline class fixes the problem-->
+                            <li t-if="company.phone" class="list-inline-item d-inline">
+                                <i class="fa fa-phone"/>
+                                <span class="o_force_ltr" t-field="company.phone"/>
+                            </li>
+                            <li t-if="company.email" class="list-inline-item d-inline">
+                                <i class="fa fa-envelope-o"/>
+                                <span t-field="company.email"/>
+                            </li>
+                            <li t-if="company.website" class="list-inline-item d-inline">
+                                <i class="fa fa-globe"/>
+                                <span t-field="company.website"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <div t-if="report_type == 'pdf'" class="col-2 text-right text-muted">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+                <div name="financial_infos" t-if="company.report_footer" class="col-12 text-center" style="font-size: 11px; color:#404040;">
+                    <span t-field="company.report_footer"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

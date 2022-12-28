@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="manufacturing_date_stock_move_line_operation_tree_view" model="ir.ui.view">
+        <field name="name">manufacturing.date.stock.move.line.operation.tree.view</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="product_expiry.view_stock_move_line_operation_tree_expiry"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expiration_date']" position="after">
+                <field name="product_expiration_time" invisible="1"/>
+                <field name="manufacturing_date"
+                    attrs="{'required': [('product_expiration_time', '=', 1500)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="manufacturing_date_stock_move_line_detailed_operation_tree_view" model="ir.ui.view">
+        <field name="name">manufacturing.date.stock.move.line.detailed.operation.tree.view</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="product_expiry.view_stock_move_line_detailed_operation_tree_expiry"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expiration_date']" position="after">
+                <field name="product_expiration_time" invisible="1"/>
+                <field name="manufacturing_date"
+                    attrs="{'required': [('product_expiration_time', '=', 1500)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,193 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cnd_mail_activity_geolocation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-24 17:35+0000\n"
+"PO-Revision-Date: 2022-08-24 17:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cnd_mail_activity_geolocation
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.mail_activity_geolocation_config_settings_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+
+#. module: cnd_mail_activity_geolocation
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.mail_activity_geolocation_config_settings_form
+msgid "Activities Geo Location"
+msgstr "Ubicación geográfica de Actividades"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model,name:cnd_mail_activity_geolocation.model_mail_activity
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model,name:cnd_mail_activity_geolocation.model_mail_activity_type
+msgid "Activity Type"
+msgstr "Tipo de actividad"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_mail__check_in_date
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_message__check_in_date
+msgid "Check-in Date"
+msgstr "Fecha de Entrada"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_mail__check_in_latitude
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_message__check_in_latitude
+msgid "Check-in Latitude"
+msgstr "Geo-Latitud de Entrada"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_mail__check_in_longitude
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_message__check_in_longitude
+msgid "Check-in Longitude"
+msgstr "Geo-Longitud de Entrada"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model,name:cnd_mail_activity_geolocation.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model,name:cnd_mail_activity_geolocation.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: cnd_mail_activity_geolocation
+#. openerp-web
+#: code:addons/cnd_mail_activity_geolocation/static/src/js/mail_activity.js:0
+#, python-format
+msgid ""
+"Debes estar en el domicilio del cliente para poder marcar como hecho una "
+"visita. Metros: , Type ID:  Partner: "
+msgstr ""
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_activity__display_name
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_activity_type__display_name
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_message__display_name
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_res_company__display_name
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: cnd_mail_activity_geolocation
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.activity_geolocation_partner_form_view
+msgid "Geo Latitude:"
+msgstr "Geo Latitud:"
+
+#. module: cnd_mail_activity_geolocation
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.activity_geolocation_partner_form_view
+msgid "Geo Longitude:"
+msgstr "Geo Longitud:"
+
+#. module: cnd_mail_activity_geolocation
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.activity_geolocation_mail_message_form_view
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.activity_geolocation_partner_form_view
+msgid "Geolocation"
+msgstr "Geolocalización"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_activity__id
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_activity_type__id
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_message__id
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_res_company__id
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_res_config_settings__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,help:cnd_mail_activity_geolocation.field_mail_activity__use_geolocation
+#: model:ir.model.fields,help:cnd_mail_activity_geolocation.field_mail_activity_type__use_geolocation
+#: model:ir.model.fields,help:cnd_mail_activity_geolocation.field_mail_mail__use_geolocation
+#: model:ir.model.fields,help:cnd_mail_activity_geolocation.field_mail_message__use_geolocation
+msgid ""
+"If marked, this type of activities are going to be able to check in "
+"geolocation."
+msgstr "Si se marca, este tipo de actividades se van a poder "
+"consultar en geolocalización."
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_activity____last_update
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_activity_type____last_update
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_message____last_update
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_res_company____last_update
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_res_company__geolocation_maximum_distance_meters
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_res_config_settings__geolocation_maximum_distance_meters
+msgid "Maximum distance in meters"
+msgstr "Distancia máxima en metros"
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,help:cnd_mail_activity_geolocation.field_res_company__geolocation_maximum_distance_meters
+#: model:ir.model.fields,help:cnd_mail_activity_geolocation.field_res_config_settings__geolocation_maximum_distance_meters
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.mail_activity_geolocation_config_settings_form
+msgid ""
+"Maximum distance in meters accepted to make check in activities between the "
+"Salesvendor and the Customer Location."
+msgstr ""
+"Distancia máxima en metros aceptada para realizar actividades de check in "
+"entre el Vendedor y la Ubicación del Cliente."
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model,name:cnd_mail_activity_geolocation.model_mail_message
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: cnd_mail_activity_geolocation
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.activity_geolocation_partner_search_view
+msgid "Missing Geo Coordinates"
+msgstr "Coordenadas geográficas faltantes"
+
+#. module: cnd_mail_activity_geolocation
+#: model_terms:ir.ui.view,arch_db:cnd_mail_activity_geolocation.activity_geolocation_mail_message_search_view
+msgid "Must have Geo Coordinates"
+msgstr "Debe tener coordenadas geográficas"
+
+#. module: cnd_mail_activity_geolocation
+#: code:addons/cnd_mail_activity_geolocation/models/mail_activity.py:0
+#, python-format
+msgid "Schedule an Activity"
+msgstr "Programar una actividad"
+
+#. module: cnd_mail_activity_geolocation
+#. openerp-web
+#: code:addons/cnd_mail_activity_geolocation/static/src/js/mail_activity_ORI.js:0
+#, python-format
+msgid ""
+"The activity is linked to a meeting. Deleting it will remove the meeting as "
+"well. Do you want to proceed ?"
+msgstr ""
+"La actividad está vinculada a una reunión. Eliminarlo también eliminará "
+"la reunión. ¿Quieres proceder?"
+
+#. module: cnd_mail_activity_geolocation
+#: code:addons/cnd_mail_activity_geolocation/hooks.py:0
+#, python-format
+msgid "This module support Odoo series 14.0, found %s."
+msgstr ""
+
+#. module: cnd_mail_activity_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_activity__use_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_activity_type__use_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_mail__use_geolocation
+#: model:ir.model.fields,field_description:cnd_mail_activity_geolocation.field_mail_message__use_geolocation
+msgid "Use Geolocation"
+msgstr "Usar geolocalización"

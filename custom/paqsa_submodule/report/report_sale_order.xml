@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <template id="report_payment" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@id='informations']" position="inside">
+                <thead>
+                    <div class="col-auto col-3 mw-100 mb-2">
+                        <strong>payment way:</strong>
+                        <p class="m-0" t-field="doc.partner_payment_method_id"/>
+                    </div>
+                    <div class="col-auto col-3 mw-100 mb-2">
+                        <strong>Uso:</strong>
+                        <p class="m-0" t-field="doc.partner_l10n_mx_edi_usage"/>
+                    </div>
+                </thead>
+            </xpath>
+        </template>
+    </data>
+</odoo>

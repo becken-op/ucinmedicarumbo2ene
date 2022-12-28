@@ -1,0 +1,83 @@
+<odoo>
+    <data>
+        <record id="action_criterios_budget" model="ir.actions.act_window">
+            <field name="name">Criterios Budget</field>
+            <field name="res_model">criterios.budget</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_criterios_authority" model="ir.actions.act_window">
+            <field name="name">Criterios Authority</field>
+            <field name="res_model">criterios.authority</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_lead_type" model="ir.actions.act_window">
+            <field name="name">Types</field>
+            <field name="res_model">crm.lead.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_lead_classification" model="ir.actions.act_window">
+            <field name="name">Classifications</field>
+            <field name="res_model">crm.lead.classification</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="crm_lead_type_tree_view" model="ir.ui.view">
+            <field name="name">crm.lead.type.tree.view</field>
+            <field name="model">crm.lead.type</field>
+            <field name="arch" type="xml">
+                <tree string="Types">
+                    <field name="name"/>
+                    <field name="not_editable"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_lead_classification_tree_view" model="ir.ui.view">
+            <field name="name">crm.lead.classification.tree.view</field>
+            <field name="model">crm.lead.classification</field>
+            <field name="arch" type="xml">
+                <tree string="Classifications">
+                    <field name="name"/>
+                    <field name="opportunity_type_id"/>
+                    <field name="complexity"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_criterios_budget_tree_view" model="ir.ui.view">
+            <field name="name">crm.criterios.budget.tree.view</field>
+            <field name="model">criterios.budget</field>
+            <field name="arch" type="xml">
+                <tree string="Criterios Budget">
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="extra_value"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_criterios_authority_tree_view" model="ir.ui.view">
+            <field name="name">crm.criterios.authority.tree.view</field>
+            <field name="model">criterios.authority</field>
+            <field name="arch" type="xml">
+                <tree string="Criterios Authority">
+                    <field name="name"/>
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="crm_menu_bant" parent="crm.crm_menu_config" name="Criterios BANT" sequence="100"/>
+
+        <menuitem id="menu_criterios_budget" action="action_criterios_budget" name="Criterios Budget" parent="crm_menu_bant" sequence="1"/>
+
+        <menuitem id="menu_criterios_authority" action="action_criterios_authority" name="Criterios Authority" parent="crm_menu_bant" sequence="2"/>
+
+        <menuitem id="menu_lead_types" action="action_lead_type" name="Types" parent="crm.menu_crm_config_lead" sequence="30"/>
+
+        <menuitem id="menu_lead_classifications" action="action_lead_classification" name="Classifications" parent="crm.menu_crm_config_lead" sequence="31"/>
+    </data>
+</odoo>

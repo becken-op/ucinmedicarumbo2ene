@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_bck_enova_ftp_sync_server" model="ir.cron">
+        <field name="name">Retrieve json files from the enova server and add to queue</field>
+        <field name="model_id" ref="model_sale_order" />
+        <field name="code">model._fetch_sales_quotation()</field>
+        <field name="interval_number">30</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+    <record id="ir_bck_enova_ftp_sync_queue" model="ir.cron">
+        <field name="name">Enova queue handler</field>
+        <field name="model_id" ref="model_sale_order" />
+        <field name="code">model._execute_queue()</field>
+        <field name="interval_number">30</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+    </record>
+</odoo>

@@ -1,0 +1,41 @@
+DISPONIBILIDAD DE PRODUCTO:
+    La cantidad de pedidos totales, cuanto se pudo surtir
+
+FILTROS A APLICAR:
+    UNIDAD DE NEGOCIO
+        CENTRO
+        DISTRIBUIDORES
+        NORTE
+    CLASIFICACION
+        ARRENDADORE
+        HOSPITAL PRIVADO
+        INTEGRADOR
+        OEM
+    TIPO DE CLIENTE
+        A
+        BLAC
+    CLIENTE
+    CLASIFICACION DE PRODUCTO (Catálogo Estático) depende de la sucursal (tabla 3)
+        PBD
+        PDE
+    PROVEEDOR
+    SUCURSAL
+
+    INDICADORES
+        VENTAS 30 DÍAS
+        BO ACTIVOS
+        BO CANCELADOS
+        COSTO DEL INVENTARIO
+        INV. EXC. A 360 DÍAS (ESTE NO)
+
+Link del tablero
+    
+https://app.powerbi.com/view?r=eyJrIjoiYzc3YzRkNmItMTgzYS00OGY3LWE5MmMtYTRhNzRkMTMyMWRjIiwidCI6IjQ1MmEzNTNmLWQ0MjMtNDZiYy05ZDhkLTdjM2ViYmViOTA0ZCJ9&pageName=ReportSectiona9b0831e52697b2b3286
+
+La meta de todos los clientes del asesor son el objetivo de ventas del asesor
+La suma de los metas de ventas de clientes es la meta de la Unidad de NEGOCIO
+La suma de metas de la Unidad de NEGOCIO es la meta de la empresa
+
+BO Activos:
+Cliente Proveedor   Código  cantidad    Total
+Nlota: Si es dólares tipo de cambio fijo a 30 MXN

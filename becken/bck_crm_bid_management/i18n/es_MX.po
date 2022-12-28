@@ -1,0 +1,930 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bck_crm_bid_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-13 18:35+0000\n"
+"PO-Revision-Date: 2022-12-13 18:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "&amp;nbsp;<span>on</span>&amp;nbsp;"
+msgstr "&amp;nbsp;<span>el</span>&amp;nbsp;"
+
+#. module: bck_crm_bid_management
+#: model:ir.actions.report,print_report_name:bck_crm_bid_management.action_report_bid_saleorder
+msgid ""
+"(object.state in ('draft', 'sent') and 'Bid Quotation - %s' % (object.name))"
+" or 'Bid Order - %s' % (object.name)"
+msgstr ""
+"(object.state in ('draft', 'sent') and 'Cotización de concurso - %s' % "
+"(object.name)) or 'Pedido - %s' % (object.name)"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "<b>ATENTAMENTE</b>"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "<b>PRESENTE,</b>"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid ""
+"<br/>\n"
+"                    <b>COORDINADORA DE VENTAS GOBIERNO</b><br/>\n"
+"                    <b>APODERADO LEGAL</b><br/>"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid ""
+"<br/>\n"
+"                <b>ventasgobierno@ucinmedica.com<br/></b>"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid ""
+"<br/>\n"
+"                CLABE:"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Importe</span>\n"
+"                                <span groups=\"account.group_show_line_subtotals_tax_included\">Precio Total</span>"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "<span>Disc.%</span>"
+msgstr "<span>Desc.%</span>"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_needaction
+msgid "Action Needed"
+msgstr "Accion necesaria"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_crm_lead_form_view
+msgid "Add delivery requirements..."
+msgstr "Añadir requisitos de entrega..."
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_crm_lead_form_view
+msgid "Add observations..."
+msgstr "Agregar observaciones..."
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_crm_lead_form_view
+msgid "Amount"
+msgstr "Importe"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cantidad de archivos adjuntos"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.bid_line_authorization_wizard_form_view
+msgid "Authorization Comment"
+msgstr "Comentario de autorización"
+
+#. module: bck_crm_bid_management
+#: model:res.groups,name:bck_crm_bid_management.bid_line_authorization_manager_group
+msgid "Authorization Manager"
+msgstr "Encargado de Autorización"
+
+#. module: bck_crm_bid_management
+#: model:res.groups,name:bck_crm_bid_management.bid_line_authorization_user_group
+msgid "Authorization User"
+msgstr "Usuario de autorización"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard__authorization_comment
+msgid "Authorization comment"
+msgstr "Comentario de autorización"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.bid_line_authorization_wizard_form_view
+msgid "Authorize"
+msgstr "Autorizar"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__bid_state__awarded
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__sale_order_line__bid_line_state__awarded
+msgid "Awarded"
+msgstr "Adjudicado"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__awarded_product_brand
+msgid "Awarded Brand"
+msgstr "Marca Adjudicada"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_form_view
+msgid "Awarded Info"
+msgstr "Info de Adjudicación"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__awarded_supplier
+msgid "Awarded Supplier"
+msgstr "Proveedor Adjudicado"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__awarded_supplier_price_unit
+msgid "Awarded Unit Price"
+msgstr "Precio Unitario Adjudicado"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__basic_chart
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Basic Chart"
+msgstr "Cuadro Básico"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__bid_folio
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__bid_folio
+msgid "Bid Folio"
+msgstr "No. de Licitación"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_crm_lead_form_view
+msgid "Bid Info"
+msgstr "Información del Concurso"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard__sale_order_line_id
+msgid "Bid Line"
+msgstr "Partida de Concurso"
+
+#. module: bck_crm_bid_management
+#: model:ir.actions.act_window,name:bck_crm_bid_management.open_bid_line_authorization_action
+#: model:ir.module.category,name:bck_crm_bid_management.module_category_bid_line_authorization
+msgid "Bid Line Authorization"
+msgstr "Autorización de Partida de Concurso"
+
+#. module: bck_crm_bid_management
+#: model:ir.model,name:bck_crm_bid_management.model_bid_line_authorization_wizard
+msgid "Bid Line Authorization Wizard"
+msgstr "Asistente para Autorización de Partida de Concurso"
+
+#. module: bck_crm_bid_management
+#: model:ir.actions.act_window,name:bck_crm_bid_management.crm_bid_sale_order_line_action
+#: model:ir.ui.menu,name:bck_crm_bid_management.menu_crm_sale_order_line
+#: model:ir.ui.menu,name:bck_crm_bid_management.menu_sale_order_line
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Bid Lines"
+msgstr "Partidas de Licitación"
+
+#. module: bck_crm_bid_management
+#: model:ir.actions.report,name:bck_crm_bid_management.action_report_bid_saleorder
+msgid "Bid Quotation/Order"
+msgstr "Cotización/Pedido de concurso"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Bid State"
+msgstr "Estado de Licitación"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__bid_type
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__bid_type
+msgid "Bid Type"
+msgstr "Tipo de Concurso"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__bidder_id
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__bidder_id
+msgid "Bidder"
+msgstr "Distribuidor"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__bid_deposit_ids
+msgid "Bonds or Checks"
+msgstr "Fianzas o Cheques"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__product_brand_ept_id
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Brand"
+msgstr "Marca"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__budget_line
+msgid "Budget Line"
+msgstr "Partida Presupuestal"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "CUENTA:"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__bid_state__cancel
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.bid_line_authorization_wizard_form_view
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__carried_out_id
+msgid "Carried out by"
+msgstr "Analista del concurso"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__character
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__character
+msgid "Character"
+msgstr "Carácter"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__clarifications_meeting_datetime
+msgid "Clarifications Meeting"
+msgstr "Junta Aclaraciones"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__bid_partner_id
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_crm_lead_form_view
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_crm_lead__proposals_delivery_date
+msgid "Date of delivery of technical-economic proposals"
+msgstr "Fecha de entrega de propuestas Técnica-Económica"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_crm_lead_form_view
+msgid "Dates"
+msgstr "Fechas"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__decision_date
+msgid "Decision Date"
+msgstr "Fecha de Fallo"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_crm_lead__bid_deposit_ids
+msgid "Define the bond or check as bid deposit."
+msgstr "Definir la fianza o cheque como depósito del concurso."
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__bid_type__direct
+msgid "Direct"
+msgstr "Directo"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard__display_name
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_report_module_name_report_name__display_name
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order__display_name
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__bid_type__distributor
+msgid "Distributor"
+msgstr "Distribuidor"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__document_folio
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__document_folio
+msgid "Document Folio"
+msgstr "No. de Expediente"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid ""
+"EN ESPERA DE VERNOS FAVORECIDOS CON SU PREFERENCIA, QUEDAMOS A SUS ÓRDENES "
+"PARA CUALQUIER DUDA O ACLARACIÓN."
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__effective_end_date
+msgid "Effective End Date"
+msgstr "Vigencia Fin"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__effective_start_date
+msgid "Effective Start Date"
+msgstr "Vigencia Inicio"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__modality__electronic
+msgid "Electronic"
+msgstr "Electrónico"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__manufactured_place
+msgid "Fabricado en"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_crm_lead_form_view
+msgid "General Information"
+msgstr "Información general"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__product_health_register_id
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Health Register"
+msgstr "Registro Sanitario"
+
+#. module: bck_crm_bid_management
+#: model:ir.module.category,description:bck_crm_bid_management.module_category_bid_line_authorization
+msgid "Helps you manage your bid lines authorization process."
+msgstr ""
+"Le ayuda a administrar su proceso de autorización de líneas de licitación."
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard__id
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__id
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_report_module_name_report_name__id
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order__id
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__message_needaction
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los nuevos mensajes requieren su atención."
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__message_has_error
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_crm_lead__pricelist_id
+msgid "If you change the pricelist, only newly added lines will be affected."
+msgstr ""
+"Si cambia la lista de precios, solo se verán afectadas las líneas recién "
+"agregadas."
+
+#. module: bck_crm_bid_management
+#: model:ir.actions.report,name:bck_crm_bid_management.sabana_de_trabajo_xlsx
+msgid "Imprimir Sábana de Trabajo"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__modality__in_person
+msgid "In Person"
+msgstr "Presencial"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__is_bid
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order__is_bid
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__is_bid
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_crm_lead_search_view
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_search_view
+msgid "Is Bid"
+msgstr "Es concurso"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard____last_update
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_report_module_name_report_name____last_update
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order____last_update
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__last_purchase_currency_id
+msgid "Last Purchase Currency"
+msgstr "Moneda de la última compra"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__last_purchase_date
+msgid "Last Purchase Date"
+msgstr "Fecha de la última compra"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_form_view
+msgid "Last Purchase Info"
+msgstr "Información de la última compra"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__last_purchase_price
+msgid "Last Purchase Price"
+msgstr "Último precio de compra"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__last_purchase_supplier_id
+msgid "Last Supplier"
+msgstr "Último proveedor"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_bid_line_authorization_wizard__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: bck_crm_bid_management
+#: model:ir.model,name:bck_crm_bid_management.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Oportunidad"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__bid_partner_id
+msgid ""
+"Linked partner (optional). Usually created when converting the lead. You can"
+" find a partner by its Name, TIN, Email or Internal Reference."
+msgstr ""
+"Socio vinculado (opcional). Por lo general, se crea al convertir el cliente "
+"potencial. Puede encontrar un socio por su Nombre, TIN, Correo electrónico o"
+" Referencia interna."
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__sale_order_line__bid_line_state__lost
+msgid "Lost"
+msgstr "Perdida"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Manufactured Place"
+msgstr "Procedencia"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__bid_state__market_research
+msgid "Market research"
+msgstr "Estudio de mercado"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega de mensajes"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__modality__mixed
+msgid "Mixed"
+msgstr "Mixto"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__modality
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__modality
+msgid "Modality"
+msgstr "Modalidad"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "My Sales Order Lines"
+msgstr "Mis partidas de concurso"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid ""
+"NORMA OFICIAL MEXICANA NOM-137-SSA1-2008, ETIQUETADO DE DISPOSITIVOS MÉDICOS.<br/>\n"
+"                VIGENCIA DE PRECIO: 60 DIAS NATURALES<br/>\n"
+"                FAVOR DE EFECTUAR SUS APRECIABLES DEPÓSITOS A LA CUENTA BANCARIA:<br/>\n"
+"                BANCO"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__character__national
+msgid "National"
+msgstr "Nacional"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de la próxima actividad"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__bid_notes
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__note
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__character__open_international
+msgid "Open International"
+msgstr "Internacional Abierto"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__bid_id
+msgid "Opportunity"
+msgstr "Oportunidad"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Order"
+msgstr "Pedido"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__awarded_supplier_origin
+msgid "Origin"
+msgstr "Origen"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid ""
+"POR MEDIO DE ESTE CONDUCTO NOS PERMITIMOS UN CORDIAL SALUDO A SU VEZ PARA "
+"PONER A SU AMABLE CONSIDERACION LA PROPUESTA DE LOS PRODUCTO QUE A "
+"CONTINUACION SE DETALLAN:"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__pricelist_id
+msgid "Pricelist"
+msgstr "Lista de precios"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Product"
+msgstr "Producto"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.bid_line_authorization_wizard_form_view
+msgid "Products"
+msgstr "Productos"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__proposals_delivery_date
+msgid "Proposals Delivery Date"
+msgstr "Entrega de propuestas"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__qty_max_requested
+msgid "Qty Max Requested"
+msgstr "Cant. Solic. Max"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__qty_min_requested
+msgid "Qty Min Requested"
+msgstr "Cant. Solic. Min"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__bid_state__quotation
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__sale_order_line__bid_line_state__quotation
+msgid "Quotation"
+msgstr "Cotización"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "REF:"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__reference_price
+msgid "Reference Price"
+msgstr "Precio de Referencia"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__reference_supplier
+msgid "Reference Supplier"
+msgstr "Proveedor de Referencia"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Req."
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__delivery_requirements
+msgid "Requirements for Products Deliveries"
+msgstr "Requisitos para Entregas de Productos"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__bid_requisition
+msgid "Requisition"
+msgstr "Requisición"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__return_samples
+msgid "Return samples?"
+msgstr "¿Devolución de muestras?"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_form_view
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_tree_view
+msgid "Sale Orders Lines"
+msgstr "Partidas de concurso"
+
+#. module: bck_crm_bid_management
+#: model:ir.model,name:bck_crm_bid_management.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: bck_crm_bid_management
+#: model:ir.model,name:bck_crm_bid_management.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de la orden de venta"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Sales Order Lines ready to be invoiced"
+msgstr "Líneas de órdenes de venta listas para ser facturadas"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Sales Order Lines related to a Sales Order of mine"
+msgstr "Líneas de orden de venta relacionadas con una orden de venta mía"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__sample_delivery_datetime
+msgid "Sample Delivery"
+msgstr "Entrega de muestras"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "Search Sales Order"
+msgstr "Buscar pedido"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__awarded_product_brand
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__product_brand_ept_id
+msgid "Select a brand for this product"
+msgstr "Seleccione una marca para este producto"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_crm_lead__bid_state
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__bid_line_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: bck_crm_bid_management
+#: model:res.groups,comment:bck_crm_bid_management.bid_line_authorization_manager_group
+msgid "This group can mauthorize any Bid Lines."
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model:res.groups,comment:bck_crm_bid_management.bid_line_authorization_user_group
+msgid "This group may mauthorize Bid Lines assigned to him."
+msgstr "Este grupo podrá mautorizar las Líneas de Oferta que se le asignen."
+
+#. module: bck_crm_bid_management
+#: code:addons/bck_crm_bid_management/hooks.py:0
+#, python-format
+msgid "This module support Odoo series 14.0, found %s."
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_filter_view
+msgid "To Invoice"
+msgstr "Para facturar"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__character__under_treaties
+msgid "Under Treaties"
+msgstr "Bajo Tratados"
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.report_bid_saleorder_document
+msgid "Unit Price"
+msgstr "Precio Unit."
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leídos"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__crm_lead__bid_state__void
+#: model:ir.model.fields.selection,name:bck_crm_bid_management.selection__sale_order_line__bid_line_state__void
+msgid "Void"
+msgstr "Desierto"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,field_description:bck_crm_bid_management.field_sale_order_line__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: bck_crm_bid_management
+#: model:ir.model.fields,help:bck_crm_bid_management.field_sale_order_line__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: bck_crm_bid_management
+#: model:ir.model,name:bck_crm_bid_management.model_report_module_name_report_name
+msgid "report.module_name.report_name"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_tree_view
+msgid "sum_price_subtotal"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_tree_view
+msgid "sum_product_uom_qty"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_tree_view
+msgid "sum_qty_delivered"
+msgstr ""
+
+#. module: bck_crm_bid_management
+#: model_terms:ir.ui.view,arch_db:bck_crm_bid_management.crm_bid_sale_order_line_tree_view
+msgid "sum_qty_invoiced"
+msgstr ""

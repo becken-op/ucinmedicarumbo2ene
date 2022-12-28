@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="sale_credit_limit_sale_order_form_view" model="ir.ui.view">
+            <field name="name">sale.credit.limit.sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority">99</field>
+            <field name="arch" type="xml">
+                <field name="payment_term_id" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="payment_term_id" position="after">
+                    <field name="allow_exceeding_credit_limit" readonly="1"/>
+                </field>
+                <field name="pricelist_id" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="pricelist_edit_sale_order_form_view" model="ir.ui.view">
+            <field name="name">pricelist.edit.sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_credit_limit_sale_order_form_view"/>
+            <field name="groups_id" eval="[(4, ref('cnd_sale_credit_limit.edit_quotation_pricelist_group'))]"/>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <field name="pricelist_id" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="sale_credit_limit_edit_sale_order_form_view" model="ir.ui.view">
+            <field name="name">sale.credit.limit.edit.sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_credit_limit_sale_order_form_view"/>
+            <field name="groups_id" eval="[(4, ref('cnd_sale_credit_limit.credit_limit_manager_group'))]"/>
+            <field name="arch" type="xml">
+                <field name="allow_exceeding_credit_limit" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

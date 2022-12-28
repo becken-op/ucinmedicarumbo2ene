@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Partner Form-->
+    <record id="l10n_mx_edi_restrict_readonly_sign_required_res_partner_form_view" model="ir.ui.view">
+        <field name="name">l10n.mx.edi.restrict.readonly.sign.required.res.partner.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='accounting']/group" position="inside">
+                <group string="Electronic invoicing (MX)" name="electronic_invoicing_mx_group">
+                    <field name="l10n_mx_edi_sign_required" readonly="1" attrs="{'invisible': [('is_company','=',False),('parent_id','!=',False)]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="l10n_mx_edi_restrict_edit_sign_required_res_partner_form_view" model="ir.ui.view">
+        <field name="name">l10n.mx.edi.restrict.edit.sign.required.res.partner.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_mx_edi_restrict_readonly_sign_required_res_partner_form_view"/>
+        <field name="groups_id" eval="[(4, ref('invoice_edi_sign_manager'))]"/>
+        <field name="arch" type="xml">
+            <field name="l10n_mx_edi_sign_required" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="web_hide_create_edit assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/bi_advance_hide_show_menu/static/src/js/hide_create_edit_button.js"></script>
+            <script type="text/javascript" src="/bi_advance_hide_show_menu/static/src/js/hide_import_button.js"></script>
+            <script type="text/javascript" src="/bi_advance_hide_show_menu/static/src/js/hide_print_action_menus.js"></script>
+        </xpath>
+    </template>
+</odoo>

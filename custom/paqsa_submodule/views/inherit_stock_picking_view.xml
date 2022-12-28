@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+        <record id="view_stock_picking_form_inherit" model="ir.ui.view">
+            <field name="name">inherit.stock.picking</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/> 
+            <field name="arch" type="xml">
+                <xpath expr="//header[1]" position ="inside"> 
+                    <field name="show_weight_button" invisible="1"/>
+                    <button name="show_weight_compute" attrs="{'invisible': ['|','|', ('show_weight_button', '=', False), ('picking_type_code', '!=', 'outgoing'), ('state', '!=', 'done')]}" string="mostrar productos por peso" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//field[@name='forecast_availability']" position ="replace"> 
+                    <field name="forecast_availability" string="Reserved" attrs="{'column_invisible': ['|', ('parent.picking_type_code', 'not in', ('internal','outgoing')), ('parent.state','=', 'done')]}" widget="forecast_widget"/>        
+                </xpath> 
+                <xpath expr="//header/field[@name='state']" position ="replace"> 
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,assigned,done" />
+                </xpath> 
+                <xpath expr="//field[@name='show_check_availability']" position ="replace"> 
+                    <field name="show_check_availabili" invisible='1'/>
+                </xpath>    
+                <xpath expr="//field[@name='show_mark_as_todo']" position ="replace"> 
+                    <field name="show_mark_as_todo_internal" invisible='1'/>        
+                </xpath> 
+                <xpath expr="//button[@name='action_confirm']" position ="replace"> 
+                    <button name="action_confirm" attrs="{'invisible': [('show_mark_as_todo_internal', '=', False)]}" string="Mark as Todo" type="object" class="oe_highlight" groups="base.group_user"/>
+                </xpath>
+                <xpath expr="//button[@name='action_assign']" position ="replace"> 
+                    <button name="action_assign" attrs="{'invisible': [('show_check_availabili', '=', False)]}" string="Check Availability" type="object" class="oe_highlight" groups="base.group_user"/>        
+                </xpath>
+                <xpath expr="//field[@name='product_uom_qty']" position ="replace"> 
+                    <field name="product_uom_qty" string="Demand"/>        
+                </xpath>
+                <xpath expr="//field[@name='quantity_done']" position ="replace"> 
+                    <field name="quantity_done" string="Done" readonly="1"/>        
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position ="after"> 
+                    <field name="name_account_id"/>        
+                </xpath>            
+                <xpath expr="//field[@name='group_id']" position = "after"> 
+                    <field name="name_account_id" />
+                </xpath>
+                <xpath expr='//notebook/page[3]' position='after'>
+                    <page string="peso de la carga">
+                        <field name='weight_ids'>
+                            <tree>
+                                <field name="total_weight_per_uom"/>
+                                <field name="uom_medida"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="total_weight_per_uom"/>
+                                    <field name="uom_medida"/>
+                                </group>
+                            </form>
+                        </field>
+                        <group name="note_total" col="6" class="mt-2 mt-md-0">
+                            <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                <field name="total_weight"/>
+                            </group>
+                        </group>
+                    </page>          
+                </xpath>
+            </field>
+        </record>
+        <record id="view_stock_picking_tree_inherit" model="ir.ui.view">
+            <field name="name">inherit.stock.picking.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/> 
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position = "after"> 
+                    <field name="picking_percentage" widget="progressbar"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

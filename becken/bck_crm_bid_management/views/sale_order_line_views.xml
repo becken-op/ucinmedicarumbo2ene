@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="open_bid_line_authorization_action" model="ir.actions.act_window">
+            <field name="name">Bid Line Authorization</field>
+            <field name="res_model">bid.line.authorization.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="domain">[('sale_order_line_id', '=', active_id)]</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="crm_bid_sale_order_line_tree_view" model="ir.ui.view">
+            <field name="name">crm.bid.sale.order.line.tree.view</field>
+            <field name="model">sale.order.line</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <!-- Por la decoración
+                <tree string="Sale Orders Lines" create="false" delete="false" decoration-bf="dnk_final_commitment_date&lt;current_date"> -->
+                <tree string="Sale Orders Lines" create="false" delete="false">
+                    <field name="order_id"/>
+                    <field name="bid_requisition"/>
+                    <field name="order_partner_id"/>
+                    <field name="name"/>
+                    <field name="product_uom_qty" sum="sum_product_uom_qty"/>
+                    <field name="qty_delivered" sum="sum_qty_delivered"/>
+                    <field name="qty_invoiced" sum="sum_qty_invoiced"/>
+                    <field name="product_uom"/>
+                    <field name="price_unit" widget="monetary"/>
+                    <field name="discount" groups="product.group_discount_per_so_line" readonly="1" optional="hide"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="price_subtotal" sum="sum_price_subtotal" widget="monetary"/>
+                    <field name="tax_id" widget="many2many_tags" readonly="1" optional="hide"/>
+                    <field name="reference_price" widget="monetary" optional="hide"/>
+                    <field name="reference_supplier" optional="hide"/>
+                    <field name="state"/>
+                    <field name="invoice_status" optional="hide"/>
+                    <field name="salesman_id" optional="hide"/>
+                    <field name="bid_line_state" optional="show"/>
+                    <!-- <field name="authorization_user" optional="hide"/>
+                    <field name="authorization_date" optional="hide"/>
+                    <field name="authorized_user" invisible="1"/>
+                    <button name="%(open_bid_line_authorization_action)d" 
+                        title="Authorize"
+                        string="Authorize"
+                        type="action"
+                        class="btn-primary"
+                        attrs="{'invisible': ['|', '|', ('authorization_date', '!=', False), ('bid_line_state', '!=', 'quotation'), ('authorized_user', '=', False)]}"
+                        groups="bck_crm_bid_management.bid_line_authorization_user_group"/> -->
+                </tree>
+            </field>
+        </record>
+        
+        <record id="crm_bid_sale_order_line_form_view" model="ir.ui.view">
+            <field name="name">crm.bid.sale.order.line.form.view</field>
+            <field name="model">sale.order.line</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Sale Orders Lines" create="false" edit="true">
+                    <header>
+                        <!-- <button name="%(open_bid_line_authorization_action)d" 
+                            title="Authorize"
+                            string="Authorize"
+                            type="action"
+                            class="btn-primary"
+                            attrs="{'invisible': ['|', '|', ('authorization_date', '!=', False), ('bid_line_state', '!=', 'quotation'), ('authorized_user', '=', False)]}"
+                            groups="bck_crm_bid_management.bid_line_authorization_user_group"/>-->
+                        <field name="bid_line_state" widget="statusbar" clickable="1"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="order_id" readonly="1"/>
+                                <field name="bid_requisition"/>
+                                <field name="basic_chart"/>
+                                <field name="budget_line"/>
+                                <field name="product_id"/>
+                                <field name="name"/>
+                                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                            </group>
+                            <group>
+                                <!-- <field name="product_uom_qty"/> -->
+                                <field name="product_uom_category_id" invisible="1"/>
+                                <field name="product_uom"/>
+                                <field name="qty_min_requested"/>
+                                <field name="qty_max_requested"/>
+                                <field name="product_brand_ept_id"/>
+                                <field name="product_health_register_id"/>
+                                <field name="manufactured_place"/>
+                                <field name="price_unit" readonly="1"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="price_subtotal" widget="monetary"/>
+                                <field name="reference_price" widget="monetary"/>
+                                <field name="reference_supplier"/>
+                            </group>
+                            <label for="note"/>
+                            <field name="note"/>
+                        </group>
+                        <notebook>
+                            <page string="Awarded Info" name="awarded_supplier" attrs="{'invisible': [('bid_line_state', '!=', 'lost')]}">
+                                <group>
+                                    <group>
+                                        <field name="awarded_supplier" attrs="{'required': [('bid_line_state', '=', 'lost')]}"/>
+                                        <field name="awarded_supplier_price_unit" attrs="{'required': [('bid_line_state', '=', 'lost')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="awarded_product_brand" attrs="{'required': [('bid_line_state', '=', 'lost')]}"/>
+                                        <field name="awarded_supplier_origin" attrs="{'required': [('bid_line_state', '=', 'lost')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Last Purchase Info" name="last_purchase_info">
+                                <group>
+                                    <group>
+                                        <field name="last_purchase_supplier_id"/>
+                                        <field name="last_purchase_date"/>
+                                    </group>
+                                    <group>
+                                        <field name="last_purchase_price"/>
+                                        <field name="last_purchase_currency_id"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <!-- <page string="Authorization" name="authorization">
+                                <group>
+                                    <group>
+                                        <field name="authorization_required"/>
+                                        <field name="authorization_date" string="Date" readonly="1" attrs="{'invisible': [('authorization_required', '=', False)]}"/>
+                                        <field name="authorized_user" invisible="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="authorization_user" attrs="{'invisible': [('authorization_required', '=', False)], 'required': [('authorization_required', '=', True)]}"/>
+                                        <field name="authorization_comment" string="Comment" readonly="1" attrs="{'invisible': [('authorization_required', '=', False)]}"/>
+                                    </group>
+                                </group>
+                            </page> -->
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_bid_sale_order_line_filter_view" model="ir.ui.view">
+            <field name="name">crm.bid.sale.order.line.filter.view</field>
+            <field name="model">sale.order.line</field>
+            <field name="arch" type="xml">
+                <search string="Search Sales Order">
+                    <filter string="Is Bid" name="is_bid" domain="[('is_bid','=',True)]" help="Bid Lines"/>
+                    <!-- <filter string="To Authorize" name="to_authorize" domain="[('is_bid','=',True), ('authorization_required','=',True), ('authorization_date','=',False)]" help="Bid Lines to Authorize"/>
+                    <filter string="To Authorize by me" name="to_authorize_by_me" domain="[('is_bid','=',True), ('authorization_user','=',uid), ('authorization_required','=',True), ('authorization_date','=',False)]" help="Bid Lines to Authorize by me"/>
+                    <filter string="Authorized" name="authorized" domain="[('is_bid','=',True), ('authorization_date','!=',False)]" help="Authorized Bid Lines"/> -->
+                    <separator/>
+                    <filter string="My Sales Order Lines" name="my_sales_order_lines" domain="[('salesman_id','=',uid)]" help="Sales Order Lines related to a Sales Order of mine"/>
+                    <filter string="To Invoice" name="to_invoice" domain="[('qty_to_invoice','!=', 0)]"  help="Sales Order Lines ready to be invoiced"/>
+                    <field name="order_id"/>
+                    <field name="order_partner_id" operator="child_of"/>
+                    <field name="product_id"/>
+                    <field name="salesman_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Product" name="product" domain="[]" context="{'group_by':'product_id'}"/>
+                        <filter string="Order" name="order" domain="[]" context="{'group_by':'order_id'}"/>
+                        <filter string="Salesperson" name="salesperson" domain="[]" context="{'group_by':'salesman_id'}"/>
+                        <filter string="Customer" name="customer" domain="[]" context="{'group_by':'order_partner_id'}"/>
+                        <filter string="Bid State" name="bid_line_state" domain="[]" context="{'group_by':'bid_line_state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="crm_bid_sale_order_line_action" model="ir.actions.act_window">
+            <field name="name">Bid Lines</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order.line</field>
+            <field name="context">{'search_default_is_bid': 1}</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_bid','=',True)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                </p>
+            </field>
+        </record>
+
+        <!-- <record id="crm_bid_sale_order_line_to_authorize_action" model="ir.actions.act_window">
+            <field name="name">Bid Lines to Authorize</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order.line</field>
+            <field name="context">{}</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_bid','=',True), ('authorization_required','=',True), ('authorization_date','=',False)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                </p>
+            </field>
+        </record> -->
+
+        <menuitem action="crm_bid_sale_order_line_action" name="Bid Lines"
+            id="menu_sale_order_line" parent="sale.sale_order_menu"
+            sequence="40"/>
+
+        <menuitem action="crm_bid_sale_order_line_action" name="Bid Lines"
+            id="menu_crm_sale_order_line" parent="crm.crm_menu_sales"
+            sequence="40"/>
+        
+        <!-- <menuitem action="crm_bid_sale_order_line_to_authorize_action" name="Bid Lines to Authorize"
+            id="menu_sale_order_line_to_authorize" parent="sale.sale_order_menu"
+            sequence="41"/> -->
+    </data>
+</odoo>

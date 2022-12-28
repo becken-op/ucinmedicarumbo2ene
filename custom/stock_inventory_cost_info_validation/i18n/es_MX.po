@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_inventory_cost_info_validation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-09 18:59+0000\n"
+"PO-Revision-Date: 2022-11-09 18:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_inventory_cost_info_validation
+#: model_terms:ir.ui.view,arch_db:stock_inventory_cost_info_validation.view_stock_configuration
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Los valores establecidos aquí"
+" son específicos de la empresa\" aria-label=\"Values set here are company-"
+"specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: stock_inventory_cost_info_validation
+#: model_terms:ir.ui.view,arch_db:stock_inventory_cost_info_validation.report_inventory_cost_info
+msgid "<strong>Adjustment cost</strong>"
+msgstr "<strong>Costo del ajuste</strong>"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_stock_inventory_line__adjustment_cost
+msgid "Adjustment cost"
+msgstr "Costo del ajuste"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model,name:stock_inventory_cost_info_validation.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model,name:stock_inventory_cost_info_validation.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_stock_inventory_line__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_res_company__display_name
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_stock_inventory__display_name
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_stock_inventory_line__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.module.category,description:stock_inventory_cost_info_validation.module_inventory_adjustments_restrict
+msgid "Helps you restrict to validate all Inventory Adjustments."
+msgstr "Le ayuda a restringir a validar todos los ajustes de inventario."
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_res_company__id
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_res_config_settings__id
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_stock_inventory__id
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_stock_inventory_line__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model,name:stock_inventory_cost_info_validation.model_stock_inventory
+msgid "Inventory"
+msgstr "Inventario"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.module.category,name:stock_inventory_cost_info_validation.module_inventory_adjustments_restrict
+msgid "Inventory Adjustments"
+msgstr "Ajustes de inventario"
+
+#. module: stock_inventory_cost_info_validation
+#: model:res.groups,name:stock_inventory_cost_info_validation.group_unrestrict_products_manager
+msgid "Inventory Adjustments Manager"
+msgstr "Gerente de Ajustes de Inventario"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model,name:stock_inventory_cost_info_validation.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "Línea de inventario"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_res_company____last_update
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_stock_inventory____last_update
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_stock_inventory_line____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model.fields,help:stock_inventory_cost_info_validation.field_res_company__stock_inventory_user_validation_max_amount
+#: model_terms:ir.ui.view,arch_db:stock_inventory_cost_info_validation.view_stock_configuration
+msgid ""
+"Maximum cost amount of Inventory Adjustment that can be validated by an "
+"Inventory User, more than this amount need to be validated by Stock Manager."
+msgstr ""
+"Monto de costo máximo del ajuste de inventario que puede validar un usuario "
+"de inventario, más de este monto debe ser validado por el Gerente de "
+"inventario."
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model.fields,help:stock_inventory_cost_info_validation.field_res_config_settings__stock_inventory_user_validation_max_amount
+msgid ""
+"Maximum cost amount of Inventory Adjustment that can be validated by any "
+"Inventory User, more than this amount need to be validated by Stock Manager."
+msgstr ""
+"Monto de costo máximo del ajuste de inventario que puede validar un usuario "
+"de inventario, más de este monto debe ser validado por el Gerente de "
+"inventario."
+
+#. module: stock_inventory_cost_info_validation
+#: code:addons/stock_inventory_cost_info_validation/models/stock_inventory.py:0
+#, python-format
+msgid ""
+"Only a inventory adjusment manager can validate this inventory adjustment, "
+"because the adjustment cost total is greater than %.2f %s."
+msgstr ""
+"Solo un gerente de ajuste de inventario puede validar este ajuste de "
+"inventario, porque el costo total del ajuste es mayor que %.2f %s."
+
+#. module: stock_inventory_cost_info_validation
+#: code:addons/stock_inventory_cost_info_validation/models/stock_inventory.py:0
+#, python-format
+msgid "Only a stock user can validate an inventory adjustment."
+msgstr "Solo un usuario de inventario puede validar un ajuste de inventario."
+
+#. module: stock_inventory_cost_info_validation
+#: model:res.groups,comment:stock_inventory_cost_info_validation.group_unrestrict_products_manager
+msgid "Only this group can validate all Inventory Adjustments"
+msgstr "Solo este grupo puede validar todos los ajustes de inventario"
+
+#. module: stock_inventory_cost_info_validation
+#: model_terms:ir.ui.view,arch_db:stock_inventory_cost_info_validation.view_stock_configuration
+msgid "Stock adjustment validation"
+msgstr "Validación de ajuste de inventario"
+
+#. module: stock_inventory_cost_info_validation
+#: model_terms:ir.ui.view,arch_db:stock_inventory_cost_info_validation.stock_inventory_line_tree
+msgid "Total"
+msgstr ""
+
+#. module: stock_inventory_cost_info_validation
+#: code:addons/stock_inventory_cost_info_validation/models/stock_inventory.py:0
+#, python-format
+msgid "Tracked Products in Inventory Adjustment"
+msgstr "Productos rastreados en Ajuste de Inventario"
+
+#. module: stock_inventory_cost_info_validation
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_res_company__stock_inventory_user_validation_max_amount
+#: model:ir.model.fields,field_description:stock_inventory_cost_info_validation.field_res_config_settings__stock_inventory_user_validation_max_amount
+msgid "User Validation Max. Amount"
+msgstr "Monto máximo para validación de usuario"
+
+#. module: stock_inventory_cost_info_validation
+#: code:addons/stock_inventory_cost_info_validation/models/stock_inventory.py:0
+#, python-format
+msgid ""
+"You can't validate the inventory '%s', maybe this inventory has been already"
+" validated or isn't ready."
+msgstr ""
+"No puede validar el inventario '%s', tal vez este inventario ya se haya "
+"validado o no esté listo."

@@ -1,0 +1,163 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cnd_stock_analytic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-06 22:40+0000\n"
+"PO-Revision-Date: 2022-12-06 22:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cnd_stock_analytic
+#: model_terms:ir.ui.view,arch_db:cnd_stock_analytic.sale_order_credit_limit_restrict_config_settings_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Los valores establecidos aquí son específicos de la empresa.\" "
+"aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move__analytic_account_id
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move_line__analytic_account_id
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_scrap__analytic_account_id
+#: model_terms:ir.ui.view,arch_db:cnd_stock_analytic.view_move_search_analytic
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move__analytic_tag_ids
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_scrap__analytic_tag_ids
+msgid "Analytic Tags"
+msgstr "Etiquetas analíticas"
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_company__required_analytic_account_on_stock_move
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_company__required_analytic_account_on_stock_scrap
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_config_settings__required_analytic_account_on_stock_move
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_config_settings__required_analytic_account_on_stock_scrap
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move__required_analytic_account_on_stock_move
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_scrap__required_analytic_account_on_stock_scrap
+msgid "Analytic account required"
+msgstr "Cuenta analítica requerida"
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_company__required_analytic_tags_on_stock_move
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_company__required_analytic_tags_on_stock_scrap
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_config_settings__required_analytic_tags_on_stock_move
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_config_settings__required_analytic_tags_on_stock_scrap
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move__required_analytic_tags_on_stock_move
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_scrap__required_analytic_tags_on_stock_scrap
+msgid "Analytic tags required"
+msgstr "Etiquetas analíticas requeridas"
+
+#. module: cnd_stock_analytic
+#: model:ir.model,name:cnd_stock_analytic.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: cnd_stock_analytic
+#: model:ir.model,name:cnd_stock_analytic.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_product_product__display_name
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_company__display_name
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move__display_name
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move_line__display_name
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_scrap__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_product_product__id
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_company__id
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_config_settings__id
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move__id
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move_line__id
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_scrap__id
+msgid "ID"
+msgstr ""
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,help:cnd_stock_analytic.field_res_company__required_analytic_account_on_stock_scrap
+#: model:ir.model.fields,help:cnd_stock_analytic.field_res_config_settings__required_analytic_account_on_stock_scrap
+#: model:ir.model.fields,help:cnd_stock_analytic.field_stock_scrap__required_analytic_account_on_stock_scrap
+#: model_terms:ir.ui.view,arch_db:cnd_stock_analytic.sale_order_credit_limit_restrict_config_settings_form
+msgid "If marked, analytic account field is required in scraps."
+msgstr "Si está marcado, el campo de cuenta analítica es obligatorio en desechos."
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,help:cnd_stock_analytic.field_res_company__required_analytic_account_on_stock_move
+#: model:ir.model.fields,help:cnd_stock_analytic.field_res_config_settings__required_analytic_account_on_stock_move
+#: model:ir.model.fields,help:cnd_stock_analytic.field_stock_move__required_analytic_account_on_stock_move
+#: model_terms:ir.ui.view,arch_db:cnd_stock_analytic.sale_order_credit_limit_restrict_config_settings_form
+msgid "If marked, analytic account field is required in stock moves."
+msgstr "Si está marcado, el campo de cuenta analítica es obligatorio en el movimientos de existencias."
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,help:cnd_stock_analytic.field_res_company__required_analytic_tags_on_stock_scrap
+#: model:ir.model.fields,help:cnd_stock_analytic.field_res_config_settings__required_analytic_tags_on_stock_scrap
+#: model:ir.model.fields,help:cnd_stock_analytic.field_stock_scrap__required_analytic_tags_on_stock_scrap
+#: model_terms:ir.ui.view,arch_db:cnd_stock_analytic.sale_order_credit_limit_restrict_config_settings_form
+msgid "If marked, analytic tags field is required in scraps."
+msgstr "Si está marcado, el campo de etiquetas analíticas es obligatorio en desechos."
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,help:cnd_stock_analytic.field_res_company__required_analytic_tags_on_stock_move
+#: model:ir.model.fields,help:cnd_stock_analytic.field_res_config_settings__required_analytic_tags_on_stock_move
+#: model:ir.model.fields,help:cnd_stock_analytic.field_stock_move__required_analytic_tags_on_stock_move
+#: model_terms:ir.ui.view,arch_db:cnd_stock_analytic.sale_order_credit_limit_restrict_config_settings_form
+msgid "If marked, analytic tags field is required in stock moves."
+msgstr "Si está marcado, el campo de etiquetas analíticas es obligatorio en el movimientos de existencias."
+
+#. module: cnd_stock_analytic
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_product_product____last_update
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_company____last_update
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move____last_update
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_move_line____last_update
+#: model:ir.model.fields,field_description:cnd_stock_analytic.field_stock_scrap____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: cnd_stock_analytic
+#: model:ir.model,name:cnd_stock_analytic.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: cnd_stock_analytic
+#: model:ir.model,name:cnd_stock_analytic.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Movimientos de producto (Línea de movimiento de existencias)"
+
+#. module: cnd_stock_analytic
+#: model:ir.model,name:cnd_stock_analytic.model_stock_scrap
+msgid "Scrap"
+msgstr "Desechar"
+
+#. module: cnd_stock_analytic
+#: model_terms:ir.ui.view,arch_db:cnd_stock_analytic.sale_order_credit_limit_restrict_config_settings_form
+msgid "Scraps"
+msgstr "Desechos"
+
+#. module: cnd_stock_analytic
+#: model:ir.model,name:cnd_stock_analytic.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de stock"
+
+#. module: cnd_stock_analytic
+#: model_terms:ir.ui.view,arch_db:cnd_stock_analytic.sale_order_credit_limit_restrict_config_settings_form
+msgid "Stock Moves"
+msgstr "Movimientos de existencias"

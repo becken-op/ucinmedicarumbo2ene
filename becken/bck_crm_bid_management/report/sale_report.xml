@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="letter_landscape" model="report.paperformat">
+            <field name="name">Letter Landscape</field>
+            <field name="default" eval="True" />
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="action_report_bid_saleorder" model="ir.actions.report">
+            <field name="name">Bid Quotation/Order</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bck_crm_bid_management.report_bid_saleorder</field>
+            <field name="report_file">bck_crm_bid_management.report_bid_saleorder</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'Bid Quotation - %s' % (object.name)) or 'Bid Order - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="model_sale_order"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="letter_landscape"/>
+        </record>
+    </data>
+</odoo>

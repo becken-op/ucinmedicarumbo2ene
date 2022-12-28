@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="crm_bid_crm_lead_form_view" model="ir.ui.view">
+            <field name="name">crm.bid.crm.lead.form.view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="is_bid"/>
+                </xpath>
+                <xpath expr="//notebook[last()]" position="inside">
+                    <page name="bid_header" string="Bid Info" attrs="{'invisible': [('is_bid', '=', False)]}">
+                        <header>
+                            <field name="bid_state" widget="statusbar" options="{'clickable': '1'}"/>
+                        </header>
+                        <group>
+                            <group string="General Information">
+                                <field name="is_bid" invisible="1"/>
+                                <field name="bid_type" attrs="{'required': [('is_bid', '=', True)]}"/>
+                                <field name="bidder_id" attrs="{'invisible': [('bid_type', '!=', 'distributor')], 'required': [('bid_type', '=', 'distributor')]}"/>
+                                <field name="document_folio"/>
+                                <field name="bid_folio" attrs="{'required': [('is_bid', '=', True)]}"/>
+                                <field name="modality" attrs="{'required': [('is_bid', '=', True)]}"/>
+                                <field name="character" attrs="{'required': [('is_bid', '=', True)]}"/>
+                                <field name="return_samples"/>
+                                <field name="carried_out_id" attrs="{'requited': [('is_bid', '=', True)]}"/>
+                                <field name="pricelist_id" attrs="{'required': [('is_bid', '=', True)]}"/>
+                            </group>
+                            <group string="Dates" name="bid_dates">
+                                <field name="effective_start_date"/>
+                                <field name="effective_end_date"/>
+                                <field name="clarifications_meeting_datetime"/>
+                                <field name="sample_delivery_datetime"/>
+                                <field name="proposals_delivery_date" attrs="{'required': [('is_bid', '=', True)]}"/>
+                                <field name="decision_date"/>
+                            </group>
+                            <label for="delivery_requirements" class="font-weight-bold"/>
+                            <field name="delivery_requirements" placeholder="Add delivery requirements..."/>
+                            <label for="bid_notes" class="font-weight-bold"/>
+                            <field name="bid_notes" placeholder="Add observations..."/>
+                            <label for="bid_deposit_ids" class="font-weight-bold"/>
+                            <field name="bid_deposit_ids">
+                                <tree edit="false" sample="1">
+                                    <field name="date"/>
+                                    <field name="ref"/>
+                                    <field name="name" optional="hide"/>
+                                    <field name="journal_id"/>
+                                    <field name="payment_method_id"/>
+                                    <field name="partner_id" string="Customer"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="amount" sum="Amount"/>
+                                    <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'posted'"/>
+                                    <field name="currency_id" groups="base.group_multi_currency"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="crm_bid_crm_lead_search_view" model="ir.ui.view">
+            <field name="name">crm.bid.crm.lead.search.view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='lost']" position="after">
+                    <separator/>
+                    <filter string="Is Bid" name="is_bid" domain="[('is_bid', '=', True)]"/>
+                </xpath>
+
+                <xpath expr="//filter[@name='source']" position="after">
+                    <separator orientation="vertical"/>
+                    <filter string="Is Bid" name="is_bid_group" domain="[]" context="{'group_by':'is_bid'}"/>
+                </xpath>
+            </field>
+        </record>
+ 
+    </data>
+</odoo>

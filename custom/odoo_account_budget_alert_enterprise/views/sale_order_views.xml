@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sale_view_order_form_inherit_view_custom_probc" model="ir.ui.view">
+            <field name="name">Sale Order Form Inherit View</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//sheet/group" position="before">
+                        <field name="custom_is_confirm" invisible="1" />
+                        <div class="alert alert-info" role="alert" attrs="{'invisible': [('custom_is_confirm', '!=', True)]}">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close"></a>
+                            <h2><strong>Budget Exceed Alert</strong></h2>
+                            <h3><field name="warn_msg" nolabel="1" /></h3>
+                        </div>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

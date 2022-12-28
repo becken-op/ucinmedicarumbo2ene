@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="product_manager_partner_form_view" model="ir.ui.view">
+            <field name="name">product.manager.partner.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='sale']/field[@name='user_id']" position="after">
+                    <field name="product_manager_id" domain="[('share', '=', False)]"/>
+                </xpath>
+                <!-- <xpath expr="//field[@name='child_ids']/form/sheet/group/group[2]/field[@name='mobile']" position="after">
+                    <field name="user_id" domain="[('share', '=', False)]"/>
+                    <field name="product_manager_id" domain="[('share', '=', False)]"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/kanban/field[@name='mobile']" position="after">
+                    <field name="product_manager_id"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/kanban/templates/t/div/div[2]" position="inside">
+                    <div t-if="record.product_manager_id.raw_value">Product Manager: <t t-esc="record.product_manager_id.value"/></div>
+                </xpath> -->
+            </field>
+        </record>
+
+        <record id="product_manager_partner_tree_view" model="ir.ui.view">
+            <field name="name">product.manager.partner.tree.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="product_manager_id" optional="show" widget="many2one_avatar_user" domain="[('share', '=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_manager_partner_search_view" model="ir.ui.view">
+            <field name="name">product.manager.partner.search.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="product_manager_id"/>
+                </xpath>
+                <xpath expr="//filter[@name='salesperson']" position="after">
+                    <filter name="product_manager" string="Product Manager" domain="[]" context="{'group_by' : 'product_manager_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

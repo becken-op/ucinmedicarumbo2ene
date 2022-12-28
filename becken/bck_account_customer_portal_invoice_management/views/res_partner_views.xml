@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="customer_portal_res_partner_form_view" model="ir.ui.view">
+        <field name="name">customer.portal.res.partner.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="groups_id" eval="[(4, ref('bck_account_customer_portal_invoice_management.group_customer_portal_user'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="customer_portal_posting_required" widget="boolean_toggle" attrs="{'invisible': [('is_company','=', False)]}"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page
+                    string="Portal"
+                    name="portal"
+                    groups="bck_account_customer_portal_invoice_management.group_customer_portal_user"
+                    attrs="{'invisible': ['|', ('is_company','=', False), ('customer_portal_posting_required', '=', False)]}">
+                    <group>
+                        <group>
+                            <field name="portal_url"/>
+                        </group>  
+                        <group>
+                            <field name="portal_user" string="User"/>
+                            <field name="portal_password" string="Password"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="customer_portal_res_partner_tree_view" model="ir.ui.view">
+        <field name="name">customer.portal.res.partner.tree.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="groups_id" eval="[(4, ref('bck_account_customer_portal_invoice_management.group_customer_portal_user'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="customer_portal_posting_required" widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="customer_portal_res_partner_filter_view" model="ir.ui.view">
+        <field name="name">customer.portal.res.partner.filter.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="groups_id" eval="[(4, ref('bck_account_customer_portal_invoice_management.group_customer_portal_user'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <separator/>
+                <filter string="Require Invoices on Portal" name="customer_portal_posting_required" domain="[('customer_portal_posting_required', '=', True)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='group_country']" position="after">
+                <filter name="invoices_on_portal" string="Invoices on Portal" context="{'group_by': 'customer_portal_posting_required'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

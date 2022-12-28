@@ -1,0 +1,227 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_customer_target
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-08 14:21+0000\n"
+"PO-Revision-Date: 2022-07-08 14:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__actual_amount
+msgid "Actual Amount"
+msgstr "Importe real"
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.target_res_partner_form
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.target_res_users_form_view
+msgid "Actual Total"
+msgstr "Total real"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__commercial_partner_id
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_search_view
+msgid "Commercial Entity"
+msgstr "Entidad Comercial"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__currency_id
+msgid "Company Currency"
+msgstr "Moneda de la empresa"
+
+#. module: sale_customer_target
+#: model:ir.model,name:sale_customer_target.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_search_view
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_account_bank_statement_line__customer_target_id
+#: model:ir.model.fields,field_description:sale_customer_target.field_account_move__customer_target_id
+#: model:ir.model.fields,field_description:sale_customer_target.field_account_payment__customer_target_id
+msgid "Customer Target"
+msgstr "Objetivo de Facturación"
+
+#. module: sale_customer_target
+#: model:ir.actions.act_window,name:sale_customer_target.sale_customer_target_action
+#: model:ir.ui.menu,name:sale_customer_target.sale_customer_target_menu
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.target_res_partner_form
+msgid "Customer Targets"
+msgstr "Objetivos de Facturación"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__date_from
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_search_view
+msgid "Date From"
+msgstr "Fecha desde"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__date_to
+msgid "Date To"
+msgstr "Fecha hasta"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_account_move__display_name
+#: model:ir.model.fields,field_description:sale_customer_target.field_res_partner__display_name
+#: model:ir.model.fields,field_description:sale_customer_target.field_res_users__display_name
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_search_view
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_account_move__id
+#: model:ir.model.fields,field_description:sale_customer_target.field_res_partner__id
+#: model:ir.model.fields,field_description:sale_customer_target.field_res_users__id
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__invoice_ids
+msgid "Invoice"
+msgstr ""
+
+#. module: sale_customer_target
+#: model:ir.model,name:sale_customer_target.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_account_move____last_update
+#: model:ir.model.fields,field_description:sale_customer_target.field_res_partner____last_update
+#: model:ir.model.fields,field_description:sale_customer_target.field_res_users____last_update
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__write_uid
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_target_pivot_view
+msgid "Customer Targets"
+msgstr "Objetivos de Facturación"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: sale_customer_target
+#: code:addons/sale_customer_target/models/sale_customer_target.py:0
+#, python-format
+msgid "Period is overlapped with another period"
+msgstr "El período se superpone con otro período"
+
+#. module: sale_customer_target
+#: model:ir.model,name:sale_customer_target.model_sale_customer_target
+msgid "Sale Customer Target"
+msgstr "Objetivo de Facturación del Cliente"
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.target_res_partner_form
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.target_res_users_form_view
+msgid "Sales Target"
+msgstr "Objetivo de Facturación"
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_search_view
+msgid "Sales Team"
+msgstr "Equipo de Ventas"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,help:sale_customer_target.field_sale_customer_target__crm_team_id
+msgid ""
+"Sales Team the user is member of. Used to compute the members of a Sales "
+"Team through the inverse one2many"
+msgstr ""
+"Equipo de ventas del que es miembro el usuario. Se utiliza para calcular los "
+"miembros de un equipo de ventas a través del inverso one2many"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__user_id
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_search_view
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_search_view
+msgid "Search Sale Customer Target"
+msgstr "Búsqueda de Objetivos de Facturación"
+
+#. module: sale_customer_target
+#: code:addons/sale_customer_target/models/sale_customer_target.py:0
+#, python-format
+msgid "Start date must be earlier than end date."
+msgstr ""
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_res_partner__target_ids
+#: model:ir.model.fields,field_description:sale_customer_target.field_res_users__target_ids
+msgid "Target"
+msgstr "Objetivo"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__target_amount
+msgid "Target Amount"
+msgstr "Importe objetivo"
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.target_res_partner_form
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.target_res_users_form_view
+msgid "Target Total"
+msgstr "Total objetivo"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,help:sale_customer_target.field_sale_customer_target__user_id
+msgid "The internal user in charge of this contact."
+msgstr "El usuario interno a cargo de este contacto."
+
+#. module: sale_customer_target
+#: model_terms:ir.ui.view,arch_db:sale_customer_target.sale_customer_search_view
+msgid "This Year"
+msgstr "Este año"
+
+#. module: sale_customer_target
+#: model:ir.model.fields,field_description:sale_customer_target.field_sale_customer_target__crm_team_id
+msgid "User's Sales Team"
+msgstr "Equipo de ventas del usuario"
+
+#. module: sale_customer_target
+#: model:ir.model,name:sale_customer_target.model_res_users
+msgid "Users"
+msgstr "Usuarios"

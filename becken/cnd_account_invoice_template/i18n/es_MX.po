@@ -1,0 +1,218 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cnd_account_invoice_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-16 15:59+0000\n"
+"PO-Revision-Date: 2022-12-16 15:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid ", Bank:"
+msgstr ", Banco:"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid ", Clabe:"
+msgstr ""
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid ""
+"<b>Fiscal Address: </b>\n"
+"                    <br/>"
+msgstr ""
+"<b>Dirección Fiscal: </b>\n"
+"                    <br/>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<b>Fiscal Regime: </b>"
+msgstr "<b>Régimen Fiscal: </b>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid ""
+"<br/>\n"
+"                    <b>Expedition place: </b>\n"
+"                    <br/>"
+msgstr ""
+"<br/>\n"
+"                    <b>Lugar de Expedición: </b>\n"
+"                    <br/>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<br/>Customs:"
+msgstr "<br/>Número de Pedimento:"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<span>SAT Code</span>"
+msgstr "<span>Código SAT</span>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid ""
+"<strong>CFDI Origin:</strong>\n"
+"                        <br/>"
+msgstr ""
+"<strong>CFDI Origen:</strong>\n"
+"                        <br/>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<strong>Currency Rate:</strong>"
+msgstr "<strong>Tipo de Cambio:</strong>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<strong>Currency:</strong>"
+msgstr "<strong>Moneda:</strong>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<strong>Incoterm:</strong>"
+msgstr ""
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<strong>Purchase Order:</strong>"
+msgstr "<strong>Orden de Compra:</strong>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<strong>Shipping Address:</strong>"
+msgstr "<strong>Embarcar a:</strong>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Account for transfer:"
+msgstr "Cuenta para transferencia:"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Cancelled Invoice"
+msgstr "Factura Cancelada"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Code"
+msgstr "Código"
+
+#. module: cnd_account_invoice_template
+#: model:ir.model,name:cnd_account_invoice_template.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Credit Note"
+msgstr "Nota de Crédito"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Description"
+msgstr "Descrpción"
+
+#. module: cnd_account_invoice_template
+#: model:ir.model.fields,field_description:cnd_account_invoice_template.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Draft Invoice"
+msgstr "Factura Borrador"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Fiscal Folio:"
+msgstr ""
+
+#. module: cnd_account_invoice_template
+#: model:ir.model.fields,field_description:cnd_account_invoice_template.field_res_partner__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: cnd_account_invoice_template
+#: model:ir.model.fields,field_description:cnd_account_invoice_template.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.compact_external_layout_background
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.compact_external_layout_boxed
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.compact_external_layout_standard
+msgid "Logo"
+msgstr ""
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Lot(s):"
+msgstr "Lote(s):"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.compact_external_layout_boxed
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.compact_external_layout_standard
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Página: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Payment Reference:"
+msgstr "Referencia de Pago:"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Please use the following communication for your payment:"
+msgstr "Por favor utilice la siguiente referencia al realizar su pago:"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Serial(s):"
+msgstr "No. Serie(s)"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Tax ID:"
+msgstr "RFC:"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Vendor Bill"
+msgstr "Factura de Proveedor"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "Vendor Credit Note"
+msgstr "Nota de Crédito de Proveedor"
+
+#. module: cnd_account_invoice_template
+#: model_terms:ir.ui.view,arch_db:cnd_account_invoice_template.cnd_report_invoice_document
+msgid "on"
+msgstr "en"

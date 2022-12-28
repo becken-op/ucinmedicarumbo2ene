@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="l10n_mx_edi_restrict_sign_invoice_report_search" model="ir.ui.view">
+        <field name="name">l10n.mx.edi.void.sign.invoice.report.search</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.view_account_invoice_report_search"/>
+        <field name="arch" type="xml">
+            <filter name="current" position="after">
+                <filter string="With CFDI Sign" name="cfdi_signed" domain="[('l10n_mx_edi_sign_required','=', True)]"/>
+                <filter string="Without CFDI Sign" name="cfdi_signed" domain="[('l10n_mx_edi_sign_required','=', False)]"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

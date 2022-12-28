@@ -1,0 +1,37 @@
+<odoo>
+    <record id="stock_inventory_analytic_form_view" model="ir.ui.view">
+        <field name="name">stock.inventory.analytic.form.view</field>
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock.view_inventory_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='exhausted']" position="after">
+                <field name="required_analytic_account_on_stock_inventory" invisible="1"/>
+                <field name="required_analytic_tags_on_stock_inventory" invisible="1"/>
+                <field name="analytic_account_id"
+                    attrs="{'required': [('required_analytic_account_on_stock_inventory', '=', True)]}"
+                    groups="analytic.group_analytic_accounting"/>
+                <field name="analytic_tag_ids"
+                    widget="many2many_tags"
+                    attrs="{'required': [('required_analytic_tags_on_stock_inventory', '=', True)]}"
+                    groups="analytic.group_analytic_accounting"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_inventory_analytic_tree_view" model="ir.ui.view">
+        <field name="name">stock.inventory.analytic.tree.view</field>
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock.view_inventory_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_ids']" position="after">
+                <field name="analytic_account_id"
+                    optional="hide"
+                    groups="analytic.group_analytic_accounting"/>
+                <field name="analytic_tag_ids"
+                    widget="many2many_tags"
+                    optional="hide"
+                    groups="analytic.group_analytic_accounting"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

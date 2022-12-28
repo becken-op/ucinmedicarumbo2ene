@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="customer_portal_account_payment_filter_view" model="ir.ui.view">
+            <field name="name">customer.portal.account.payment.filter.view</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_search"/>
+            <field name="groups_id" eval="[(4, ref('bck_account_customer_portal_invoice_management.group_customer_portal_user'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='transfers_filter']" position="after">
+                    <separator/>
+                    <filter name="must_post_portal" string="Must be posted on the portal" domain="[('customer_portal_posted', '=', False), ('customer_portal_posting_required', '=', True), ('state', '!=', 'cancel')]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="customer_portal_account_payment_tree_view" model="ir.ui.view">
+            <field name="name">customer.portal.account.payment.tree.view</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="groups_id" eval="[(4, ref('bck_account_customer_portal_invoice_management.group_customer_portal_user'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="customer_portal_posted" widget="boolean_toggle" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="customer_portal_account_payment_form_view" model="ir.ui.view">
+            <field name="name">customer.portal.account.payment.form.view</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="groups_id" eval="[(4, ref('bck_account_customer_portal_invoice_management.group_customer_portal_user'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group2']" position="inside">
+                    <field name="customer_portal_posting_required" invisible="1"/>
+                    <field name="customer_portal_posted" widget="boolean_toggle" attrs="{'invisible': [('customer_portal_posting_required', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
