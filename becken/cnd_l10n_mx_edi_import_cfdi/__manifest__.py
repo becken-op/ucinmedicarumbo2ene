@@ -12,14 +12,16 @@
     Se carga también los archivos Pdf siempre y cuando se llame igual que el xml
     """,
 
-    "author": "José Candelas",
-    "website": "http://www.candelassoftware.mx",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
-    # for the full list
-    "category": "Accounting",
-    "version": "14.0.1.0.0",
+    'author': 'Candelas Software Factory',
+    'support': 'support@candelassoftware.com',
+    'license': 'OPL-1',
+    'website': 'http://www.candelassoftware.com',
+    'currency': 'USD',
+    'price': 199.00,
+    'maintainer': 'José Candelas',
+    'images': ['static/description/banner.png'],
+    'category': 'Accounting',
+    'version': '14.0.1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['account', 'l10n_mx_edi', 'sale'],
@@ -30,14 +32,17 @@
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/account_views.xml',
-        'views/res_config_settings_views.xml',
+	    'views/res_config_settings_views.xml',
+        'views/res_partner_views.xml',
         'wizard/upload_edi_invoices.xml',
     ],
     'installable': True,
     'auto_install': False,
+    'pre_init_hook': 'pre_init_check',
 }
-# TODO: 1. Importar pagos desde xml
-#       2. Agragar campo en el proveedor "Cuenta de imoprtación de XML": account.accout dominio: deprecated=false user_type_id=15
+# TODO: 1. Agragar campo en el proveedor "Cuenta de importación de XML": account.accout dominio: deprecated=false
+#         user_type_id=15
 #         Cuando importas facturas regulares de proveedor, cada vez que se importe una factura so toma esa cuenta
 #         para cada línea de factura de ese proveedor
-#       3. Preparar para 4.0
+#       2. Preparar para 4.0
+#       3. Importar pagos desde xml

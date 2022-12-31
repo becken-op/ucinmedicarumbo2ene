@@ -11,10 +11,6 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
         help='If marked, product in the xml file are going to be created.')
     product_type_default = fields.Selection(
-        selection=[
-            ('consu', 'Consumable'),
-            ('service', 'Service'),
-            ('product', 'Storable Product')],
         string='Product Type',
         related='company_id.product_type_default',
         readonly=False,

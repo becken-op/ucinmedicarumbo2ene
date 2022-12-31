@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Serie="FB" Folio="2040705" Fecha="2019-01-21T11:29:47" Moneda="USD" SubTotal="4503.54" Total="4626.84" TipoCambio="19.084400" TipoDeComprobante="I" FormaPago="99" MetodoPago="PPD" CondicionesDePago="30 Dias" LugarExpedicion="66367" Sello="WsO/t58qF8tCtdqC9rX91UwQStOFs9xvROJ29aJo1SseJEh645yeehpj6NLnsLo5lFMCGKnqWkBegBC9Uu7oSohdwwiezwsUgSoq0tmfp6REitRfG7M+9RShkpzLNHFbgEEifaqYm7hqb9XdJM7HulBv/ZMNYqA9Xujk8gbPjc4QRTo+TZmOnu43oR61KCIVFEwCjEFORjLm9e8MSoz7itw7LZkHKmiy+xQZwFq/jkG06pMGWn4vqBQ8IlxAhlu8WHiWl75PEyVyILlsYsa44jGIhOkyZ5YeSWuVEMJ9zRP2x9pITp9pOmO5mpUbxe+Jz6zPa6mmhhPWTwFaHPxiyQ==" NoCertificado="00001000000405062221" Certificado="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">
+  <cfdi:Emisor Rfc="GPM170110AV4" Nombre="GRUPO PGL MEXICO SAPI DE CV" RegimenFiscal="601" />
+  <cfdi:Receptor Rfc="AME980420MA6" Nombre="ANTIESTATICA DE MEXICO SA DE CV" UsoCFDI="G03" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="78101900" Cantidad="1" ClaveUnidad="E48" Descripcion="Cargos Adicionales Al Maritimo" ValorUnitario="690.000000" Importe="690.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="690.00" Impuesto="002" TipoFactor="Exento" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="78101900" Cantidad="1" ClaveUnidad="E48" Descripcion="Cargos Adicionales Al Maritimo" ValorUnitario="935.400000" Importe="935.40">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="935.40" Impuesto="002" TipoFactor="Exento" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="78101900" Cantidad="1" ClaveUnidad="E48" Descripcion="Internacional Maritimo" ValorUnitario="148.350000" Importe="148.35">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="148.35" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="78101900" Cantidad="1" ClaveUnidad="E48" Descripcion="Cargos Adicionales Al Maritimo" ValorUnitario="262.500000" Importe="262.50">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="262.50" Impuesto="002" TipoFactor="Exento" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="78101800" Cantidad="1" ClaveUnidad="E48" Descripcion="Internacional Terrestre Arrastre" ValorUnitario="285.350000" Importe="285.35">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="285.35" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="45.66" />
+        </cfdi:Traslados>
+        <cfdi:Retenciones>
+          <cfdi:Retencion Base="285.35" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.040000" Importe="11.41" />
+        </cfdi:Retenciones>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="78101900" Cantidad="1" ClaveUnidad="E48" Descripcion="Cargos Adicionales Al Maritimo" ValorUnitario="690.000000" Importe="690.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="690.00" Impuesto="002" TipoFactor="Exento" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="78101900" Cantidad="1" ClaveUnidad="E48" Descripcion="Cargos Adicionales Al Maritimo" ValorUnitario="935.400000" Importe="935.40">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="935.40" Impuesto="002" TipoFactor="Exento" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="78101900" Cantidad="1" ClaveUnidad="E48" Descripcion="SEGURO INTERNACIONAL MARITIMO" ValorUnitario="556.540000" Importe="556.54">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="556.54" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="89.05" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosRetenidos="11.41" TotalImpuestosTrasladados="134.71">
+    <cfdi:Retenciones>
+      <cfdi:Retencion Impuesto="002" Importe="11.41" />
+    </cfdi:Retenciones>
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00" />
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="134.71" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" Version="1.1" FechaTimbrado="2019-01-21T11:29:51" SelloCFD="WsO/t58qF8tCtdqC9rX91UwQStOFs9xvROJ29aJo1SseJEh645yeehpj6NLnsLo5lFMCGKnqWkBegBC9Uu7oSohdwwiezwsUgSoq0tmfp6REitRfG7M+9RShkpzLNHFbgEEifaqYm7hqb9XdJM7HulBv/ZMNYqA9Xujk8gbPjc4QRTo+TZmOnu43oR61KCIVFEwCjEFORjLm9e8MSoz7itw7LZkHKmiy+xQZwFq/jkG06pMGWn4vqBQ8IlxAhlu8WHiWl75PEyVyILlsYsa44jGIhOkyZ5YeSWuVEMJ9zRP2x9pITp9pOmO5mpUbxe+Jz6zPa6mmhhPWTwFaHPxiyQ==" UUID="D513C2C7-1613-46A5-8ABE-7AFC984D985A" NoCertificadoSAT="00001000000402636111" RfcProvCertif="SAD110722MQA" SelloSAT="iqnMYPLVc/Z4ztD6aInsoVsm4d/dLAemET9ffH0JkbJCEJTqtWY0EBprtJpt59bpzCDiXbJHnaxFzLgF2mBuuIgasKxb6zi1uCLCQVinAdHrDJ9I4d2N5kdysNPF+dQeGA0tXcCQJOnee5qyqL5Ls5QGVAWtWo2O33/QPtqMlKgcRTGYok5MjxGjTgUVAbtQcNMtrH8F7T1WuhMDYDmxfL24lJfvxU7cMrWCLEqo6yXvq34pr3XbrRYDIt1bxNvxewK6Cj0NsApOO8FliuZTTFjlpumaszpPFT2HKxhUva5hsKDWJCNHyxjVDkIKkG7qYKdCACKYu5KwI66JVkaFzg==" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

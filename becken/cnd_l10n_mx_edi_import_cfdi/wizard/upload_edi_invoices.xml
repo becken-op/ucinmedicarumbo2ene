@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="wizard_account_upload_edi_invoices_form_view" model="ir.ui.view">
-        <field name="name">Import Customer EDI Invoices (MX)</field>
+    <record id="wizard_account_upload_edi_invoices_form_view" model="ir.ui.view">
+        <field name="name">wizard.account.upload.edi.invoices.form.view</field>
         <field name="model">wizard.account.upload.edi.invoices</field>
         <field name="arch" type="xml">
             <form>
@@ -19,11 +19,11 @@
                     <field name="pdf_filename" invisible="1"/>
                     <field name="pdf_file" filename="pdf_filename" attrs="{'invisible': [('file_type', '=', 'zip')]}"/>
                     <field name="create_partners_not_found"/>
-                    <field name="new_partner_payment_term_id" attrs="{'invisible': [('create_partners_not_found', '=', False)], 'required': [('create_partners_not_found', '=', True)]}"/>
+                    <field name="new_partner_payment_term_id"
+                        attrs="{'invisible': [('create_partners_not_found', '=', False)], 'required': [('create_partners_not_found', '=', True)]}"/>
                     <field name="invoice_user_id" attrs="{'invisible': [('journal_type', '!=', 'sale')]}"/>
                     <field name="supplier_l10n_mx_type_of_operation" attrs="{'invisible': [('create_partners_not_found', '=', False)], 'required': [('create_partners_not_found','=', True)]}"/>
                     <field name="company_id" invisible="1"/>
-                    <!--<field name="invoice_team_id" attrs="{'invisible': [('journal_type', '!=', 'sale')]}"/>-->
                     <field name="analytic_account_id" groups="analytic.group_analytic_accounting"
                         domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]"/>
                     <field name="analytic_tag_ids" groups="analytic.group_analytic_tags"
@@ -37,25 +37,24 @@
         </field>
     </record>
 
-	<record id="act_window_account_upload_edi_invoices" model="ir.actions.act_window">
-	    <field name="name">Import Customer EDI Invoices (MX)</field>
-	    <field name="type">ir.actions.act_window</field>
-	    <field name="res_model">wizard.account.upload.edi.invoices</field>
-	    <!--<field name="view_mode">tree,form</field>-->
-	    <field name="view_id" ref="wizard_account_upload_edi_invoices_form_view"/>
-	    <field name="binding_model_id" ref="account.model_account_move"/>
-	    <field name="target">new</field>
-	</record>
+    <record id="act_window_account_upload_edi_invoices" model="ir.actions.act_window">
+        <field name="name">Import EDI Invoices from XML file (CFDI MX)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.account.upload.edi.invoices</field>
+        <field name="view_id" ref="wizard_account_upload_edi_invoices_form_view"/>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="target">new</field>
+    </record>
 
 	<menuitem id="menu_account_upload_edi_invoices" name="Import Customer EDI Invoices (MX)" parent="account.account_invoicing_menu" sequence="10" action="act_window_account_upload_edi_invoices" groups="cnd_l10n_mx_edi_import_cfdi.group_edi_import"/>
 
-	<record id="message_wizard_form" model="ir.ui.view">
-		<field name="name">message.wizard.form</field>
-		<field name="model">message.wizard</field>
+	<record id="upload_correct_invoices_form_view" model="ir.ui.view">
+		<field name="name">upload.correct.invoices.form.view</field>
+		<field name="model">upload.correct.invoices</field>
 		<field name="arch" type="xml">
-			<form>
+            <form>
 				<h2 class="text-center">
-					List of invoices to upload, please, check the status column.
+					List of invoices to import, please, check the status column.
 				</h2>
 				<field name="invoice_upload_count" invisible="1"/>
 				<field name="invoice_upload_ids">

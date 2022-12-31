@@ -20,12 +20,14 @@ _logger = logging.getLogger(__name__)
 MAX_FILE_SIZE = 100 * 1024 * 1024  # in megabytes
 
 
-class MessageWizard(models.TransientModel):
-    _name = 'message.wizard'
+
+class UploadCorrectInvoices(models.TransientModel):
+    _name = 'upload.correct.invoices'
+    _description = 'Import Correct Invoices'
 
     invoice_upload_ids = fields.One2many(
         comodel_name='import.account.invoice',
-        inverse_name='message_wizard_id',
+        inverse_name='upload_correct_invoices_id',
         string='Invoices Uploaded',
         readonly=True)
     invoice_upload_count = fields.Integer(
@@ -37,24 +39,22 @@ class MessageWizard(models.TransientModel):
             lambda invoice: invoice.xml_error is False))
 
     def action_ok(self):
-        # self.unlink() No se necesita porque el modelo es de tipo: TransientModel
-        """ close wizard"""
         new_invoice_ids = []
         for invoice_upload_id in self.invoice_upload_ids:
             if not invoice_upload_id.xml_error:
-                journal_id = False
-                lines = False
-
                 # Crear al partner si no existe
                 if not invoice_upload_id.partner_id:
-                    # Volver a buscar el cliente o proveedor, por si en esta misma carga se dió de alta ya, no darlo de alta dos veces
+                    # Volver a buscar el cliente o proveedor, por si en esta misma carga se dió de alta ya,
+                    # no darlo de alta dos veces
                     partner_id = self.env['res.partner'].search(
-                        [('name', '=', invoice_upload_id.partner_name), ('vat', '=', invoice_upload_id.partner_vat)], limit=1)
+                        [('name', '=', invoice_upload_id.partner_name),
+                         ('vat', '=', invoice_upload_id.partner_vat)],
+                        limit=1)
                     if not partner_id:
                         # country_mx = self.env['res.country'].search([('code', '=', 'mx')], limit=1)
                         country_mx = self.env.ref('base.mx')
                         values = {
-                            'name': invoice_upload_id.partner_name,
+                            'name': invoice_upload_id.partner_name or 'SIN NOMBRE EN XML',
                             'company_type': 'company',
                             'company_id': invoice_upload_id.company_id.id,
                             'vat': invoice_upload_id.partner_vat,
@@ -63,6 +63,8 @@ class MessageWizard(models.TransientModel):
                             'country_id': country_mx.id,
                             'l10n_mx_type_of_operation': invoice_upload_id.supplier_l10n_mx_type_of_operation,
                         }
+                        _logger.info(
+                            _('Creating Partner with values: %s') % str(values))
                         partner_id = self.env['res.partner'].create(values)
                     invoice_upload_id.partner_id = partner_id
 
@@ -94,18 +96,8 @@ class MessageWizard(models.TransientModel):
                         'state': 'sent',
                     }
                     arr_edi_document_ids = [(0, 0, arr_edi_document_id)]
-
                     new_invoice.write(
                         {'edi_document_ids': arr_edi_document_ids})
-                    """
-                    new_invoice._post(soft=True)
-                    new_invoice.write({'edi_state': 'sent', 'l10n_mx_edi_sat_status': 'none'})
-
-                    for edi_document_id in new_invoice.edi_document_ids:
-                        if edi_document_id.edi_format_id.id == cfdi_3_3_edi.id:
-                            edi_document_id.attachment_id = xml_invoice.id
-                            edi_document_id.state = 'sent'
-                    """
 
                 # Crear el adjunto PDF
                 new_invoice_ids.append(new_invoice.id)
@@ -126,8 +118,9 @@ class MessageWizard(models.TransientModel):
                         'account.data_account_type_receivable')
                     account_type_payable_id = self.env.ref(
                         'account.data_account_type_payable')
-                    journal_item_ids = new_invoice.line_ids.filtered(lambda journal_item: journal_item.account_id.user_type_id in [
-                                                                     account_type_receivable_id, account_type_payable_id])
+                    journal_item_ids = new_invoice.line_ids.filtered(
+                        lambda journal_item: journal_item.account_id.user_type_id in
+                        [account_type_receivable_id, account_type_payable_id])
                     journal_item_ids.write(
                         {'account_id': invoice_upload_id.invoice_account_id.id})
 
@@ -143,16 +136,9 @@ class MessageWizard(models.TransientModel):
         }
 
 
-class InvoiceUploaded(models.TransientModel):
+class ImportAccountInvoice(models.TransientModel):
     _name = 'import.account.invoice'
-    # TODO: Por cada factura crear un account.edi.document
-    # edi_document_ids = fields.One2many(
-    #    comodel_name='account.edi.document',
-    #    inverse_name='move_id')
-    # Donde:
-    #   format_id = cfdi_3_3_edi
-    #        cfdi_3_3_edi = self.env.ref('l10n_mx_edi.edi_cfdi_3_3')
-    #    return self.edi_document_ids.filtered(lambda document: document.edi_format_id == cfdi_3_3_edi and document.attachment_id)
+    _description = 'Import Account Invoice'
 
     invoice_type = fields.Selection(
         selection=[
@@ -160,14 +146,15 @@ class InvoiceUploaded(models.TransientModel):
             ('out_refund', 'Customer Credit Note'),
             ('in_invoice', 'Vendor Bill'),
             ('in_refund', 'Vendor Credit Note'),
-        ], string='Type', required=True, readonly=True)
+        ], string='Type', required=True, readonly=True,
+        help="")
     invoice_date = fields.Date(
         string='Invoice/Bill Date',
         readonly=True, copy=False)
     xml_serie = fields.Char('Serie', readonly=True)
     xml_folio = fields.Char('Folio', readonly=True)
-    message_wizard_id = fields.Many2one(
-        'message.wizard', string='Wizard Message', ondelete='cascade')
+    upload_correct_invoices_id = fields.Many2one(
+        'upload.correct.invoices', string='Wizard Message')
     rfc_supplier = fields.Text('RFC Emisor', required=True, readonly=True)
     rfc_customer = fields.Text('RFC Receptor', required=True, readonly=True)
     uuid = fields.Text('UUID', required=True, readonly=True)
@@ -179,7 +166,10 @@ class InvoiceUploaded(models.TransientModel):
         string='Importation Type',
         default='regular_invoices',
         required=True,
-        selection=[('opening_balances', 'Opening Balances'), ('regular_invoices', 'Regular Invoices')])
+        selection=[('opening_balances', 'Opening Balances'),
+                   ('regular_invoices', 'Regular Invoices')],
+        help='Regular Invoices - Import includes every line of the invoices.\n'
+        'Opening Balances - Import only includes one summary invoice line.')
     # Invoice fields
     partner_id = fields.Many2one(
         'res.partner', readonly=True,
@@ -198,7 +188,7 @@ class InvoiceUploaded(models.TransientModel):
     company_id = fields.Many2one(
         'res.company',
         string='Company', store=True, readonly=True,
-        related='journal_id.company_id', change_default=True)
+        default=lambda self: self.env.user.company_id.id)
     # xml_invoice_id = fields.Many2one('ir.attachment', string="Xml invoice", copy=False)
     xml_binary_content = fields.Binary(
         string="XML Binary", attachment=False, help="XML Binary Content")
@@ -255,13 +245,14 @@ class InvoiceUploaded(models.TransientModel):
     partner_name = fields.Char(string="Partner Name")
     partner_vat = fields.Char(
         string='Tax ID',
-        help="The Tax Identification Number. Complete it if the contact is subjected to government taxes. Used in some legal statements.")
+        help="The Tax Identification Number. Complete it if the contact is subjected to government taxes. "
+        "Used in some legal statements.")
     partner_property_payment_term_id = fields.Many2one(
         'account.payment.term', company_dependent=True,
         string='Customer Payment Terms',
         help="This payment term will be used instead of the default one for sales orders and customer invoices")
     partner_property_supplier_payment_term_id = fields.Many2one(
-        'account.payment.term', company_dependent=True,
+        'account.payment.term', check_company=True,
         string='Vendor Payment Terms',
         help="This payment term will be used instead of the default one for purchase orders and vendor bills")
     invoice_account_id = fields.Many2one(
@@ -289,8 +280,10 @@ class InvoiceUploaded(models.TransientModel):
         addr = self.partner_id.address_get(['delivery', 'invoice'])
 
         if self.importation_type == 'opening_balances':
+            name = self.xml_serie + self.xml_folio
             narration = _("This invoice is opening balance invoice")
         else:
+            name = '/'
             narration = _("This invoice was imported from his XML file")
 
         property_payment_term_id = False
@@ -301,7 +294,7 @@ class InvoiceUploaded(models.TransientModel):
 
         ref = self.xml_serie + self.xml_folio
         return {
-            'name': '/',
+            'name': name,
             'invoice_date': self.invoice_date,
             'move_type': self.invoice_type,
             'partner_id': addr['invoice'],
@@ -312,6 +305,7 @@ class InvoiceUploaded(models.TransientModel):
             'fiscal_position_id': fpos_id,
             'invoice_payment_term_id': property_payment_term_id,
             'narration': narration,
+            'user_id': self.env.uid,
             'l10n_mx_edi_sign_required': False,
             'l10n_mx_edi_cfdi_uuid': self.xml_file_name,
             'l10n_mx_edi_usage': self.l10n_mx_edi_usage,
@@ -344,8 +338,9 @@ class InvoiceUploaded(models.TransientModel):
 
 class ImportAccountInvoiceLine(models.TransientModel):
     _name = 'import.account.invoice.line'
+    _description = 'Import Account Invoice Line'
 
-    name = fields.Char(string='')
+    name = fields.Char(string='Label')
     price_unit = fields.Float(string='Unit Price', digits='Product Price')
     discount = fields.Float(string='Discount (%)',
                             digits='Discount', default=0.0)
@@ -353,7 +348,7 @@ class ImportAccountInvoiceLine(models.TransientModel):
         string='Quantity',
         default=1.0, digits='Product Unit of Measure',
         help="The optional quantity expressed by this line, eg: number of product sold. "
-             "The quantity is not a leLabelgal requirement but is very useful for some reports.")
+             "The quantity is not a legal requirement but is very useful for some reports.")
     product_uom_id = fields.Many2one('uom.uom', string='Unit of Measure')
     tax_ids = fields.Many2many(
         'account.tax', string='Taxes', help="Taxes that apply on the base amount")
@@ -431,7 +426,8 @@ class ImportAccountInvoiceLine(models.TransientModel):
             'analytic_account_id': self.invoice_id.analytic_account_id.id,
             'analytic_tag_ids': [(6, 0, self.invoice_id.analytic_tag_ids.ids)],
         }
-        # Esto porque si en el wizard se deja vacía la cuenta contable, que tome la por defecto del cliente o de la configuración de contabilidad
+        # Esto porque si en el wizard se deja vacía la cuenta contable, que tome la por defecto del cliente o
+        # o de la configuración de contabilidad
         if self.invoice_id.lines_account_id:
             values['account_id'] = self.invoice_id.lines_account_id.id
         return values
@@ -451,9 +447,8 @@ def create_list_html(array):
 
 
 class WizardAccountUploadEdiInvoices(models.TransientModel):
-
     _name = 'wizard.account.upload.edi.invoices'
-    _description = 'Upload customer EDI invoices compressed in a zip file as opening balances'
+    _description = 'Wizard to import EDI invoices compressed in a zip file as opening balances'
 
     @api.model
     def _get_invoice_default_sale_team(self):
@@ -474,7 +469,7 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
         domain="[('type', '=', journal_type)]")
     zip_file = fields.Binary(
         string='Zip or Xml File', required=True,
-        help='Compressed Zip file that contains the xml and pdf files of the customer invoices.')
+        help='Compressed Zip file that contains the xml and pdf files of the edi invoices.')
     zip_filename = fields.Char('Zip or Xml File Name', copy=False)
     pdf_file = fields.Binary(
         string='Pdf File (optional)',
@@ -492,7 +487,10 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
         string='Importation Type',
         default='regular_invoices',
         required=True,
-        selection=[('opening_balances', 'Opening Balances'), ('regular_invoices', 'Regular Invoices')])
+        selection=[('opening_balances', 'Opening Balances'),
+                   ('regular_invoices', 'Regular Invoices')],
+        help='Regular Invoices - Import includes every line of the invoices.\n'
+        'Opening Balances - Import only includes one summary invoice line.')
     invoice_user_id = fields.Many2one(
         'res.users',
         string='Salesperson',
@@ -527,21 +525,6 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
         help='Indicate the operations type that makes this supplier. Is the '
         'second column in DIOT report')
 
-    """
-    LOS CAMPOS QUE ME PASÓ RAMON
-        YA Tipo de factura: Cliente / Proveedor
-        YA Tipo de Importacion: Saldos Iniciales / Factura regular
-        YA Carga de Archivo: XML / Zip
-        YA Plazo de pago: Seleccionable: Terminos de Pago
-       XXX Cuenta de Factura: Seleccionable:  Cuentas de Tipo "A Pagar / A Cobrar"
-        YA Diario: Seleccionable: De Venta / Compra
-        YA Comercial: Seleccionable: Comercial, en el caso de facturas de clientes
-       XXX Cuenta de linea: Cuenta de Ingreso o Gastos a la que se Cargaran en las lineas de Factura
-       XXX Cuenta analitica de linea: Seleccionable
-       XXX Etiquetas analiticas de linea: Seleccionable
-        YA Equipo de ventas: En el caso de Facturas de Clientes
-       XXX Referencia/Descripcion: En el caso de Facturas regulares de proveedores
-    """
 
     @api.onchange('zip_file')
     def onchange_zip_file(self):
@@ -556,7 +539,8 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
             self.file_type = 'xml'
         else:
             raise UserError(
-                _('The file selected (%s) is no a zip nither xml file, please, select a zip or xml file.') % (self.zip_filename))
+                _('The file selected (%s) is no a zip nither xml file, please, select a zip or xml file.')
+                % (self.zip_filename))
 
     @api.onchange('pdf_file')
     def onchange_pdf_file(self):
@@ -593,12 +577,12 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                 (6, 0, new_invoice_ids),
             ],
         }
-        message_id = self.env['message.wizard'].create(values)
+        message_id = self.env['upload.correct.invoices'].create(values)
         return {
             'name': _('Invoices List'),
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
-            'res_model': 'message.wizard',
+            'res_model': 'upload.correct.invoices',
             # pass the id
             'res_id': message_id.id,
             'target': 'new'
@@ -683,6 +667,7 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
             with zipfile.ZipFile(fp, "r") as z:
                 # Variable para validar si el archivo zip contiene archivos xml o no
                 xml_files_content = False
+
                 for zf in z.filelist:
                     # Procesar SIN DESCOMPRIMIR EL ARCHIVO ZIP
                     if zf.filename.lower().endswith('.xml'):
@@ -701,7 +686,7 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                         z.extractall(temp_invoices_dir)
                     except Exception as e:
                         raise UserError(
-                            _("Error unzipping '%s' file!") % zf.filename)
+                            _("Error unzipping '%s' file: %s") % (zf.filename, e))
 
                     xml_files = []
                     for filename in Path(temp_invoices_dir).rglob('*.xml'):
@@ -735,60 +720,78 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
             return result
 
     def process_xml_content(self, cfdi, xsd_datas, xml_file_path, company_vat):
-        tree = self.l10n_mx_edi_get_xml_etree(cfdi)
         xml_file_name = os.path.basename(xml_file_path)
+        try:
+            tree = self.l10n_mx_edi_get_xml_etree(cfdi)
+        except:
+            raise UserError(
+                _(f'The XML structure of "{xml_file_name}" file is not valid.'))
 
-        # Check with xsd v13
+        # Validar que el xml corresponde a la factura y es un xml válido
         # if xsd_datas:
         #     try:
         #         with BytesIO(xsd_datas) as xsd:
         #             _check_with_xsd(tree, xsd)
         #     except (IOError, ValueError):
-        #         _logger.info(
-        #             _('The xsd file to validate the XML structure was not found'))
+        #         raise UserError(
+        #             _("The xsd file to validate the XML structure was not found"))
         #     except Exception as e:
-        #         pass
-        # TODO: temporarily quit: raise UserError(_('The cfdi generated is not valid.\n') + create_list_html(str(e).split('\\n')))
-        # end Check with xsd v13
+        #         raise UserError(_('The CFDI generated is not valid.') + str(e))
+        # else:
+        #     raise UserError(
+        #         _("The xsd file to validate the XML structure was not found"))
 
         # if already signed, extract uuid
         tfd_node = self.l10n_mx_edi_get_tfd_etree(tree)
 
         if tfd_node is not None:
-            invoice_date = tree.get('Fecha', tree.get('Fecha'))[
+            invoice_date = tree.get('Fecha', tree.get('fecha'))[
                 :10] or str(fields.Date.today())
-            invoice_currency = tree.get('Moneda', tree.get('moneda'))
-            xml_serie = tree.get('Serie', tree.get('Serie')) or ''
-            xml_folio = tree.get('Folio', tree.get('Folio')) or ''
+            invoice_currency = tree.get('Moneda', tree.get('moneda')) or 'MXN'
+            xml_serie = tree.get('Serie', tree.get('serie')) or ''
+            xml_folio = tree.get('Folio', tree.get('folio')) or ''
+            xml_version = tree.get('Version', tree.get('version')) or ''
             # I=Ingreso, E=Egreso, T=Traslado, P=Pago N=Nómina
             tipo_comprobante = tree.get(
-                'TipoDeComprobante', tree.get('TipoDeComprobante')) or ''
+                'TipoDeComprobante', tree.get('tipoDeComprobante')) or ''
+
+            # Descuento sólo para 3.2
+            total_discount = tree.get(
+                'descuento', tree.get('descuento')) or 0.00
+            if total_discount:
+                total_discount = float(total_discount)
+            subtotal = tree.get(
+                'subTotal', tree.get('subtotal')) or 0.00
 
             invoice_currency_id = self.env['res.currency'].search(
                 [('name', '=', invoice_currency)]).id
+            if not invoice_currency_id:
+                invoice_currency_id = self.env.ref('base.MXN').id
 
-            rfc_supplier = tree.Emisor.get('Rfc', tree.Emisor.get('Rfc'))
+            rfc_supplier = tree.Emisor.get('Rfc', tree.Emisor.get('rfc'))
             name_supplier = tree.Emisor.get(
-                'Nombre', tree.Emisor.get('Nombre'))
+                'Nombre', tree.Emisor.get('nombre'))
 
-            rfc_customer = tree.Receptor.get('Rfc', tree.Receptor.get('Rfc'))
+            rfc_customer = tree.Receptor.get('Rfc', tree.Receptor.get('rfc'))
             name_customer = tree.Receptor.get(
-                'Nombre', tree.Receptor.get('Nombre'))
+                'Nombre', tree.Receptor.get('nombre'))
             # TODO: Qué hacer con el uso de CFDI
-            usocfdi_customer = tree.Receptor.get(
+            invoice_cfdi_use = tree.Receptor.get(
                 'UsoCFDI', tree.Emisor.get('UsoCFDI'))
 
             xml_error = False
-            xml_state = _("Ready to Upload XML")
+            xml_state = _("Ready to Import XML!")
 
             if self.journal_type == 'sale':
-                if tipo_comprobante == 'I':
+                if tipo_comprobante == 'I' or tipo_comprobante == 'ingreso':
                     invoice_type = 'out_invoice'
-                elif tipo_comprobante == 'E':
+                elif tipo_comprobante == 'E' or tipo_comprobante == 'egreso':
                     invoice_type = 'out_refund'
                 # Si el xml no es de tipo Ingreso ni Egreso
                 else:
-                    return False
+                    xml_error = True
+                    xml_state = _(
+                        f'Invalid voucher type: "{tipo_comprobante}", File: "{xml_file_name}"')
 
                 if rfc_supplier != company_vat:
                     xml_error = True
@@ -804,18 +807,21 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                         [('vat', '=', rfc_customer)], limit=1)
 
             elif self.journal_type == 'purchase':
-                if tipo_comprobante == 'I':
+                if tipo_comprobante == 'I' or tipo_comprobante == 'ingreso':
                     invoice_type = 'in_invoice'
-                elif tipo_comprobante == 'E':
+                elif tipo_comprobante == 'E' or tipo_comprobante == 'egreso':
                     invoice_type = 'in_refund'
                 # Si el xml no es de tipo Ingreso ni Egreso
                 else:
-                    return False
+                    invoice_type = 'in_invoice'
+                    xml_error = True
+                    xml_state = _(
+                        f'Invalid voucher type: "{tipo_comprobante}", File: "{xml_file_name}"')
 
                 if rfc_customer != company_vat:
                     xml_error = True
                     xml_state = _(
-                        f'Receiver "{rfc_customer}" VAT does not coincide with the VAT of your Company "{company_vat}"')
+                        f'Receiver "{rfc_customer}" VAT does not match with the VAT of your Company "{company_vat}", File: "{xml_file_name}"')
 
                 generic_partner = False
                 partner_id = False
@@ -857,7 +863,7 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                 if reteated_invoice_id:
                     xml_error = True
                     xml_state = _(
-                        "The invoice is already in your invoice catalog.")
+                        f'The invoice is already in your invoice catalog, File: "{xml_file_name}"')
                 if partner_id:
                     if self.journal_type == 'sale' and partner_id.property_payment_term_id:
                         partner_property_payment_term_id = partner_id.property_payment_term_id.id
@@ -876,34 +882,42 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                 # <cfdi:Concepto ClaveProdServ="80101511" ClaveUnidad="E48" Cantidad="1.00" Unidad="SERVICIO" NoIdentificacion="700" Descripcion="Servicio de asesoramiento en recursos humanos" ValorUnitario="2873.55" Importe="2873.55">
 
                 line_name = concepto.get(
-                    'Descripcion', concepto.get('Descripcion'))
+                    'Descripcion', concepto.get('descripcion'))
                 line_noidentificacion = concepto.get(
                     'NoIdentificacion', concepto.get('NoIdentificacion'))
                 line_claveprodserv = concepto.get(
                     'ClaveProdServ', concepto.get('ClaveProdServ'))
                 line_price_unit = float(concepto.get(
-                    'ValorUnitario', concepto.get('ValorUnitario')))
+                    'ValorUnitario', concepto.get('valorUnitario')))
                 # Extraer el descuento
                 line_discount = concepto.get(
-                    'Descuento', concepto.get('Descuento'))
+                    'Descuento', concepto.get('descuento'))
                 if line_discount is None:
                     line_discount = 0.0
                 else:
                     line_discount = float(line_discount)
                 line_quantity = float(concepto.get(
-                    'Cantidad', concepto.get('Cantidad')))
+                    'Cantidad', concepto.get('cantidad')))
                 line_product_uom_id = False
                 line_tax_ids = False
 
                 clave_unidad_xml = concepto.get(
                     'ClaveUnidad', concepto.get('ClaveUnidad'))
-                condition = [
-                    ('code', '=', clave_unidad_xml),
-                    ('applies_to', '=', 'uom'),
-                ]
-                # clave_unidad = self.env['l10n_mx_edi.product.sat.code'].search(condition)
+
+                if not clave_unidad_xml:
+                    unidad_xml = concepto.get(
+                        'Unidad', concepto.get('unidad'))
+                    condition = [
+                        ('name', '=', unidad_xml),
+                        ('applies_to', '=', 'uom'),
+                    ]
+                else:
+                    condition = [
+                        ('code', '=', clave_unidad_xml),
+                        ('applies_to', '=', 'uom'),
+                    ]
                 clave_unidad = self.env['product.unspsc.code'].search(
-                    condition)
+                    condition, limit=1)
                 if not clave_unidad:
                     xml_error = True
                     xml_state = _(
@@ -917,7 +931,7 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                 if not uom_id:
                     xml_error = True
                     xml_state = _(
-                        "No existe una Unidad de Medida con la clave del SAT '%s'!") % clave_unidad_xml
+                        f'No existe una Unidad de Medida con la clave del SAT "{clave_unidad_xml}", File: "{xml_file_name}"')
                 else:
                     line_product_uom_id = uom_id.id
 
@@ -928,7 +942,7 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
 
                     for impuesto_traslado in impuestos_traslados:
                         tax_key = impuesto_traslado.get(
-                            'Impuesto', impuesto_traslado.get('Impuesto'))
+                            'Impuesto', impuesto_traslado.get('impuesto'))
                         tax_type = impuesto_traslado.get(
                             'TipoFactor', impuesto_traslado.get('TipoFactor'))
                         base = impuesto_traslado.get(
@@ -953,14 +967,46 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                             ('amount_type', '=', 'percent'),
                             ('type_tax_use', '=', type_tax_use),
                         ]
+                        _logger.info(
+                            _('Search tax conditions: %s') % str(condition))
                         tax_id = self.env['account.tax'].search(
                             condition, limit=1)
                         if not tax_id:
                             xml_error = True
-                            xml_state = _("Impuesto faltante. Tipo: Traslado, Tipo Factor: %s, Impuesto: %s, Tasa o Cuota: %s.") % (
-                                tax_type, tax_key, tasa_o_cuota)
+                            xml_state = _(
+                                f'Impuesto faltante. Tipo: Traslado, Tipo Factor: {tax_type}, Impuesto: {tax_key}, Tasa o Cuota: {tasa_o_cuota}, File: "{xml_file_name}"')
                         else:
                             arr_tax_ids.append(tax_id.id)
+                else:
+                    # Verificar si tiene Impuestos de XML 3.2
+                    if xml_version == '3.2' and hasattr(tree, 'Impuestos') and hasattr(tree.Impuestos, 'Traslados') and hasattr(tree.Impuestos.Traslados, 'Traslado'):
+                        impuestos_traslados = tree.Impuestos.Traslados.Traslado
+                        for impuesto_traslado in impuestos_traslados:
+                            impuesto = impuesto_traslado.get(
+                                'impuesto', impuesto_traslado.get('impuesto'))
+                            tasa = impuesto_traslado.get(
+                                'tasa', impuesto_traslado.get('tasa')) or 0.00
+                            if tasa:
+                                tasa = float(tasa)
+
+                            if self.journal_type == 'sale':
+                                type_tax_use = 'sale'
+                            elif self.journal_type == 'purchase':
+                                type_tax_use = 'purchase'
+
+                            condition = [
+                                ('amount', '=', tasa),
+                                ('amount_type', '=', 'percent'),
+                                ('type_tax_use', '=', type_tax_use),
+                            ]
+                            tax_id = self.env['account.tax'].search(
+                                condition, limit=1)
+                            if not tax_id:
+                                xml_error = True
+                                xml_state = _(
+                                    f'Impuesto faltante. Tipo: Traslado, Impuesto: {impuesto}, Tasa o Cuota: {tasa}, File: "{xml_file_name}"')
+                            else:
+                                arr_tax_ids.append(tax_id.id)
 
                 # Validar si existen Retenciones o no en la línea, la línea de abajo marca error si no hay
                 if hasattr(concepto, 'Impuestos') and hasattr(concepto.Impuestos, 'Retenciones'):
@@ -977,8 +1023,8 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                             'Importe', impuesto_retencion.get('Importe')))
                         if tasa_o_cuota is not None:
                             if self.journal_type == 'sale' or amount > 0.0 and self.journal_type == 'purchase':
-                                tax_amount = float(impuesto_retencion.get(
-                                    'TasaOCuota', impuesto_retencion.get('TasaOCuota'))) * 100
+                                tax_amount = float(
+                                    impuesto_retencion.get('TasaOCuota', impuesto_retencion.get('TasaOCuota'))) * 100
 
                                 if self.journal_type == 'sale':
                                     type_tax_use = 'sale'
@@ -996,10 +1042,43 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                                     condition, limit=1)
                                 if not tax_id:
                                     xml_error = True
-                                    xml_state = _("Impuesto faltante. Tipo: Retención, Tipo Factor: %s, Impuesto: %s, Tasa o Cuota: %s.") % (
-                                        tax_type, tax_key, tasa_o_cuota)
+                                    xml_state = _(
+                                        f'Missing tax. Type: Retention, Factor Type: {tax_type}, Tax: {tax_key}, Rate or Quota: {tasa_o_cuota}, File: "{xml_file_name}"')
                                 else:
                                     arr_tax_ids.append(tax_id.id)
+                else:
+                    # Verificar si tiene Impuestos de XML 3.2
+                    if xml_version == '3.2' and hasattr(tree, 'Impuestos') and hasattr(tree.Impuestos, 'Retenciones') and hasattr(tree.Impuestos.Retenciones, 'Retencion'):
+                        impuestos_retenciones = tree.Impuestos.Retenciones.Retencion
+                        for impuesto_retencion in impuestos_retenciones:
+                            impuesto = impuesto_retencion.get(
+                                'impuesto', impuesto_retencion.get('impuesto'))
+                            importe = impuesto_retencion.get(
+                                'importe', impuesto_retencion.get('importe'))
+                            tasa = impuesto_retencion.get(
+                                'tasa', impuesto_retencion.get('tasa')) or 0.00
+                            if tasa:
+                                tasa = float(tasa)
+
+                            if self.journal_type == 'sale':
+                                type_tax_use = 'sale'
+                            elif self.journal_type == 'purchase':
+                                type_tax_use = 'purchase'
+
+                            condition = [
+                                ('amount', '=', -tasa),
+                                ('amount_type', '=', 'percent'),
+                                ('type_tax_use', '=', type_tax_use),
+                            ]
+                            tax_id = self.env['account.tax'].search(
+                                condition, limit=1)
+                            if not tax_id:
+                                xml_error = True
+                                xml_state = _(
+                                    f'Impuesto faltante. Tipo: Retención, Impuesto: {impuesto}, Tasa o Cuota: {tasa}, File: "{xml_file_name}')
+                            else:
+                                arr_tax_ids.append(tax_id.id)
+
                 arr_tax_ids.sort()
                 line_tax_ids = [(6, 0, arr_tax_ids)]
 
@@ -1027,8 +1106,8 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                 elif self.file_type == 'zip':
                     pdf_file_path = str(xml_file_path)[:-3] + 'pdf'
                     if os.path.isfile(pdf_file_path):
-                        if xml_state == _("Ready to Upload XML"):
-                            xml_state += _(' and PDF')
+                        if xml_state == _("Ready to Import XML!"):
+                            xml_state = _('Ready to Import XML and PDF!')
                         pdf_file_name = os.path.basename(pdf_file_path)
 
                         with open(pdf_file_path, 'rb') as f:
@@ -1039,14 +1118,19 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
             if self.importation_type == 'opening_balances':
                 import_invoice_lines = self._group_by_taxes(
                     import_invoice_lines)
-                origin = _(
-                    "Importación de Balance Inicial (%s)") % xml_file_name
+                origin = _("Initial Balance Import (%s)") % xml_file_name
             else:
-                origin = _(
-                    "Importación de Factura Regular (%s)") % xml_file_name
+                origin = _("Regular Invoice Import (%s)") % xml_file_name
 
             new_import_invoice_lines = []
             for import_invoice_line in import_invoice_lines:
+                if xml_version == '3.2' and total_discount:
+                    line_ponderation = import_invoice_line['price_unit'] * \
+                        import_invoice_line['quantity'] / float(subtotal)
+                    line_discount = import_invoice_line['quantity']*import_invoice_line['price_unit'] - \
+                        (import_invoice_line['quantity']*import_invoice_line['price_unit'] -
+                         total_discount*line_ponderation)
+                    import_invoice_line['discount'] = line_discount
                 new_import_invoice_lines.append((0, 0, import_invoice_line))
 
             if partner_id:
@@ -1066,14 +1150,12 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                 'journal_id': self.journal_id.id,
                 'partner_id': partner_id,
                 'invoice_line_ids': [(6, 0, arr_invoice_line_ids)],
-                # 'xml_invoice_id': xml_invoice_id,
                 'xml_binary_content': xml_binary_content,
                 'xml_file_name': xml_file_name,
-                # 'pdf_invoice_id': pdf_invoice_id,
                 'pdf_binary_content': pdf_binary_content,
                 'pdf_file_name': pdf_file_name,
                 'invoice_line_ids': new_import_invoice_lines,
-                'l10n_mx_edi_usage': usocfdi_customer,
+                'l10n_mx_edi_usage': invoice_cfdi_use,
                 'invoice_user_id': self.invoice_user_id.id,
                 'invoice_team_id': self.invoice_team_id.id,
                 'analytic_account_id': self.analytic_account_id.id,
@@ -1086,10 +1168,8 @@ class WizardAccountUploadEdiInvoices(models.TransientModel):
                 'partner_property_payment_term_id': partner_property_payment_term_id,
                 'partner_property_supplier_payment_term_id': partner_property_supplier_payment_term_id,
                 'invoice_account_id': self.invoice_account_id.id,
-                'lines_account_id': self.lines_account_id.id,
+                'lines_account_id': self.lines_account_id.id if self.lines_account_id else partner_id.import_invoice_line_account_id.id,
                 'supplier_l10n_mx_type_of_operation': self.supplier_l10n_mx_type_of_operation,
             }
-
             return invoice_dict
 
-        xml_file.close()

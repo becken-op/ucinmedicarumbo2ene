@@ -55,9 +55,9 @@ msgid ""
 "specific.\" aria-label=\"Values set here are company-specific.\" "
 "groups=\"base.group_multi_company\" role=\"img\"/>"
 msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Los valores establecidos "
-"aquí son específicos de la empresa.\" aria-label=\"Values set here are company-specific.\" "
-"groups=\"base.group_multi_company\" role=\"img\"/>"
+"<span class=\"fa fa-lg fa-building-o\" title=\"Los valores establecidos aquí"
+" son específicos de la empresa.\" aria-label=\"Values set here are company-"
+"specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_res_company__product_type_default
@@ -99,7 +99,7 @@ msgid "CFDI Import"
 msgstr "Importación de CFDI"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model_terms:ir.ui.view,arch_db:cnd_l10n_mx_edi_import_cfdi.message_wizard_form
+#: model_terms:ir.ui.view,arch_db:cnd_l10n_mx_edi_import_cfdi.upload_correct_invoices_form_view
 #: model_terms:ir.ui.view,arch_db:cnd_l10n_mx_edi_import_cfdi.wizard_account_upload_edi_invoices_form_view
 msgid "Cancel"
 msgstr "Cancelar"
@@ -121,18 +121,11 @@ msgid "Company"
 msgstr "Empresa"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__company_id
-msgid "Company related to this journal"
-msgstr "Empresa relacionada con este diario"
-
-#. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__zip_file
 msgid ""
-"Compressed Zip file that contains the xml and pdf files of the customer "
-"invoices."
+"Compressed Zip file that contains the xml and pdf files of the edi invoices."
 msgstr ""
-"Archivo Zip comprimido que contiene los archivos xml y pdf de las facturas "
-"de los clientes."
+"Archivo Zip comprimido que contiene los archivos xml y pdf de las facturas edi."
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields.selection,name:cnd_l10n_mx_edi_import_cfdi.selection__import_account_invoice__l10n_mx_edi_usage__i04
@@ -173,7 +166,7 @@ msgstr "Crear Productos"
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__create_uid
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__create_uid
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard__create_uid
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices__create_uid
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__create_uid
 msgid "Created by"
 msgstr "Creado por"
@@ -181,10 +174,22 @@ msgstr "Creado por"
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__create_date
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__create_date
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard__create_date
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices__create_date
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__create_date
 msgid "Created on"
 msgstr "Creado el"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
+#: code:addons/cnd_l10n_mx_edi_import_cfdi/wizard/upload_edi_invoices.py:0
+#, python-format
+msgid "Creating Partner with values: %s"
+msgstr "Creando Contacto con los valores: %s"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_partner__import_invoice_line_account_id
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_users__import_invoice_line_account_id
+msgid "Cuenta de importación de xml"
+msgstr ""
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__currency_id
@@ -230,16 +235,9 @@ msgid "Discount (%)"
 msgstr "Descuento (%)"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_edi_format__display_name
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_move__display_name
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_move_line__display_name
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_tax__display_name
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__display_name
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__display_name
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard__display_name
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_company__display_name
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_config_settings__display_name
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_partner__display_name
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices__display_name
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
@@ -273,7 +271,7 @@ msgstr ""
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: code:addons/cnd_l10n_mx_edi_import_cfdi/wizard/upload_edi_invoices.py:0
 #, python-format
-msgid "Error unzipping '%s' file!"
+msgid "Error unzipping '%s' file: %s"
 msgstr "¡Error al descomprimir el archivo '%s'!"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
@@ -327,16 +325,9 @@ msgid "General expenses"
 msgstr "Gastos en general"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_edi_format__id
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_move__id
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_move_line__id
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_tax__id
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__id
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__id
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard__id
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_company__id
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_config_settings__id
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_partner__id
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices__id
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__id
 msgid "ID"
 msgstr "Identificación"
@@ -346,14 +337,17 @@ msgstr "Identificación"
 #: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_res_config_settings__create_products
 #: model_terms:ir.ui.view,arch_db:cnd_l10n_mx_edi_import_cfdi.l10n_mx_edi_import_cfdi_restrict_config_settings_form
 msgid "If marked, product in the xml file are going to be created."
-msgstr "Si está marcado, se crearán el productos contenidos en los archivos xml importados, si es que no existen en el catálogo de productos."
+msgstr ""
+"Si está marcado, se crearán el productos contenidos en los archivos xml "
+"importados, si es que no existen en el catálogo de productos."
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_account_bank_statement_line__l10n_mx_edi_imported_from_xml
 #: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_account_move__l10n_mx_edi_imported_from_xml
 #: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_account_payment__l10n_mx_edi_imported_from_xml
 msgid "If this field is active, the CFDI was imported from its XML file."
-msgstr "Si este campo está activo, el CFDI fue importado desde su archivo XML."
+msgstr ""
+"Si este campo está activo, el CFDI fue importado desde su archivo XML."
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_account_bank_statement_line__l10n_mx_edi_sign_required
@@ -378,10 +372,29 @@ msgid "Import"
 msgstr "Importar"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.actions.act_window,name:cnd_l10n_mx_edi_import_cfdi.act_window_account_upload_edi_invoices
+#: model:ir.model,name:cnd_l10n_mx_edi_import_cfdi.model_import_account_invoice
+msgid "Import Account Invoice"
+msgstr "Cuenta Factura de importación"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
+#: model:ir.model,name:cnd_l10n_mx_edi_import_cfdi.model_import_account_invoice_line
+msgid "Import Account Invoice Line"
+msgstr "Línea de factura de cuenta de importación"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
+#: model:ir.model,name:cnd_l10n_mx_edi_import_cfdi.model_upload_correct_invoices
+msgid "Import Correct Invoices"
+msgstr "Importar facturas correctas"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.ui.menu,name:cnd_l10n_mx_edi_import_cfdi.menu_account_upload_edi_invoices
 msgid "Import Customer EDI Invoices (MX)"
 msgstr "Importar facturas EDI de clientes/proveedores (MX)"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
+#: model:ir.actions.act_window,name:cnd_l10n_mx_edi_import_cfdi.act_window_account_upload_edi_invoices
+msgid "Import EDI Invoices from XML file (CFDI MX)"
+msgstr "Importar Facturas EDI desde archivo XML (CFDI MX)"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__importation_type
@@ -429,7 +442,7 @@ msgid "Invoice Account"
 msgstr "Cuenta de factura"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard__invoice_upload_count
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices__invoice_upload_count
 msgid "Invoice count"
 msgstr "Contador de facturas"
 
@@ -450,7 +463,7 @@ msgid "Invoices List"
 msgstr "Lista de facturas"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard__invoice_upload_ids
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices__invoice_upload_ids
 msgid "Invoices Uploaded"
 msgstr "Facturas importadas"
 
@@ -471,16 +484,14 @@ msgid "Journal Item"
 msgstr "Apunte de diario"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_edi_format____last_update
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_move____last_update
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_move_line____last_update
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_account_tax____last_update
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__name
+msgid "Label"
+msgstr "Etiqueta"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice____last_update
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line____last_update
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard____last_update
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_company____last_update
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_res_partner____last_update
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices____last_update
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
@@ -488,7 +499,7 @@ msgstr "Última modificación en"
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__write_uid
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__write_uid
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard__write_uid
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices__write_uid
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
@@ -496,7 +507,7 @@ msgstr "Última actualización por"
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__write_date
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__write_date
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_message_wizard__write_date
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_upload_correct_invoices__write_date
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__write_date
 msgid "Last Updated on"
 msgstr "Ultima actualización el"
@@ -508,8 +519,8 @@ msgid "Lines Account"
 msgstr "Cuenta de Líneas"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model_terms:ir.ui.view,arch_db:cnd_l10n_mx_edi_import_cfdi.message_wizard_form
-msgid "List of invoices to upload, please, check the status column."
+#: model_terms:ir.ui.view,arch_db:cnd_l10n_mx_edi_import_cfdi.upload_correct_invoices_form_view
+msgid "List of invoices to import, please, check the status column."
 msgstr ""
 "Lista de facturas a importar, por favor, consulte la columna de estado."
 
@@ -534,11 +545,6 @@ msgid "Medical, dental and hospital expenses."
 msgstr "Honorarios médicos, dentales y gastos hospitalarios."
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__name
-msgid "Name"
-msgstr "Nombre"
-
-#. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__new_partner_payment_term_id
 msgid "New Partners Payment Terms"
 msgstr "Condiciones de pago de nuevos contactos"
@@ -548,6 +554,11 @@ msgstr "Condiciones de pago de nuevos contactos"
 #, python-format
 msgid "No file sent."
 msgstr "Ningún archivo enviado."
+
+#. module: cnd_l10n_mx_edi_import_cfdi
+#: model:ir.model.fields.selection,name:cnd_l10n_mx_edi_import_cfdi.selection__import_account_invoice__l10n_mx_edi_usage__s01
+msgid "No tax effects"
+msgstr ""
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice_line__noidentificacion
@@ -662,12 +673,6 @@ msgid "RFC Receptor"
 msgstr ""
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: code:addons/cnd_l10n_mx_edi_import_cfdi/wizard/upload_edi_invoices.py:0
-#, python-format
-msgid "Ready to Upload XML"
-msgstr "Listo para subir XML"
-
-#. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields.selection,name:cnd_l10n_mx_edi_import_cfdi.selection__import_account_invoice__l10n_mx_edi_usage__d05
 msgid "Real interest effectively paid for mortgage loans (room house)"
 msgstr ""
@@ -679,6 +684,14 @@ msgstr ""
 #: model:ir.model.fields.selection,name:cnd_l10n_mx_edi_import_cfdi.selection__wizard_account_upload_edi_invoices__importation_type__regular_invoices
 msgid "Regular Invoices"
 msgstr "Facturas Regulares"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
+#: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__importation_type
+#: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__importation_type
+msgid ""
+"Regular Invoices - Import includes every line of the invoices.\n"
+"Opening Balances - Import only includes one summary invoice line."
+msgstr ""
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields.selection,name:cnd_l10n_mx_edi_import_cfdi.selection__import_account_invoice__l10n_mx_edi_usage__g02
@@ -877,6 +890,12 @@ msgid "This invoice was imported from his XML file"
 msgstr "Esta factura fue importada de su archivo XML"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
+#: code:addons/cnd_l10n_mx_edi_import_cfdi/__init__.py:0
+#, python-format
+msgid "This module support Odoo series 15.0, found %s."
+msgstr ""
+
+#. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,help:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__partner_property_supplier_payment_term_id
 msgid ""
 "This payment term will be used instead of the default one for purchase "
@@ -946,7 +965,7 @@ msgstr ""
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model_terms:ir.ui.view,arch_db:cnd_l10n_mx_edi_import_cfdi.message_wizard_form
 msgid "Upload the correct Invoices"
-msgstr "Cargue las facturas correctas"
+msgstr "Importar las facturas correctas"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__l10n_mx_edi_usage
@@ -988,9 +1007,16 @@ msgid "Voluntary contributions to SAR"
 msgstr "Aportaciones voluntarias al SAR"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__message_wizard_id
+#: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__upload_correct_invoices_id
 msgid "Wizard Message"
 msgstr "Mensaje del Asistente"
+
+#. module: cnd_l10n_mx_edi_import_cfdi
+#: model:ir.model,name:cnd_l10n_mx_edi_import_cfdi.model_wizard_account_upload_edi_invoices
+msgid ""
+"Wizard to import EDI invoices compressed in a zip file as opening balances"
+msgstr ""
+"Asistente para importar facturas EDI comprimidas en un archivo zip como saldos iniciales"
 
 #. module: cnd_l10n_mx_edi_import_cfdi
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_import_account_invoice__xml_binary_content
@@ -1027,18 +1053,3 @@ msgstr "Archivo Zip o Xml"
 #: model:ir.model.fields,field_description:cnd_l10n_mx_edi_import_cfdi.field_wizard_account_upload_edi_invoices__zip_filename
 msgid "Zip or Xml File Name"
 msgstr "Nombre del Archivo Zip o Xml"
-
-#. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model,name:cnd_l10n_mx_edi_import_cfdi.model_import_account_invoice
-msgid "import.account.invoice"
-msgstr ""
-
-#. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model,name:cnd_l10n_mx_edi_import_cfdi.model_import_account_invoice_line
-msgid "import.account.invoice.line"
-msgstr ""
-
-#. module: cnd_l10n_mx_edi_import_cfdi
-#: model:ir.model,name:cnd_l10n_mx_edi_import_cfdi.model_message_wizard
-msgid "message.wizard"
-msgstr ""

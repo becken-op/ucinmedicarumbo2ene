@@ -8,7 +8,7 @@ class AccountMove(models.Model):
     l10n_mx_edi_imported_from_xml = fields.Boolean(
         string='Imported from XML',
         default=False,
-        radonly=True,
+        readonly=True,
         help='If this field is active, the CFDI was imported from its XML file.')
     l10n_mx_edi_sign_required = fields.Boolean(
         string='Sign Invoice?',
@@ -37,11 +37,13 @@ class AccountMove(models.Model):
 
     def _post(self, soft=True):
         # OVERRIDE
-        super()._post(soft=soft)
+        to_post = super()._post(soft=soft)
 
         for move in self:
             if move.l10n_mx_edi_sign_required is False:
                 move._compute_l10n_mx_edi_cfdi_request()
+
+        return to_post
 
 
 class AccountMoveLine(models.Model):
@@ -49,5 +51,6 @@ class AccountMoveLine(models.Model):
 
     @api.onchange('product_id')
     def _onchange_product_id(self):
-        if not self.l10n_mx_edi_imported_from_xml:
+        if not self.move_id.l10n_mx_edi_imported_from_xml:
             super(AccountMoveLine, self)._onchange_product_id()
+

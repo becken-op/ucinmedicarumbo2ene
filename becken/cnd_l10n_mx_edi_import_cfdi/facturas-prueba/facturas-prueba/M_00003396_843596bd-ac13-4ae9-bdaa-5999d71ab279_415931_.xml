@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Serie="M" Folio="00003396" Fecha="2020-02-11T12:24:07" Sello="fqqcchgvbe+sn9/7jvoEIMAh7llnfUxABNof1827ykfEjLfnQZULJtSohLofNrUSmSk1JJDJlTi2DKSnqY7nhk3rXRbEZeud9z9ynAYFCMbHmFgjwDnCB2VInckdTh/Bf51jkShFIBfdF4Q+sCd5m/Q9fdL5QWCEKcJEevLtiOSYjeT4zeBJjLfym4keFdyqIckUCjS2DlBt2A49CVmpFvvGAJR5xirOS6OuNMwtLr/+pxMmjCAkwrKEs7R8FL+Eii/DLSTLFq7uEUA99WouUnauiDkEifW26LhsePgdB/31QEG0w945ERqgMdlVX9cNKtjxpe8EQ0Nzum7uLFvyHQ==" FormaPago="99" NoCertificado="00001000000501344955" Certificado="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" CondicionesDePago="INV" SubTotal="800.00" Moneda="USD" TipoCambio="18.76" Total="848.00" TipoDeComprobante="I" MetodoPago="PPD" LugarExpedicion="03840" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfdi="http://www.sat.gob.mx/cfd/3">
+  <cfdi:Emisor Rfc="DRO190903817" Nombre="DSV ROAD SA DE CV" RegimenFiscal="601" />
+  <cfdi:Receptor Rfc="AME980420MA6" Nombre="ANTIESTATICA DE MEXICO S.A. DE C.V." UsoCFDI="G03" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="80151600" NoIdentificacion="FRT" Cantidad="1" ClaveUnidad="E48" Unidad="No Applica" Descripcion="Coordinación Logística Toledo, OH - Laredo, TX" ValorUnitario="400" Importe="400.00" />
+    <cfdi:Concepto ClaveProdServ="78101800" NoIdentificacion="LINL" Cantidad="1" ClaveUnidad="E48" Unidad="No Applica" Descripcion="Cruce" ValorUnitario="150.00" Importe="150.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="150.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="24.00" />
+        </cfdi:Traslados>
+        <cfdi:Retenciones>
+          <cfdi:Retencion Base="150.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.040000" Importe="6.00" />
+        </cfdi:Retenciones>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="78101800" NoIdentificacion="LINL" Cantidad="1" ClaveUnidad="E48" Unidad="No Applica" Descripcion="Coordinación Logística Nuevo Laredo, TMP - Zapopan, JAL" ValorUnitario="250" Importe="250.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="250" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="40.00" />
+        </cfdi:Traslados>
+        <cfdi:Retenciones>
+          <cfdi:Retencion Base="250" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.040000" Importe="10.00" />
+        </cfdi:Retenciones>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosRetenidos="16.00" TotalImpuestosTrasladados="64.00">
+    <cfdi:Retenciones>
+      <cfdi:Retencion Impuesto="002" Importe="16.00" />
+    </cfdi:Retenciones>
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="64.00" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="843596bd-ac13-4ae9-bdaa-5999d71ab279" FechaTimbrado="2020-02-11T12:30:04" RfcProvCertif="CFA110411FW5" SelloCFD="fqqcchgvbe+sn9/7jvoEIMAh7llnfUxABNof1827ykfEjLfnQZULJtSohLofNrUSmSk1JJDJlTi2DKSnqY7nhk3rXRbEZeud9z9ynAYFCMbHmFgjwDnCB2VInckdTh/Bf51jkShFIBfdF4Q+sCd5m/Q9fdL5QWCEKcJEevLtiOSYjeT4zeBJjLfym4keFdyqIckUCjS2DlBt2A49CVmpFvvGAJR5xirOS6OuNMwtLr/+pxMmjCAkwrKEs7R8FL+Eii/DLSTLFq7uEUA99WouUnauiDkEifW26LhsePgdB/31QEG0w945ERqgMdlVX9cNKtjxpe8EQ0Nzum7uLFvyHQ==" SelloSAT="lB8q9sbgXyPdUH09R/eyrqYbizoEuUOmhLdsE+S36+zx4G3nta4fGDHxgtZirKNKCTN2BbcIGJ/PXZbFOV0V4DbVdIIr3r5H10B+mNGELNrRcmd19ifAdl9xi7nV3JjyLi5fkFXzfk723VK0re9OIBt32pvnLXCJ6G9SWAT6LX2gnt36T3RlBPja9MFEvBfbuavbF/xeFNkZcjG9CTiFR9aURR1OHXke0LtHFOXt/JIEAw7R7kkMGtTPaykypUJQ9IgZg9LeZDJUGiAk66SrojGPkr//F5qI7d0onYO8zfDrR00PI890Cf7nd6bjLDevNl2bmSA7JjNDFPO8khR9Mg==" NoCertificadoSAT="00001000000407908743" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/timbrefiscaldigital/TimbreFiscalDigitalv11.xsd" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>
